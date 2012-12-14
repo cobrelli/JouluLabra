@@ -19,5 +19,9 @@ public class Main {
         
         p.lisaaHahmo(eka);
         p.lisaaHahmo(toka);
+        
+        System.out.println(eka.getHp());
+        
+        p.tulostaHahmot();
     }
 }

@@ -64,7 +64,10 @@ public abstract class CharClass {
         return this.y;
     }
     
-    void alustaStatsit(){
+    /**
+     *
+     */
+    public void alustaStatsit(){
         this.Hp = HpMax;
         this.Mp = MpMax;
     }
@@ -77,7 +80,11 @@ public abstract class CharClass {
         return this.charClassID;
     }
     
-    void setCharClassID(String ID){
+    /**
+     *
+     * @param ID
+     */
+    public void setCharClassID(String ID){
         this.charClassID = ID;
     }
     
