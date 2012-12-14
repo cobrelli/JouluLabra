@@ -9,7 +9,8 @@ package CharClass;
 public class Fighter extends CharClass{
     
     /**
-     * Konstruktori luo uuden Fighterin
+     * Konstruktori luo uuden Fighterin. Luokka tulee sisältämään enemmän tälle
+     * hahmotyypille tyypillisiä eroja suhteessa toisiin hahmoluokkiin.
      * @param nimi      Luo uuden fighterin halutulla nimellä.
      */
     public Fighter(String nimi){

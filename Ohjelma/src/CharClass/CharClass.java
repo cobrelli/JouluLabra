@@ -65,7 +65,7 @@ public abstract class CharClass {
     }
     
     /**
-     *
+     * Alustaa täysiksi statseiksi max statsit.
      */
     public void alustaStatsit(){
         this.Hp = HpMax;

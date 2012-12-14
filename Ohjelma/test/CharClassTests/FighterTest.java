@@ -8,6 +8,7 @@ package CharClassTests;
 import CharClass.Fighter;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -22,12 +23,12 @@ public class FighterTest {
 
     @Before
     public void setUp() {
-        
+        fighter = new Fighter("testi");
     }
 
     @Test
-    public void test(){
-        fighter = new Fighter("testi");
+    public void testPalauttaaOikeanCharClassID(){
+        assertEquals("Fighter", fighter.getCharClassID());
     }
     
 }
