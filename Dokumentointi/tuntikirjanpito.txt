@@ -1,3 +1,7 @@
 11.12
 
-2h aiheen aiheen hahmottelua paperille, sek� githubin alustus ja projektin aloittaminen, sek� kansiorakenteen kasaaminen. 
+2h aiheen aiheen hahmottelua paperille, sek� githubin alustus ja projektin aloittaminen, sek� kansiorakenteen kasaaminen. 
+
+14.12
+
+1h Yläluokka hahmoluokille ja ensimmäinen hahmoluokka Fighter tehty, sekä hahmojen joukkoa varten tehty ryhmä.
