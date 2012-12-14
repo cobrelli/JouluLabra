@@ -46,4 +46,21 @@ public class CharClassTesti {
         assertEquals(99, fighter.getMp());
     }
     
+    @Test 
+    public void testaaEttaHpVaheneeOikeasti(){
+        int arvo = fighter.getHp();
+        
+        fighter.vahennaHp(30);
+        assertEquals(arvo-30, fighter.getHp());
+    }
+    
+    @Test
+    public void testaaEttaLisattyHpKasvattaaOikeastiMaaraa(){
+        fighter.vahennaHp(50);
+        int arvo = fighter.getHp();
+        
+        fighter.lisaaHp(10);
+        
+        assertEquals(arvo+10, fighter.getHp());
+    }
 }

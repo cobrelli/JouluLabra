@@ -73,24 +73,24 @@ public abstract class CharClass {
     }
     
     /**
-     *
-     * @return
+     * Hahmoluokan ID:n getteri
+     * @return      Palauttaa hahmoluokan CharClassID:n
      */
     public String getCharClassID(){
         return this.charClassID;
     }
     
     /**
-     *
-     * @param ID
+     * Hahmoluokan ID:n setteri
+     * @param ID    Asettaa CharClassID:lle uuden määritellyn Stringin.
      */
     public void setCharClassID(String ID){
         this.charClassID = ID;
     }
     
     /**
-     *
-     * @param maara
+     * Kasvattaa tämänhetkistä Hp määrää.
+     * @param maara     Asennettu parametri lisätään Hp attribuuttiin.
      */
     public void lisaaHp(int maara) {
 
