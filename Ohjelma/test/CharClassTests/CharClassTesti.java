@@ -63,4 +63,27 @@ public class CharClassTesti {
         
         assertEquals(arvo+10, fighter.getHp());
     }
+    
+    @Test
+    public void testaaEttaLisattyMpKasvattaaOikeastiMaaraa(){
+        fighter.setMpMax(120);
+        fighter.alustaStatsit();
+        
+        fighter.vahennaMp(100);
+        
+        assertEquals(20, fighter.getMp());
+    }
+    
+    @Test
+    public void testaaEttaSetteriMuuttaaMaxHp(){
+        fighter.setHpMax(10);
+        assertEquals(10, fighter.getHp());
+    }
+    
+    @Test
+    public void testaaEttaSetteriMuuttaaMaxMp(){
+        fighter.setMpMax(10);
+        assertEquals(10, fighter.getMp());
+    }
+    
 }
