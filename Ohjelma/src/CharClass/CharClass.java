@@ -162,8 +162,8 @@ public abstract class CharClass {
     }
     
     /**
-     *
-     * @param maara
+     * Lisää Mp attribuuttia maaran verran ja tarkistaa ettei ylitä maksimia
+     * @param maara     Lisataan nykyisiin Mp
      */
     public void lisaaMp(int maara) {
 
@@ -175,8 +175,8 @@ public abstract class CharClass {
     }
 
     /**
-     *
-     * @param maara
+     * Vähentää Mp attribuuttia maaran verran ja tarkistaa ettei ylitä maksimia
+     * @param maara     Vähennetään nykyisiin Mp
      */
     public void vahennaMp(int maara) {
         
@@ -188,18 +188,18 @@ public abstract class CharClass {
     }
 
     /**
-     *
-     * @return
+     * Mp attribuutin getteri
+     * @return      Palauttaa Mp
      */
     public int getMp() {
         return this.Mp;
     }
     
     /**
-     *
-     * @return
+     * getteri booleanille, joka kertoo onko kyseinen yksikkö elossa.
+     * @return      Palauttaa booleanin elossa
      */
-    public boolean isAlive(){
+    public boolean getIsAlive(){
         return elossa;
     }
     
