@@ -60,31 +60,33 @@ public abstract class Monster {
     }
 
     /**
-     *
+     * Alustaa vihollisyksikön nykyisen hp arvon olemaan sama kuin sen HpMax arvo.
      */
     public void alustaStatsit() {
         this.Hp = HpMax;
     }
 
     /**
-     *
-     * @param ID
+     * Asettaa vihollisyksikön ID:n halutuksia.
+     * @param ID        Asettaa parametrina annetun Stringin olion ID:ksi.
      */
     public void setMonsterClassID(String ID) {
         this.monsterClassID = ID;
     }
 
     /**
-     *
-     * @return
+     * Monsterin ID:n getteri.
+     * @return      Palauttaa ID:n Stringinä.
      */
     public String getMonsterClassID(){
         return this.monsterClassID;
     }
     
     /**
-     *
-     * @param maara
+     * Lisää hp:ta halutulla määrällä. Tarkistaa onko hirviö elossa, jos on niin
+     * hp:ta ei kasvateta. Hp kasvaa maksimissaan HpMax arvoon asti.
+     * 
+     * @param maara         kertoo arvon jolla Hp:ta kasvatetaan.
      */
     public void lisaaHp(int maara) {
 
@@ -100,8 +102,10 @@ public abstract class Monster {
     }
 
     /**
-     *
-     * @param maara
+     * Vähentää monsterin hp:ta halutulla määrällä. Jos yksikkö ei elossa, ei
+     * tehdä mitään. Jos laskee alle nollan asetetaan olio kuolleeksi ja hp
+     * -1:ksi.
+     * @param maara         Kertoo määrän jolla Hp:ta vähennetään.
      */
     public void vahennaHp(int maara) {
         if (!elossa) {
@@ -116,24 +120,24 @@ public abstract class Monster {
     }
 
     /**
-     *
-     * @return
+     * Hp attribuutin getteri.
+     * @return      Palauttaa nykyisen hp:n.
      */
     public int getHp() {
         return this.Hp;
     }
     
     /**
-     *
-     * @return
+     * HpMax attribuutin getteri.
+     * @return      Palauttaa maksimi hp:n.
      */
     public int getHpMax(){
         return this.HpMax;
     }
 
     /**
-     *
-     * @param uusi
+     * HpMax attribuutin setteri.
+     * @param uusi      Asettaa HpMax arvoksi arvon uusi.
      */
     public void setHpMax(int uusi) {
         this.HpMax = uusi;
@@ -141,16 +145,16 @@ public abstract class Monster {
     }
 
     /**
-     *
-     * @return
+     * Kertoo onko yksikkö elossa.
+     * @return      Palauttaa elossa attribuutin arvon.
      */
     public boolean isAlive() {
         return elossa;
     }
 
     /**
-     *
-     * @return
+     * Palauttaa esimerkiksi toStringiä varten hengissäolotilanteen mukaisesti tekstin
+     * @return      Jos elossa palattaa tyhjän, jos ei ole elossa palauttaa R.I.P.
      */
     public String onkoElossa() {
         if (elossa) {
