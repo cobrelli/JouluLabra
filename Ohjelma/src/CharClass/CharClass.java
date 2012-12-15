@@ -10,8 +10,6 @@ public abstract class CharClass {
 
     private int Hp;
     private int HpMax;
-    private int Mp;
-    private int MpMax;
     private boolean elossa;
     private String nimi;
     private String charClassID;
@@ -73,7 +71,6 @@ public abstract class CharClass {
      */
     public void alustaStatsit() {
         this.Hp = HpMax;
-        this.Mp = MpMax;
     }
 
     /**
@@ -148,67 +145,12 @@ public abstract class CharClass {
     }
 
     /**
-     * MpMax setteri
-     *
-     * @param uusi Asettaa MpMaxin tähän arvoon.
-     */
-    public void setMpMax(int uusi) {
-        this.MpMax = uusi;
-    }
-
-    /**
      * HpMax getteri
      *
      * @return Palauttaa HpMax.
      */
     public int getHpMax() {
         return this.HpMax;
-    }
-
-    /**
-     * MpMax getteri
-     *
-     * @return Palauttaa MpMax.
-     */
-    public int getMpMax() {
-        return this.MpMax;
-    }
-
-    /**
-     * Lisää Mp attribuuttia maaran verran ja tarkistaa ettei ylitä maksimia
-     *
-     * @param maara Lisataan nykyisiin Mp
-     */
-    public void lisaaMp(int maara) {
-
-        if (this.Mp + maara > this.MpMax) {
-            this.Mp = this.MpMax;
-        } else {
-            this.Mp += maara;
-        }
-    }
-
-    /**
-     * Vähentää Mp attribuuttia maaran verran ja tarkistaa ettei ylitä maksimia
-     *
-     * @param maara Vähennetään nykyisiin Mp
-     */
-    public void vahennaMp(int maara) {
-
-        if (this.Mp - maara < 0) {
-            this.Mp = 0;
-        } else {
-            this.Mp -= maara;
-        }
-    }
-
-    /**
-     * Mp attribuutin getteri
-     *
-     * @return Palauttaa Mp
-     */
-    public int getMp() {
-        return this.Mp;
     }
 
     /**
@@ -234,7 +176,7 @@ public abstract class CharClass {
 
     @Override
     public String toString() {
-        return this.nimi + " " + this.charClassID + " HP: (" + getHp() + ") MP: (" + getMp() + ") "
-                + onkoElossa();
+        return this.nimi + " " + this.charClassID + " HP: (" + getHp() + "/" +
+                getHpMax() + ") " + onkoElossa();
     }
 }

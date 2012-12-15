@@ -16,7 +16,6 @@ public class Fighter extends CharClass{
     public Fighter(String nimi){
         super(nimi);
         setHpMax(100);
-        setMpMax(0);
         setCharClassID("Fighter");
         alustaStatsit();
     }
