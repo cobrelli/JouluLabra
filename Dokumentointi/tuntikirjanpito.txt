@@ -4,4 +4,4 @@
 
 14.12
 
-1h Yläluokka hahmoluokille ja ensimmäinen hahmoluokka Fighter tehty, sekä hahmojen joukkoa varten tehty ryhmä.
+3h Yläluokka hahmoluokille ja ensimmäinen hahmoluokka Fighter tehty, sekä hahmojen joukkoa varten tehty ryhmä.
