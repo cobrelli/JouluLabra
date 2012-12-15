@@ -1,5 +1,9 @@
 package Monster;
 
+/**
+ * Yliluokka Monster, jonka aliluokkia ovat erilaiset vihollisyksiköt.
+ * @author Cobrelli
+ */
 public abstract class Monster {
 
     private int Hp;
@@ -10,6 +14,11 @@ public abstract class Monster {
     private int x;
     private int y;
 
+    /**
+     * Luokan konstruktori, joka luo uuden olion halutulla nimellä ja alustaa
+     * sen attribuutit.
+     * @param nimi      Olion nimi. 
+     */
     public Monster(String nimi) {
 
         this.nimi = nimi;
@@ -18,34 +27,65 @@ public abstract class Monster {
 
     }
 
+    /**
+     * Asettaa olion paikan x akselilla.
+     * @param x     Määrää mihin paikkaan x akselia olio sijoittuu matriisissa.
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * Asettaa olion paikan y akselilla.
+     * @param y     Määrää mihin paikkaan y akselia olio sijoittuu matriisissa.
+     */
     public void setY(int y) {
         this.y = y;
     }
 
+    /**
+     * Olion paikan x akselin getteri.
+     * @return      Palauttaa olion paikan x akselilla.
+     */
     public int getX() {
         return this.x;
     }
 
+    /**
+     * Olion paikan y akselin getteri.
+     * @return      Palauttaa olion paikan y akselilla.
+     */
     public int getY() {
         return this.y;
     }
 
+    /**
+     *
+     */
     public void alustaStatsit() {
         this.Hp = HpMax;
     }
 
+    /**
+     *
+     * @param ID
+     */
     public void setMonsterClassID(String ID) {
         this.monsterClassID = ID;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMonsterClassID(){
         return this.monsterClassID;
     }
     
+    /**
+     *
+     * @param maara
+     */
     public void lisaaHp(int maara) {
 
         if (!elossa) {
@@ -59,6 +99,10 @@ public abstract class Monster {
         }
     }
 
+    /**
+     *
+     * @param maara
+     */
     public void vahennaHp(int maara) {
         if (!elossa) {
             return;
@@ -71,23 +115,43 @@ public abstract class Monster {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getHp() {
         return this.Hp;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getHpMax(){
         return this.HpMax;
     }
 
+    /**
+     *
+     * @param uusi
+     */
     public void setHpMax(int uusi) {
         this.HpMax = uusi;
         this.Hp = HpMax;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isAlive() {
         return elossa;
     }
 
+    /**
+     *
+     * @return
+     */
     public String onkoElossa() {
         if (elossa) {
             return "";

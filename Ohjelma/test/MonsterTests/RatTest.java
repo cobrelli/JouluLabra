@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
+ * Rat aliluokan testi luokka
  * @author Cobrelli
  */
 public class RatTest {
@@ -14,13 +14,13 @@ public class RatTest {
     Rat rat;
     
     /**
-     *
+     * Konstruktori
      */
     public RatTest() {
     }
         
     /**
-     *
+     * Asettaa globaalin Rat olion testaamista varten.
      */
     @Before
     public void setUp() {
@@ -28,7 +28,7 @@ public class RatTest {
     }
     
     /**
-     *
+     * Tarkistaa että MonsterClassID palautuu oikein
      */
     @Test
     public void testaaEttaMonsterClassIDAnnetaanOikein(){
