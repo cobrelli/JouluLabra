@@ -106,8 +106,8 @@ public abstract class CharClass {
     }
 
     /**
-     *
-     * @param maara
+     * Vahentaa nykyisen Hp:n määrää.
+     * @param maara     Hp:ta vähennetään maara:n verran
      */
     public void vahennaHp(int maara) {
         if (!elossa) {
@@ -122,8 +122,8 @@ public abstract class CharClass {
     }
 
     /**
-     *
-     * @return
+     * Nykyisen Hp määrän getteri
+     * @return      Palauttaa nykyisen Hp määrän
      */
     public int getHp() {
         return this.Hp;
