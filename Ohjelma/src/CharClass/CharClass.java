@@ -130,19 +130,35 @@ public abstract class CharClass {
     }
     
     /**
-     *
-     * @param uusi
+     * HpMax Setteri
+     * @param uusi      Asettaa HpMaxin tähän arvoon.
      */
     public void setHpMax(int uusi){
         this.HpMax = uusi;
     }
     
     /**
-     *
-     * @param uusi
+     * MpMax setteri
+     * @param uusi      Asettaa MpMaxin tähän arvoon.
      */
     public void setMpMax(int uusi){
         this.MpMax = uusi;
+    }
+    
+    /**
+     * HpMax getteri
+     * @return      Palauttaa HpMax.
+     */
+    public int getHpMax(){
+        return this.HpMax;
+    }
+    
+    /**
+     * MpMax getteri
+     * @return      Palauttaa MpMax.
+     */
+    public int getMpMax(){
+        return this.MpMax;
     }
     
     /**

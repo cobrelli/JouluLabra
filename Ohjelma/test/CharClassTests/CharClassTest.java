@@ -8,11 +8,11 @@ import static org.junit.Assert.*;
  * 
  * @author Cobrelli
  */
-public class CharClassTesti {
+public class CharClassTest {
     
     Fighter fighter;
     
-    public CharClassTesti() {
+    public CharClassTest() {
     }
     
     @Before
@@ -54,6 +54,18 @@ public class CharClassTesti {
         assertEquals(arvo-30, fighter.getHp());
     }
     
+    @Test 
+    public void testaaEttaMpVaheneeOikeasti(){
+        fighter.setMpMax(100);
+        fighter.alustaStatsit();
+        
+        int arvo = fighter.getMp();
+        
+        fighter.vahennaMp(30);
+        
+        assertEquals(arvo-30, fighter.getMp());
+    }
+    
     @Test
     public void testaaEttaLisattyHpKasvattaaOikeastiMaaraa(){
         fighter.vahennaHp(50);
@@ -77,13 +89,13 @@ public class CharClassTesti {
     @Test
     public void testaaEttaSetteriMuuttaaMaxHp(){
         fighter.setHpMax(10);
-        assertEquals(10, fighter.getHp());
+        assertEquals(10, fighter.getHpMax());
     }
     
     @Test
     public void testaaEttaSetteriMuuttaaMaxMp(){
         fighter.setMpMax(10);
-        assertEquals(10, fighter.getMp());
+        assertEquals(10, fighter.getMpMax());
     }
     
 }
