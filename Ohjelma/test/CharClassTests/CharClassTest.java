@@ -13,7 +13,7 @@ public class CharClassTest {
     Fighter fighter;
     
     /**
-     *
+     * CharClass luokan konstruktori.
      */
     public CharClassTest() {
     }

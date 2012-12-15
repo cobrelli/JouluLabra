@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package CharClassTests;
 
 import CharClass.CharParty;
@@ -18,14 +14,23 @@ public class CharPartyTest {
 
     CharParty p;
 
+    /**
+     *
+     */
     public CharPartyTest() {
     }
 
+    /**
+     *
+     */
     @Before
     public void setUp() {
         p = new CharParty();
     }
 
+    /**
+     *
+     */
     @Test
     public void testaaEttaSetteriMuuttaaNimenOikein() {
         p.setNimi("k");
@@ -33,6 +38,9 @@ public class CharPartyTest {
         assertEquals("k", p.getNimi());
     }
     
+    /**
+     *
+     */
     @Test
     public void testaaEttaLisattyCharClassLisataanArrayListiin(){
         Fighter f = new Fighter("F");
@@ -40,6 +48,9 @@ public class CharPartyTest {
         assertTrue(p.palautaHahmot().contains(f));
     }
     
+    /**
+     *
+     */
     @Test
     public void testaaEttaPoistettavaCharClassPoistuuArrayListista(){
         Fighter f = new Fighter("F");
@@ -48,11 +59,17 @@ public class CharPartyTest {
         assertFalse(p.palautaHahmot().contains(f));
     }
     
+    /**
+     *
+     */
     @Test
     public void testaaEttaPalauttaaTyhjanJosTyhja(){
         assertTrue(p.isEmpty());
     }
     
+    /**
+     *
+     */
     @Test
     public void TestaaEttaPalauttaaFalseJosEiTyhja(){
         p.lisaaHahmo(new Fighter("testi"));

@@ -1,17 +1,13 @@
 package CharClassTests;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import CharClass.Fighter;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Testaa aliluokkaa Fighter
+ * Testaa aliluokkaa Fighter. Suurin osa tämän käyttämistä metodeista on testattu
+ * jo yliluokan testeissä.
  * @author Cobrelli
  */
 public class FighterTest {
@@ -19,13 +15,13 @@ public class FighterTest {
     Fighter fighter;
     
     /**
-     * 
+     * Konstruktori
      */
     public FighterTest() {
     }
 
     /**
-     *
+     * Asettaa käsiteltävän yksikön globaalisti.
      */
     @Before
     public void setUp() {
@@ -33,7 +29,7 @@ public class FighterTest {
     }
 
     /**
-     *
+     * Testaa että CharClass palautuu oikein.
      */
     @Test
     public void testPalauttaaOikeanCharClassID(){
