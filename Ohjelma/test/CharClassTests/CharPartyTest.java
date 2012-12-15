@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
+ * Yksikköjä hallinnoivan luokan testejä.
  * @author Cobrelli
  */
 public class CharPartyTest {
@@ -15,13 +15,13 @@ public class CharPartyTest {
     CharParty p;
 
     /**
-     *
+     * Konstruktori
      */
     public CharPartyTest() {
     }
 
     /**
-     *
+     * Asettaa uuden globaalin CharParty olion.
      */
     @Before
     public void setUp() {
@@ -29,7 +29,7 @@ public class CharPartyTest {
     }
 
     /**
-     *
+     * Testaa että setterillä voidaan muuttaa nimi oikein.
      */
     @Test
     public void testaaEttaSetteriMuuttaaNimenOikein() {
@@ -39,7 +39,7 @@ public class CharPartyTest {
     }
     
     /**
-     *
+     * Testaa että annettu CharClass menee oikeasti arraylistiin
      */
     @Test
     public void testaaEttaLisattyCharClassLisataanArrayListiin(){
@@ -49,7 +49,7 @@ public class CharPartyTest {
     }
     
     /**
-     *
+     * Testaa että CharClass saadaan poistettua listalta.
      */
     @Test
     public void testaaEttaPoistettavaCharClassPoistuuArrayListista(){
@@ -60,7 +60,7 @@ public class CharPartyTest {
     }
     
     /**
-     *
+     * Testaa että jos lista on tyhjä palautetaan true.
      */
     @Test
     public void testaaEttaPalauttaaTyhjanJosTyhja(){
@@ -68,7 +68,7 @@ public class CharPartyTest {
     }
     
     /**
-     *
+     * Testaa että jos lista ei ole tyhjä palautetaan false.
      */
     @Test
     public void TestaaEttaPalauttaaFalseJosEiTyhja(){
