@@ -55,16 +55,6 @@ public class CharClassTest {
     }
     
     /**
-     * Alustusmetodi muuttaa nykyiseksi mp:ksi max mp:n oikein.
-     */
-    @Test
-    public void testaaAlustusAsettaaMpOikein(){
-        fighter.setMpMax(99);
-        fighter.alustaStatsit();
-        assertEquals(99, fighter.getMp());
-    }
-    
-    /**
      * Hahmolta vahennettava hp laskee oikein hp arvoa.
      */
     @Test 
@@ -88,21 +78,6 @@ public class CharClassTest {
     }
     
     /**
-     * Hahmolta vahennettava mp laskee oikein mp arvoa.
-     */
-    @Test 
-    public void testaaEttaMpVaheneeOikeasti(){
-        fighter.setMpMax(100);
-        fighter.alustaStatsit();
-        
-        int arvo = fighter.getMp();
-        
-        fighter.vahennaMp(30);
-        
-        assertEquals(arvo-30, fighter.getMp());
-    }
-    
-    /**
      * Hahmolle lisätty hp nostaa hp arvoa oikein
      */
     @Test
@@ -116,34 +91,12 @@ public class CharClassTest {
     }
     
     /**
-     * Testaa lisaa mp toimivuuden
-     */
-    @Test
-    public void testaaEttaLisattyMpKasvattaaOikeastiMaaraa(){
-        fighter.setMpMax(120);
-        fighter.alustaStatsit();
-        
-        fighter.vahennaMp(100);
-        
-        assertEquals(20, fighter.getMp());
-    }
-    
-    /**
      * Hpmax setterin testaus
      */
     @Test
     public void testaaEttaSetteriMuuttaaMaxHp(){
         fighter.setHpMax(10);
         assertEquals(10, fighter.getHpMax());
-    }
-    
-    /**
-     * Mpmax setterin testaus
-     */
-    @Test
-    public void testaaEttaSetteriMuuttaaMaxMp(){
-        fighter.setMpMax(10);
-        assertEquals(10, fighter.getMpMax());
     }
     
     /**
