@@ -3,79 +3,86 @@ package CharClass;
 import java.util.ArrayList;
 
 /**
- * Luokka johon talletetaan useita yksiköitä. Luokalla on erilaisia hallinnollisia
- * metodeja, joilla yksiköitä käsitellään.
+ * Luokka johon talletetaan useita yksiköitä. Luokalla on erilaisia
+ * hallinnollisia metodeja, joilla yksiköitä käsitellään.
+ *
  * @author Cobrelli
  */
 public class CharParty {
 
     private String partyNimi;
-    
     private ArrayList<CharClass> party;
-    
+
     /**
      * Luokan konstruktori alustaa ArrayListin ja yksikön nimen.
      */
-    public CharParty(){
+    public CharParty() {
         this.party = new ArrayList<>();
         this.partyNimi = "";
     }
-    
+
     /**
      * Nimen getteri
-     * @return      Palauttaa ryhmän nimen.
+     *
+     * @return Palauttaa ryhmän nimen.
      */
-    public String getNimi(){
+    public String getNimi() {
         return this.partyNimi;
     }
-    
+
     /**
      * Nimen setteri
-     * @param nimi      Asettaa ryhmän nimen.
+     *
+     * @param nimi Asettaa ryhmän nimen.
      */
-    public void setNimi(String nimi){
+    public void setNimi(String nimi) {
         this.partyNimi = nimi;
     }
-    
+
     /**
      * Lisaa uuden yksikön arraylistiin.
-     * @param hahmo     Liittaa lisattavan CharClass olion arraylistiin.
+     *
+     * @param hahmo Liittaa lisattavan CharClass olion arraylistiin.
      */
-    public void lisaaHahmo(CharClass hahmo){
+    public void lisaaHahmo(CharClass hahmo) {
         this.party.add(hahmo);
     }
 
     /**
      * Poistaa halutun yksikön arraylististä. Esimerkiksi kuollessa.
-     * @param hahmo     Poistaa parametrinä annetun CharClass olion arraylististä
+     *
+     * @param hahmo Poistaa parametrinä annetun CharClass olion arraylististä
      */
-    public void poistaHahmo(CharClass hahmo){
+    public void poistaHahmo(CharClass hahmo) {
         this.party.remove(hahmo);
     }
-    
+
     /**
      * Palauttaa arraylistin
-     * @return      Palauttaa viitteen arraylistiin.
+     *
+     * @return Palauttaa viitteen arraylistiin.
      */
-    public ArrayList<CharClass> palautaHahmot(){
+    public ArrayList<CharClass> palautaHahmot() {
         return this.party;
     }
-    
+
     /**
      * Tulostaa kaikki arraylistin sisältämät CharClass oliot.
      */
-    public void tulostaHahmot(){
+    public void tulostaHahmot() {
         for (CharClass c : party) {
             System.out.println(c);
         }
     }
+
     /**
      * Tarkistaa onko arraylist tyhjä. Esimerkiksi taistelun aika jos kaikki
      * hahmot ovat kuolleet on arraylist tyhjä.
-     * @return      Palauttaa true jos tyhjä, false jos ei.
+     *
+     * @return Palauttaa true jos tyhjä, false jos ei.
      */
-    public boolean isEmpty(){
-        if(party.isEmpty()){
+    public boolean isEmpty() {
+        if (party.isEmpty()) {
             return true;
         }
         return false;

@@ -10,6 +10,10 @@ import CharClass.Fighter;
  */
 public class Main {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         Fighter eka = new Fighter("eka");

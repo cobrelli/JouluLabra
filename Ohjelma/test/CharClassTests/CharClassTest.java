@@ -75,6 +75,10 @@ public class CharClassTest {
         assertEquals(arvo-30, fighter.getHp());
     }
     
+    /**
+     * Testaa että jos yksikön hp on laskenut alle nollan ei se enää lisätessä
+     * kasva.
+     */
     @Test
     public void testaaEttaAlleNollanVahenevaHpEiPalauduPlussalle(){
         fighter.vahennaHp((fighter.getHp()+20));

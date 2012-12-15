@@ -11,21 +11,30 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Testaa aliluokkaa Fighter
  * @author Cobrelli
  */
 public class FighterTest {
     
     Fighter fighter;
     
+    /**
+     * 
+     */
     public FighterTest() {
     }
 
+    /**
+     *
+     */
     @Before
     public void setUp() {
         fighter = new Fighter("testi");
     }
 
+    /**
+     *
+     */
     @Test
     public void testPalauttaaOikeanCharClassID(){
         assertEquals("Fighter", fighter.getCharClassID());
