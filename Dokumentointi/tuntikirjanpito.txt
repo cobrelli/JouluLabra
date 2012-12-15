@@ -5,3 +5,7 @@
 14.12
 
 3h Yläluokka hahmoluokille ja ensimmäinen hahmoluokka Fighter tehty, sekä hahmojen joukkoa varten tehty ryhmä.
+
+15.12
+
+3h Testejä ja dokumentointia ja ohjelman suunnittelua
