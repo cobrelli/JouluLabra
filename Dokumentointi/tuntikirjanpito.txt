@@ -9,3 +9,7 @@
 15.12
 
 4h Testejä ja dokumentointia ja ohjelman suunnittelua, aihemäärittelyn kirjoittelua.
+
+17.12
+
+1h Testejä ja dokumentointia
