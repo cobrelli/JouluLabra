@@ -1,5 +1,7 @@
 package GUI;
 
+import CharClass.CharParty;
+import Monster.MonsterMash;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -15,8 +17,12 @@ public class GUI implements Runnable {
 
     JFrame frame;
     private JPanel alusta;
+    private MonsterMash mash;
+    private CharParty party;
 
-    public GUI() {
+    public GUI(MonsterMash m, CharParty p) {
+        this.mash = m;
+        this.party = p;
     }
 
     @Override
@@ -37,7 +43,7 @@ public class GUI implements Runnable {
 
         container.setLayout(new BorderLayout());
 
-        this.alusta = new PiirtoalustaTaistelu();
+        this.alusta = new PiirtoalustaTaistelu(mash, party);
 
         container.add(alusta, BorderLayout.CENTER);
 
