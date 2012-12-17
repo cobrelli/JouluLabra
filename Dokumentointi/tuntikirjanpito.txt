@@ -12,4 +12,5 @@
 
 17.12
 
-2h Testejä ja javadocseja, sekä määrittelydokumentin tarkennusta. Määrittelyvaiheen luokkakaavio.
+3h Testejä ja javadocseja, sekä määrittelydokumentin tarkennusta. Määrittelyvaiheen luokkakaavio. MOOC matskun GUI
+osioiden lukua.
