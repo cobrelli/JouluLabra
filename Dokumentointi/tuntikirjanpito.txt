@@ -1,4 +1,4 @@
-11.12
+﻿11.12
 
 2h aiheen aiheen hahmottelua paperille, sek� githubin alustus ja projektin aloittaminen, sek� kansiorakenteen kasaaminen. 
 
@@ -12,4 +12,4 @@
 
 17.12
 
-1h Testejä ja dokumentointia
+1h Testejä ja javadocseja, sekä määrittelydokumentin tarkennusta.
