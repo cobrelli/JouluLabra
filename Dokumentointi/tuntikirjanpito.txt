@@ -12,4 +12,4 @@
 
 17.12
 
-1h Testejä ja javadocseja, sekä määrittelydokumentin tarkennusta.
+2h Testejä ja javadocseja, sekä määrittelydokumentin tarkennusta. Määrittelyvaiheen luokkakaavio.
