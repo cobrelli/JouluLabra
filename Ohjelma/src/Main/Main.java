@@ -3,6 +3,7 @@ package Main;
 
 import CharClass.CharParty;
 import CharClass.Fighter;
+import GUI.GUI;
 
 /**
  *
@@ -16,16 +17,21 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Fighter eka = new Fighter("eka");
-        Fighter toka = new Fighter("toka");
+//        Fighter eka = new Fighter("eka");
+//        Fighter toka = new Fighter("toka");
+//        
+//        CharParty p = new CharParty();
+//        
+//        p.lisaaHahmo(eka);
+//        p.lisaaHahmo(toka);
+//        
+//        System.out.println(eka.getHp());
         
-        CharParty p = new CharParty();
+//        p.tulostaHahmot();
         
-        p.lisaaHahmo(eka);
-        p.lisaaHahmo(toka);
+        GUI gui = new GUI();
+        gui.run();
         
-        System.out.println(eka.getHp());
         
-        p.tulostaHahmot();
     }
 }
