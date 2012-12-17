@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -8,9 +9,13 @@ import javax.swing.JPanel;
  */
 public class PiirtoalustaTaistelu extends JPanel implements Paivitettava{
 
+    public PiirtoalustaTaistelu(){
+        super.setBackground(Color.white);
+    }
+    
     @Override
     public void paivita() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        repaint();
     }
     
 }
