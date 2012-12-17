@@ -48,6 +48,16 @@ public class CharPartyTest {
         assertTrue(p.palautaHahmot().contains(f));
     }
     
+    @Test
+    public void testaaEttaUseammanLisaysOnnistuu(){
+        int maara = 5;
+        
+        for (int i = 0; i < maara; i++) {
+            p.lisaaHahmo(new Fighter("eki"));
+        }
+        assertEquals(maara, p.palautaHahmot().size());
+    }
+    
     /**
      * Testaa että CharClass saadaan poistettua listalta.
      */

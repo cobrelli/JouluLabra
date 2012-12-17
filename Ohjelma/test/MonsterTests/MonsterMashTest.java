@@ -4,40 +4,55 @@
  */
 package MonsterTests;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import Monster.MonsterMash;
+import Monster.Rat;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  *
  * @author Cobrelli
  */
 public class MonsterMashTest {
-    
+
+    MonsterMash m;
+    Rat r;
+
     public MonsterMashTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+
     @Before
     public void setUp() {
+        m = new MonsterMash();
+        r = new Rat("Rat");
+    }
+
+    /**
+     * Testaa että annettu Monster lisätään oikeasti
+     */
+    @Test
+    public void testaaEttaLisattyMonsterLoytyy() {
+        m.lisaaMosa(r);
+        assertTrue(m.palautaMosat().contains(r));
     }
     
-    @After
-    public void tearDown() {
+    @Test
+    public void testaaEttaUseanLisaysOnnistuu(){
+        int maara = 5;
+        for(int i = 0;i<maara;i++){
+            m.lisaaMosa(new Rat("Rat"));
+        }
+        assertEquals(5, m.palautaMosat().size());
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+
+    /**
+     * Testaa että poistettava olio poistuu oikeasti.
+     */
+    @Test
+    public void testaaEttaPoistettavaMonsterPoistuu() {
+        m.lisaaMosa(r);
+        m.poistaMosa(r);
+        assertFalse(m.palautaMosat().contains(r));
+    }
 }
