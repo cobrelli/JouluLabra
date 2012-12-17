@@ -17,9 +17,15 @@ public class MonsterTest {
     
     Rat rat;
     
+    /**
+     *
+     */
     public MonsterTest() {
     }
         
+    /**
+     * Pistää testaustilanteen pystyyn ja alustaa käytettävät oliot.
+     */
     @Before
     public void setUp() {
         rat = new Rat("rat-dummy");

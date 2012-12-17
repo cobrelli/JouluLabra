@@ -48,6 +48,9 @@ public class CharPartyTest {
         assertTrue(p.palautaHahmot().contains(f));
     }
     
+    /**
+     * Testaa että luokkaan voidaan lisätä useita olioita.
+     */
     @Test
     public void testaaEttaUseammanLisaysOnnistuu(){
         int maara = 5;

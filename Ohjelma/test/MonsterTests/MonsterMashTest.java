@@ -19,9 +19,15 @@ public class MonsterMashTest {
     MonsterMash m;
     Rat r;
 
+    /**
+     *
+     */
     public MonsterMashTest() {
     }
 
+    /**
+     * Pistää pystyyn testattavan alkutilanteen ja alustaa oliot.
+     */
     @Before
     public void setUp() {
         m = new MonsterMash();
@@ -37,6 +43,9 @@ public class MonsterMashTest {
         assertTrue(m.palautaMosat().contains(r));
     }
     
+    /**
+     * Testaa että luokkaan voidaan lisätä useita olioita.
+     */
     @Test
     public void testaaEttaUseanLisaysOnnistuu(){
         int maara = 5;
