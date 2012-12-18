@@ -14,30 +14,28 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
     JPanel paivitettava;
     CharClass c;
-    
-    public Nappaimistonkuuntelija(JPanel paivitettava, CharClass c){
+
+    public Nappaimistonkuuntelija(JPanel paivitettava, CharClass c) {
         this.paivitettava = paivitettava;
         this.c = c;
     }
-    
+
     @Override
     public void keyPressed(KeyEvent e) {
 
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            System.out.println("blabal");
             if (c.getY() - 25 < 100) {
                 return;
             }
             c.setY(c.getY() - 25);
-            System.out.println("lkj");
 
             paivitettava.repaint();
-            
+
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             if (c.getY() + 25 > 475) {
                 return;
             }
-            
+
             c.setY(c.getY() + 25);
             paivitettava.repaint();
 
@@ -45,7 +43,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getX() - 25 < 100) {
                 return;
             }
-            
+
             c.setX(c.getX() - 25);
             paivitettava.repaint();
 
@@ -53,15 +51,15 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getX() + 25 > 475) {
                 return;
             }
-            
+
             c.setX(c.getX() + 25);
             paivitettava.repaint();
-            
+
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
             if (c.getY() - 25 < 100 || c.getX() - 25 < 100) {
                 return;
             }
-            
+
             c.setY(c.getY() - 25);
             c.setX(c.getX() - 25);
             paivitettava.repaint();
@@ -70,7 +68,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getY() - 25 < 100) {
                 return;
             }
-            
+
             c.setY(c.getY() - 25);
             paivitettava.repaint();
 
@@ -78,7 +76,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getY() - 25 < 100 || c.getX() + 25 > 475) {
                 return;
             }
-            
+
             c.setY(c.getY() - 25);
             c.setX(c.getX() + 25);
             paivitettava.repaint();
@@ -87,7 +85,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getX() - 25 < 100) {
                 return;
             }
-            
+
             c.setX(c.getX() - 25);
             paivitettava.repaint();
 
@@ -98,7 +96,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getX() + 25 > 475) {
                 return;
             }
-            
+
             c.setX(c.getX() + 25);
             paivitettava.repaint();
 
@@ -106,7 +104,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getY() + 25 > 475 || c.getX() - 25 < 100) {
                 return;
             }
-            
+
             c.setY(c.getY() + 25);
             c.setX(c.getX() - 25);
             paivitettava.repaint();
@@ -115,7 +113,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getY() + 25 > 475) {
                 return;
             }
-            
+
             c.setY(c.getY() + 25);
             paivitettava.repaint();
 
@@ -123,7 +121,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             if (c.getY() + 25 > 475 || c.getX() + 25 > 475) {
                 return;
             }
-            
+
             c.setY(c.getY() + 25);
             c.setX(c.getX() + 25);
             paivitettava.repaint();
@@ -134,7 +132,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
     }
-    
+
     @Override
     public void keyReleased(KeyEvent e) {
     }
