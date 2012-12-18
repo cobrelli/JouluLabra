@@ -1,10 +1,12 @@
 package GUI;
 
 import CharClass.CharParty;
+import GUI.Nappaimistonkuuntelija.Nappaimistonkuuntelija;
 import Monster.MonsterMash;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
@@ -36,7 +38,7 @@ public class GUI implements Runnable {
 
         frame.pack();
         frame.setVisible(true);
-
+        
     }
 
     private void luoKomponentit(Container container) {
@@ -45,8 +47,15 @@ public class GUI implements Runnable {
 
         this.alusta = new PiirtoalustaTaistelu(mash, party);
 
-        container.add(alusta, BorderLayout.CENTER);
+        container.add(this.alusta, BorderLayout.CENTER);
 
+        container.addKeyListener(new Nappaimistonkuuntelija(this.alusta, party.palautaHahmot().get(0)));
 
+        container.setFocusable(true);
+        
+    }
+    
+    public JFrame getFrame() {
+        return frame;
     }
 }
