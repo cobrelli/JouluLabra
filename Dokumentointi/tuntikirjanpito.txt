@@ -14,3 +14,7 @@
 
 4h Testejä ja javadocseja, sekä määrittelydokumentin tarkennusta. Määrittelyvaiheen luokkakaavio. MOOC matskun GUI
 osioiden lukua.
+
+18.12
+
+2h Taistelua swingin kanssa. Nappaimistonkuuntelija luotu ja lopulta refaktoroitu järkevämmäksi.
