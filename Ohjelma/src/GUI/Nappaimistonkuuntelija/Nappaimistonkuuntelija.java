@@ -24,108 +24,44 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
     public void keyPressed(KeyEvent e) {
 
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            if (c.getY() - 25 < 100) {
-                return;
-            }
-            c.setY(c.getY() - 25);
-
-            paivitettava.repaint();
+            liikuJosValidi(c.getY() - 25, c.getX());
 
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            if (c.getY() + 25 > 475) {
-                return;
-            }
-
-            c.setY(c.getY() + 25);
-            paivitettava.repaint();
+            liikuJosValidi(c.getY() + 25, c.getX());
 
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            if (c.getX() - 25 < 100) {
-                return;
-            }
-
-            c.setX(c.getX() - 25);
-            paivitettava.repaint();
+            liikuJosValidi(c.getY(), c.getX() - 25);
 
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if (c.getX() + 25 > 475) {
-                return;
-            }
-
-            c.setX(c.getX() + 25);
-            paivitettava.repaint();
+            liikuJosValidi(c.getX() + 25, c.getY());
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
-            if (c.getY() - 25 < 100 || c.getX() - 25 < 100) {
-                return;
-            }
-
-            c.setY(c.getY() - 25);
-            c.setX(c.getX() - 25);
-            paivitettava.repaint();
+            liikuJosValidi(c.getY() - 25, c.getX() - 25);
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
-            if (c.getY() - 25 < 100) {
-                return;
-            }
-
-            c.setY(c.getY() - 25);
-            paivitettava.repaint();
+            liikuJosValidi(c.getY() - 25, c.getX());
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
-            if (c.getY() - 25 < 100 || c.getX() + 25 > 475) {
-                return;
-            }
-
-            c.setY(c.getY() - 25);
-            c.setX(c.getX() + 25);
-            paivitettava.repaint();
+            liikuJosValidi(c.getY() - 25, c.getX() + 25);
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
-            if (c.getX() - 25 < 100) {
-                return;
-            }
-
-            c.setX(c.getX() - 25);
-            paivitettava.repaint();
-
+            liikuJosValidi(c.getY(), c.getX() - 25);
+            
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
             paivitettava.repaint();
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
-            if (c.getX() + 25 > 475) {
-                return;
-            }
-
-            c.setX(c.getX() + 25);
-            paivitettava.repaint();
-
+            liikuJosValidi(c.getY(), c.getX()+25);
+            
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
-            if (c.getY() + 25 > 475 || c.getX() - 25 < 100) {
-                return;
-            }
-
-            c.setY(c.getY() + 25);
-            c.setX(c.getX() - 25);
-            paivitettava.repaint();
-
+            liikuJosValidi(c.getY()+25, c.getX()-25);
+            
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
-            if (c.getY() + 25 > 475) {
-                return;
-            }
-
-            c.setY(c.getY() + 25);
-            paivitettava.repaint();
-
+            liikuJosValidi(c.getY()+25, c.getX());
+            
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
-            if (c.getY() + 25 > 475 || c.getX() + 25 > 475) {
-                return;
-            }
-
-            c.setY(c.getY() + 25);
-            c.setX(c.getX() + 25);
-            paivitettava.repaint();
-
+            liikuJosValidi(c.getY()+25, c.getX()+25);
+            
         }
     }
 
@@ -135,5 +71,16 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+    }
+
+    public void liikuJosValidi(int y, int x) {
+
+        if (y > 475 || y < 100 || x < 100 || x > 475) {
+            return;
+        }
+
+        c.setY(y);
+        c.setX(x);
+        paivitettava.repaint();
     }
 }
