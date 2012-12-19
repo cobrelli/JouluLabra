@@ -17,4 +17,8 @@ osioiden lukua.
 
 18.12
 
-2h Taistelua swingin kanssa. Nappaimistonkuuntelija luotu ja lopulta refaktoroitu järkevämmäksi.
+3h Taistelua swingin kanssa. Nappaimistonkuuntelija luotu ja lopulta refaktoroitu järkevämmäksi.
+
+19.12
+
+1h GUI juttuja, swing.
