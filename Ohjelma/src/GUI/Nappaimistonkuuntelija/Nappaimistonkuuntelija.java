@@ -1,7 +1,6 @@
 package GUI.Nappaimistonkuuntelija;
 
 import CharClass.CharClass;
-import GUI.Paivitettava;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JPanel;
@@ -33,7 +32,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             liikuJosValidi(c.getY(), c.getX() - 25);
 
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            liikuJosValidi(c.getX() + 25, c.getY());
+            liikuJosValidi(c.getY(), c.getX() + 25);
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
             liikuJosValidi(c.getY() - 25, c.getX() - 25);
@@ -46,22 +45,22 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
             liikuJosValidi(c.getY(), c.getX() - 25);
-            
+
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
             paivitettava.repaint();
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
-            liikuJosValidi(c.getY(), c.getX()+25);
-            
+            liikuJosValidi(c.getY(), c.getX() + 25);
+
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
-            liikuJosValidi(c.getY()+25, c.getX()-25);
-            
+            liikuJosValidi(c.getY() + 25, c.getX() - 25);
+
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
-            liikuJosValidi(c.getY()+25, c.getX());
-            
+            liikuJosValidi(c.getY() + 25, c.getX());
+
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
-            liikuJosValidi(c.getY()+25, c.getX()+25);
-            
+            liikuJosValidi(c.getY() + 25, c.getX() + 25);
+
         }
     }
 
