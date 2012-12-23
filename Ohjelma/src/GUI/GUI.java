@@ -46,11 +46,11 @@ public class GUI implements Runnable {
 
         container.setLayout(new BorderLayout());
 
-        this.alusta = new PiirtoalustaTaistelu(mash, party);
+        Vuoro vuoro = new Vuoro(party, mash);
+
+        this.alusta = new PiirtoalustaTaistelu(mash, party, vuoro);
 
         container.add(this.alusta, BorderLayout.CENTER);
-
-        Vuoro vuoro = new Vuoro(party, mash);
 
         TarkistaTormays tormays = new TarkistaTormays(party, mash, vuoro);
 

@@ -1,11 +1,11 @@
 
 package Main;
 
-import Yksikot.Ryhma;
-import Yksikot.Soturi;
 import GUI.GUI;
 import Viholliset.HirvioRyhma;
 import Viholliset.Rotta;
+import Yksikot.Ryhma;
+import Yksikot.Soturi;
 
 /**
  *
@@ -40,9 +40,17 @@ public class Main {
         
         r.setX(401);
         r.setY(401);
-//        System.out.println(eka.getHp());
+
+        Rotta r2 = new Rotta("rotta");
+        r2.setX(301);
+        r2.setY(401);
+        m.lisaaMosa(r2);
         
-//        p.tulostaHahmot();
+        Rotta r3 = new Rotta("rotta");
+        r3.setX(301);
+        r3.setY(301);
+        m.lisaaMosa(r3);
+        r.setHpMax(120);
         
         GUI gui = new GUI(m, p);
         gui.run();

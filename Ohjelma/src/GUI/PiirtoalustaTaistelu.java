@@ -1,9 +1,10 @@
 package GUI;
 
-import Yksikot.Yksikko;
-import Yksikot.Ryhma;
+import Sovelluslogiikka.Vuoro;
 import Viholliset.Hirvio;
 import Viholliset.HirvioRyhma;
+import Yksikot.Ryhma;
+import Yksikot.Yksikko;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -16,21 +17,25 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
 
     private HirvioRyhma mash;
     private Ryhma party;
-    
-    public PiirtoalustaTaistelu(HirvioRyhma m, Ryhma p) {
+    Vuoro vuoro;
+
+    public PiirtoalustaTaistelu(HirvioRyhma m, Ryhma p, Vuoro vuoro) {
         super.setBackground(Color.white);
         this.mash = m;
         this.party = p;
+        this.vuoro = vuoro;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        piirraVuoro(g, vuoro.getVuoro().getX(), vuoro.getVuoro().getY());
         piirraRuudukko(g);
         piirraHahmot(g);
         piirraMosat(g);
         
+
     }
 
     private void piirraRuudukko(Graphics g) {
@@ -62,6 +67,11 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
             }
         }
 
+    }
+
+    public void piirraVuoro(Graphics g, int x, int y) {
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRect(x, y, 23, 23);
     }
 
     @Override

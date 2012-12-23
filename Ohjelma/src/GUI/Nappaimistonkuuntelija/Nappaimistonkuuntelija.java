@@ -86,11 +86,14 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
         if (y > 475 || y < 100 || x < 100 || x > 475
                 || tormays.tarkistaTormaako(x, y)) {
+            paivitettava.repaint();
             return;
         }
 
         c.setY(y);
         c.setX(x);
+//        vuoro.seuraavaVuoro();
         paivitettava.repaint();
+//        vuoro.seuraavaVuoro();
     }
 }

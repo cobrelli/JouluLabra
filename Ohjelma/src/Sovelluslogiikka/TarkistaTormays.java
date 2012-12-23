@@ -32,7 +32,6 @@ public class TarkistaTormays {
             }
         }
 
-
         Hirvio kuoleva;
 
         for (Hirvio m : mash.palautaMosat()) {
@@ -42,17 +41,14 @@ public class TarkistaTormays {
                 if (!m.isAlive()) {
                     kuoleva = m;
                     mash.poistaMosa(kuoleva);
-                    vuoro.seuraavaVuoro();
+//                    vuoro.seuraavaVuoro();
                     return true;
                 }
-
                 System.out.println("sattuuuuuuu!");
-                vuoro.seuraavaVuoro();
+//                vuoro.seuraavaVuoro();
                 return true;
             }
-
         }
-
-        return false;
+       return false;
     }
 }
