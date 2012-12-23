@@ -3,10 +3,10 @@ package GUI;
 import CharClass.CharParty;
 import GUI.Nappaimistonkuuntelija.Nappaimistonkuuntelija;
 import Monster.MonsterMash;
+import Sovelluslogiikka.TarkistaTormays;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
@@ -49,7 +49,9 @@ public class GUI implements Runnable {
 
         container.add(this.alusta, BorderLayout.CENTER);
 
-        container.addKeyListener(new Nappaimistonkuuntelija(this.alusta, party.palautaHahmot().get(0)));
+        TarkistaTormays tormays = new TarkistaTormays(party, mash);
+        
+        container.addKeyListener(new Nappaimistonkuuntelija(this.alusta, party.palautaHahmot().get(0), tormays));
 
         container.setFocusable(true);
         

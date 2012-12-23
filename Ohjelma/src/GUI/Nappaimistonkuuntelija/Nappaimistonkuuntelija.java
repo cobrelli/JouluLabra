@@ -1,6 +1,7 @@
 package GUI.Nappaimistonkuuntelija;
 
 import CharClass.CharClass;
+import Sovelluslogiikka.TarkistaTormays;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JPanel;
@@ -13,10 +14,13 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
     JPanel paivitettava;
     CharClass c;
+    TarkistaTormays tormays;
 
-    public Nappaimistonkuuntelija(JPanel paivitettava, CharClass c) {
+    public Nappaimistonkuuntelija(JPanel paivitettava, CharClass c,
+            TarkistaTormays tormays) {
         this.paivitettava = paivitettava;
         this.c = c;
+        this.tormays = tormays;
     }
 
     @Override
@@ -74,7 +78,8 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
     public void liikuJosValidi(int y, int x) {
 
-        if (y > 475 || y < 100 || x < 100 || x > 475) {
+        if (y > 475 || y < 100 || x < 100 || x > 475
+                || tormays.tarkistaTormaako(x, y)) {
             return;
         }
 
