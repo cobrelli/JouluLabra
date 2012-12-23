@@ -4,7 +4,7 @@
  */
 package MonsterTests;
 
-import Monster.Rat;
+import Viholliset.Rotta;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +15,7 @@ import org.junit.Test;
  */
 public class MonsterTest {
     
-    Rat rat;
+    Rotta rat;
     
     /**
      *
@@ -28,7 +28,7 @@ public class MonsterTest {
      */
     @Before
     public void setUp() {
-        rat = new Rat("rat-dummy");
+        rat = new Rotta("rat-dummy");
     }
     
     /**

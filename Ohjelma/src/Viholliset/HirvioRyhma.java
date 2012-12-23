@@ -1,4 +1,4 @@
-package Monster;
+package Viholliset;
 
 import java.util.ArrayList;
 
@@ -7,14 +7,14 @@ import java.util.ArrayList;
  * olioita.
  * @author Cobrelli
  */
-public class MonsterMash {
+public class HirvioRyhma {
 
-    private ArrayList<Monster> mash;
+    private ArrayList<Hirvio> mash;
     
     /**
      * Konstruktori alustaa tyhjän ArrayListin monster olioiden lisäämistä varten.
      */
-    public MonsterMash(){
+    public HirvioRyhma(){
         this.mash = new ArrayList<>();
     }
     
@@ -22,7 +22,7 @@ public class MonsterMash {
      * Lisää luokan sisältämään ArrayListiin uuden monster olion.
      * @param mosa      Parametrinä annettu monster olio lisätään arraylistiin.
      */
-    public void lisaaMosa(Monster mosa){
+    public void lisaaMosa(Hirvio mosa){
         this.mash.add(mosa);
     }
 
@@ -30,7 +30,7 @@ public class MonsterMash {
      * Poistaa halutun monster olion ArrayLististä.
      * @param mosa      Parametrinä annettu monster poistetaan Arraylististä.
      */
-    public void poistaMosa(Monster mosa){
+    public void poistaMosa(Hirvio mosa){
         this.mash.remove(mosa);
     }
     
@@ -38,7 +38,7 @@ public class MonsterMash {
      * Palauttaa luokan sisältämän ArrayListin.
      * @return      Palauttaa viitteen ArrayListiin.
      */
-    public ArrayList<Monster> palautaMosat(){
+    public ArrayList<Hirvio> palautaMosat(){
         return this.mash;
     }
     
@@ -46,7 +46,7 @@ public class MonsterMash {
      * Tulostaa kaikki luokan sisältämät monster oliot.
      */
     public void tulostaMosat(){
-        for (Monster m : mash) {
+        for (Hirvio m : mash) {
             System.out.println(m);
         }
     }

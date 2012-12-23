@@ -1,7 +1,7 @@
 package CharClassTests;
 
-import CharClass.CharParty;
-import CharClass.Fighter;
+import Yksikot.Ryhma;
+import Yksikot.Soturi;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.junit.Test;
  */
 public class CharPartyTest {
 
-    CharParty p;
+    Ryhma p;
 
     /**
      * Konstruktori
@@ -25,7 +25,7 @@ public class CharPartyTest {
      */
     @Before
     public void setUp() {
-        p = new CharParty();
+        p = new Ryhma();
     }
 
     /**
@@ -43,7 +43,7 @@ public class CharPartyTest {
      */
     @Test
     public void testaaEttaLisattyCharClassLisataanArrayListiin(){
-        Fighter f = new Fighter("F");
+        Soturi f = new Soturi("F");
         p.lisaaHahmo(f);
         assertTrue(p.palautaHahmot().contains(f));
     }
@@ -56,7 +56,7 @@ public class CharPartyTest {
         int maara = 5;
         
         for (int i = 0; i < maara; i++) {
-            p.lisaaHahmo(new Fighter("eki"));
+            p.lisaaHahmo(new Soturi("eki"));
         }
         assertEquals(maara, p.palautaHahmot().size());
     }
@@ -66,7 +66,7 @@ public class CharPartyTest {
      */
     @Test
     public void testaaEttaPoistettavaCharClassPoistuuArrayListista(){
-        Fighter f = new Fighter("F");
+        Soturi f = new Soturi("F");
         p.lisaaHahmo(f);
         p.poistaHahmo(f);
         assertFalse(p.palautaHahmot().contains(f));
@@ -85,7 +85,7 @@ public class CharPartyTest {
      */
     @Test
     public void TestaaEttaPalauttaaFalseJosEiTyhja(){
-        p.lisaaHahmo(new Fighter("testi"));
+        p.lisaaHahmo(new Soturi("testi"));
         assertFalse(p.isEmpty());
     }
 }

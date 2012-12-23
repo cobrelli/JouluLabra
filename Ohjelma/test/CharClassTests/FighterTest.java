@@ -1,6 +1,6 @@
 package CharClassTests;
 
-import CharClass.Fighter;
+import Yksikot.Soturi;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.junit.Test;
  */
 public class FighterTest {
     
-    Fighter fighter;
+    Soturi fighter;
     
     /**
      * Konstruktori
@@ -25,7 +25,7 @@ public class FighterTest {
      */
     @Before
     public void setUp() {
-        fighter = new Fighter("testi");
+        fighter = new Soturi("testi");
     }
 
     /**

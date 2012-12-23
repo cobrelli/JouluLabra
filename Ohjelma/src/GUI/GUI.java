@@ -1,9 +1,10 @@
 package GUI;
 
-import CharClass.CharParty;
+import Yksikot.Ryhma;
 import GUI.Nappaimistonkuuntelija.Nappaimistonkuuntelija;
-import Monster.MonsterMash;
+import Viholliset.HirvioRyhma;
 import Sovelluslogiikka.TarkistaTormays;
+import Sovelluslogiikka.Vuoro;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -19,10 +20,10 @@ public class GUI implements Runnable {
 
     JFrame frame;
     private JPanel alusta;
-    private MonsterMash mash;
-    private CharParty party;
+    private HirvioRyhma mash;
+    private Ryhma party;
 
-    public GUI(MonsterMash m, CharParty p) {
+    public GUI(HirvioRyhma m, Ryhma p) {
         this.mash = m;
         this.party = p;
     }
@@ -38,7 +39,7 @@ public class GUI implements Runnable {
 
         frame.pack();
         frame.setVisible(true);
-        
+
     }
 
     private void luoKomponentit(Container container) {
@@ -49,14 +50,17 @@ public class GUI implements Runnable {
 
         container.add(this.alusta, BorderLayout.CENTER);
 
-        TarkistaTormays tormays = new TarkistaTormays(party, mash);
-        
-        container.addKeyListener(new Nappaimistonkuuntelija(this.alusta, party.palautaHahmot().get(0), tormays));
+        Vuoro vuoro = new Vuoro(party, mash);
+
+        TarkistaTormays tormays = new TarkistaTormays(party, mash, vuoro);
+
+        container.addKeyListener(new Nappaimistonkuuntelija(this.alusta, 
+                tormays, vuoro));
 
         container.setFocusable(true);
-        
+
     }
-    
+
     public JFrame getFrame() {
         return frame;
     }

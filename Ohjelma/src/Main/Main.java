@@ -1,11 +1,11 @@
 
 package Main;
 
-import CharClass.CharParty;
-import CharClass.Fighter;
+import Yksikot.Ryhma;
+import Yksikot.Soturi;
 import GUI.GUI;
-import Monster.MonsterMash;
-import Monster.Rat;
+import Viholliset.HirvioRyhma;
+import Viholliset.Rotta;
 
 /**
  *
@@ -19,10 +19,10 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Fighter eka = new Fighter("eka");
-        Fighter toka = new Fighter("toka");
+        Soturi eka = new Soturi("eka");
+        Soturi toka = new Soturi("toka");
         
-        CharParty p = new CharParty();
+        Ryhma p = new Ryhma();
         
         p.lisaaHahmo(eka);
         p.lisaaHahmo(toka);
@@ -33,9 +33,9 @@ public class Main {
         toka.setX(126);
         toka.setY(126);
         
-        Rat r = new Rat("rat");
+        Rotta r = new Rotta("rat");
         
-        MonsterMash m = new MonsterMash();
+        HirvioRyhma m = new HirvioRyhma();
         m.lisaaMosa(r);
         
         r.setX(401);

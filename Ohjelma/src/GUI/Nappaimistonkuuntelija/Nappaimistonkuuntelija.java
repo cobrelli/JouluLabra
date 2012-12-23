@@ -1,7 +1,8 @@
 package GUI.Nappaimistonkuuntelija;
 
-import CharClass.CharClass;
+import Yksikot.Yksikko;
 import Sovelluslogiikka.TarkistaTormays;
+import Sovelluslogiikka.Vuoro;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JPanel;
@@ -13,19 +14,23 @@ import javax.swing.JPanel;
 public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
     JPanel paivitettava;
-    CharClass c;
+    Yksikko c;
     TarkistaTormays tormays;
-
-    public Nappaimistonkuuntelija(JPanel paivitettava, CharClass c,
-            TarkistaTormays tormays) {
+    Vuoro vuoro;
+    
+    public Nappaimistonkuuntelija(JPanel paivitettava, TarkistaTormays tormays, 
+            Vuoro vuoro) {
         this.paivitettava = paivitettava;
-        this.c = c;
+//        this.c = c;
         this.tormays = tormays;
+        this.vuoro = vuoro;
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
 
+        c = vuoro.getVuoro();
+        
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             liikuJosValidi(c.getY() - 25, c.getX());
 
@@ -66,6 +71,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             liikuJosValidi(c.getY() + 25, c.getX() + 25);
 
         }
+        vuoro.seuraavaVuoro();
     }
 
     @Override

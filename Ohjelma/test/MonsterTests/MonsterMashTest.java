@@ -4,8 +4,8 @@
  */
 package MonsterTests;
 
-import Monster.MonsterMash;
-import Monster.Rat;
+import Viholliset.HirvioRyhma;
+import Viholliset.Rotta;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,8 +16,8 @@ import org.junit.Test;
  */
 public class MonsterMashTest {
 
-    MonsterMash m;
-    Rat r;
+    HirvioRyhma m;
+    Rotta r;
 
     /**
      *
@@ -30,8 +30,8 @@ public class MonsterMashTest {
      */
     @Before
     public void setUp() {
-        m = new MonsterMash();
-        r = new Rat("Rat");
+        m = new HirvioRyhma();
+        r = new Rotta("Rat");
     }
 
     /**
@@ -50,7 +50,7 @@ public class MonsterMashTest {
     public void testaaEttaUseanLisaysOnnistuu(){
         int maara = 5;
         for(int i = 0;i<maara;i++){
-            m.lisaaMosa(new Rat("Rat"));
+            m.lisaaMosa(new Rotta("Rat"));
         }
         assertEquals(5, m.palautaMosat().size());
     }

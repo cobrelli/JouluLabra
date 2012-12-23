@@ -1,4 +1,4 @@
-package CharClass;
+package Yksikot;
 
 /**
  * Abstrakti yläluokka muille hahmoluokille. Sisältää keskeiset komennot
@@ -6,7 +6,7 @@ package CharClass;
  *
  * @author Cobrelli
  */
-public abstract class CharClass {
+public abstract class Yksikko {
 
     private int Hp;
     private int HpMax;
@@ -22,7 +22,7 @@ public abstract class CharClass {
      *
      * @param nimi Hahmolle annettu nimi talletetaan oliolle.
      */
-    public CharClass(String nimi) {
+    public Yksikko(String nimi) {
 
         this.nimi = nimi;
         this.elossa = true;

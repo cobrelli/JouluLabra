@@ -1,9 +1,9 @@
 package GUI;
 
-import CharClass.CharClass;
-import CharClass.CharParty;
-import Monster.Monster;
-import Monster.MonsterMash;
+import Yksikot.Yksikko;
+import Yksikot.Ryhma;
+import Viholliset.Hirvio;
+import Viholliset.HirvioRyhma;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -14,10 +14,10 @@ import javax.swing.JPanel;
  */
 public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
 
-    private MonsterMash mash;
-    private CharParty party;
+    private HirvioRyhma mash;
+    private Ryhma party;
     
-    public PiirtoalustaTaistelu(MonsterMash m, CharParty p) {
+    public PiirtoalustaTaistelu(HirvioRyhma m, Ryhma p) {
         super.setBackground(Color.white);
         this.mash = m;
         this.party = p;
@@ -45,7 +45,7 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
 
     private void piirraHahmot(Graphics g) {
 
-        for (CharClass c : this.party.palautaHahmot()) {
+        for (Yksikko c : this.party.palautaHahmot()) {
             if (c.getIsAlive()) {
                 g.setColor(Color.red);
                 g.fillOval(c.getX(), c.getY(), 23, 23);
@@ -55,7 +55,7 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
 
     private void piirraMosat(Graphics g) {
 
-        for (Monster m : this.mash.palautaMosat()) {
+        for (Hirvio m : this.mash.palautaMosat()) {
             if (m.isAlive()) {
                 g.setColor(Color.black);
                 g.fillOval(m.getX(), m.getY(), 23, 23);

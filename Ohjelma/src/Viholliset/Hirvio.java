@@ -1,10 +1,10 @@
-package Monster;
+package Viholliset;
 
 /**
  * Yliluokka Monster, jonka aliluokkia ovat erilaiset vihollisyksiköt.
  * @author Cobrelli
  */
-public abstract class Monster {
+public abstract class Hirvio {
 
     private int Hp;
     private int HpMax;
@@ -19,7 +19,7 @@ public abstract class Monster {
      * sen attribuutit.
      * @param nimi      Olion nimi. 
      */
-    public Monster(String nimi) {
+    public Hirvio(String nimi) {
 
         this.nimi = nimi;
         this.elossa = true;

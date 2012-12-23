@@ -1,4 +1,4 @@
-package CharClass;
+package Yksikot;
 
 import java.util.ArrayList;
 
@@ -8,15 +8,15 @@ import java.util.ArrayList;
  *
  * @author Cobrelli
  */
-public class CharParty {
+public class Ryhma {
 
     private String partyNimi;
-    private ArrayList<CharClass> party;
+    private ArrayList<Yksikko> party;
 
     /**
      * Luokan konstruktori alustaa ArrayListin ja yksikön nimen.
      */
-    public CharParty() {
+    public Ryhma() {
         this.party = new ArrayList<>();
         this.partyNimi = "";
     }
@@ -44,7 +44,7 @@ public class CharParty {
      *
      * @param hahmo Liittaa lisattavan CharClass olion arraylistiin.
      */
-    public void lisaaHahmo(CharClass hahmo) {
+    public void lisaaHahmo(Yksikko hahmo) {
         this.party.add(hahmo);
     }
 
@@ -53,7 +53,7 @@ public class CharParty {
      *
      * @param hahmo Poistaa parametrinä annetun CharClass olion arraylististä
      */
-    public void poistaHahmo(CharClass hahmo) {
+    public void poistaHahmo(Yksikko hahmo) {
         this.party.remove(hahmo);
     }
 
@@ -62,7 +62,7 @@ public class CharParty {
      *
      * @return Palauttaa viitteen arraylistiin.
      */
-    public ArrayList<CharClass> palautaHahmot() {
+    public ArrayList<Yksikko> palautaHahmot() {
         return this.party;
     }
 
@@ -70,7 +70,7 @@ public class CharParty {
      * Tulostaa kaikki arraylistin sisältämät CharClass oliot.
      */
     public void tulostaHahmot() {
-        for (CharClass c : party) {
+        for (Yksikko c : party) {
             System.out.println(c);
         }
     }
