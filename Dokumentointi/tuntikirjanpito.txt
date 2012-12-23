@@ -25,5 +25,5 @@ osioiden lukua.
 
 23.12
 
-5h Liikkumista ja törmäystarkastelua, Actionlistenereitä, Piirtoalustoja
+7h Liikkumista ja törmäystarkastelua, Actionlistenereitä, Piirtoalustoja
 aloitukseen ja taisteluun.
