@@ -34,8 +34,6 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
         piirraRuudukko(g);
         piirraHahmot(g);
         piirraMosat(g);
-        
-
     }
 
     private void piirraRuudukko(Graphics g) {
