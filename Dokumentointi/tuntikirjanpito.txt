@@ -22,3 +22,7 @@ osioiden lukua.
 19.12
 
 1h GUI juttuja, swing.
+
+23.12
+
+1h Liikkumista ja törmäystarkastelua
