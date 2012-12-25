@@ -136,7 +136,7 @@ public class GUI implements Runnable {
         JPanel otsikko = new JPanel(new GridLayout(1, 3));
         otsikko.setBackground(Color.white);
         alusta.add(otsikko, BorderLayout.NORTH);
-        
+
         JTextArea Teksti1 = new JTextArea("Kauppa");
         Teksti1.setForeground(Color.black);
         Teksti1.setEditable(false);
@@ -153,8 +153,8 @@ public class GUI implements Runnable {
         JButton ostaNostovaki = new JButton("Nostoväki");
         ostaNostovaki.setPreferredSize(new Dimension(130, 80));
         JButton ostaSoturi = new JButton("Soturi");
-        ostaSoturi.setPreferredSize(new Dimension(130,80));
-        
+        ostaSoturi.setPreferredSize(new Dimension(130, 80));
+
         kaupanPainikkeet.add(ostaNostovaki);
         kaupanPainikkeet.add(ostaSoturi);
 
@@ -165,7 +165,7 @@ public class GUI implements Runnable {
         alusta.add(hallintaNappulat, BorderLayout.WEST);
         hallintaNappulat.setPreferredSize(new Dimension(130, 80));
         hallintaNappulat.add(aloita);
-        
+
         JPanel pisteet = new JPanel(new GridLayout(1, 3));
         pisteet.setBackground(Color.white);
         JTextArea pisteLaskuri = new JTextArea("Pisteitä jäljellä: ");
@@ -173,7 +173,7 @@ public class GUI implements Runnable {
         pisteLaskuri.setEditable(false);
         pisteLaskuri.setFont(font);
         pisteLaskuri.setFont(new Font("Verdana", Font.BOLD, 12));
-        
+
         alusta.add(pisteet, BorderLayout.SOUTH);
         pisteet.add(new JLabel());
         pisteet.add(pisteLaskuri, BorderLayout.SOUTH);
