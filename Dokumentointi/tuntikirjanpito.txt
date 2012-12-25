@@ -27,3 +27,7 @@ osioiden lukua.
 
 7h Liikkumista ja törmäystarkastelua, Actionlistenereitä, Piirtoalustoja
 aloitukseen ja taisteluun.
+
+24.12
+
+2h Swinging kanssa taistelua ja lukemista swingistä
