@@ -87,4 +87,10 @@ public class Ryhma {
         }
         return false;
     }
+
+    public void alustaKaikkienHP() {
+        for (Yksikko y : party) {
+            y.alustaStatsit();
+        }
+    }
 }

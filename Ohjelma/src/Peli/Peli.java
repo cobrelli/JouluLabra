@@ -20,6 +20,7 @@ public class Peli {
     private int pisteet;
     private int taso;
     private HirvioRyhma hirviot;
+    private Ryhma ryhma;
     GUI gui;
     
     public Peli() {
@@ -49,6 +50,7 @@ public class Peli {
 
     public void seuraavaTaso() {
         this.taso += 1;
+        ryhma.alustaKaikkienHP();
         gui.getFrame().getContentPane().removeAll();
         gui.getFrame().invalidate();
         gui.luoKauppa(gui.getFrame().getContentPane());
@@ -58,7 +60,7 @@ public class Peli {
     public void kaynnista() {
 
         this.hirviot = new HirvioRyhma();
-        Ryhma ryhma = new Ryhma();
+        ryhma = new Ryhma();
         ryhma.lisaaHahmo(new Soturi(""));
 //        palautaUudetViholliset();
         gui = new GUI(hirviot, ryhma, this);
@@ -70,7 +72,7 @@ public class Peli {
 
         int maara = 2;
 
-        int luku = (taso % 10) / 2;
+        int luku = (taso % 10);
 
         //ei implementoitu vielä
         int hirviotaso = taso / 10;

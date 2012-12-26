@@ -26,6 +26,10 @@ public class luoTaisteluruutu implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         frame.getContentPane().removeAll();
+        if(frame.getContentPane().getKeyListeners().length>0){
+            frame.getContentPane().removeKeyListener(frame.getContentPane().getKeyListeners()[0]);
+        }
+        
         frame.invalidate();
         gui.luoTaisteluruutu(frame.getContentPane());
         frame.validate();

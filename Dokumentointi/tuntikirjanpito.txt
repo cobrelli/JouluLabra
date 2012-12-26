@@ -36,3 +36,8 @@ aloitukseen ja taisteluun.
 
 3h Swingin kanssa säätämistä. Kaupparuutu alkaa pikkuhiljaa hahmottumaan.
 Sovelluslogiikan rakentelua.
+
+26.12
+
+3h Pelin rakenteen suunnittelua, ruudunvaihtojen toteutuksen suunnittelua 
+ja toteutus.
