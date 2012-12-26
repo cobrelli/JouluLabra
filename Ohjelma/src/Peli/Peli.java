@@ -5,7 +5,9 @@
 package Peli;
 
 import GUI.GUI;
+import Viholliset.Hirvio;
 import Viholliset.HirvioRyhma;
+import Viholliset.Rotta;
 import Yksikot.Ryhma;
 import Yksikot.Soturi;
 
@@ -14,46 +16,75 @@ import Yksikot.Soturi;
  * @author vito
  */
 public class Peli {
-    
+
     private int pisteet;
     private int taso;
+    private HirvioRyhma hirviot;
+    GUI gui;
     
     public Peli() {
         this.pisteet = 0;
         this.taso = 1;
     }
-    
+
     public int getPisteet() {
         return this.pisteet;
     }
-    
+
     public void lisaaPisteita(int maara) {
         this.pisteet += maara;
     }
-    
+
     public void vahennaPisteita(int maara) {
         this.pisteet -= maara;
     }
-    
+
     public boolean riittaako(int maara) {
         return this.pisteet - maara >= 0;
     }
-    
-    public int getTaso(){
+
+    public int getTaso() {
         return this.taso;
     }
-    
-    public void seuraavaTaso(){
+
+    public void seuraavaTaso() {
         this.taso += 1;
+        gui.getFrame().getContentPane().removeAll();
+        gui.getFrame().invalidate();
+        gui.luoKauppa(gui.getFrame().getContentPane());
+        gui.getFrame().validate();
     }
-    
+
     public void kaynnista() {
-        
-        HirvioRyhma hirviot = new HirvioRyhma();
+
+        this.hirviot = new HirvioRyhma();
         Ryhma ryhma = new Ryhma();
         ryhma.lisaaHahmo(new Soturi(""));
-        GUI gui = new GUI(hirviot, ryhma);
+//        palautaUudetViholliset();
+        gui = new GUI(hirviot, ryhma, this);
         gui.run();
+
+    }
+
+    public HirvioRyhma palautaUudetViholliset() {
+
+        int maara = 2;
+
+        int luku = (taso % 10) / 2;
+
+        //ei implementoitu vielä
+        int hirviotaso = taso / 10;
+
+        for (int i = 0; i < (maara + luku); i++) {
+            hirviot.lisaaMosa(new Rotta("Rotta"));
+        }
+
+        return hirviot;
+    }
+    
+    public Hirvio annaHirvioTasonMukaan(){
         
+        
+        return null;
     }
 }

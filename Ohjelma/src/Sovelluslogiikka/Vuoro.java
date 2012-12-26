@@ -4,6 +4,7 @@
  */
 package Sovelluslogiikka;
 
+import Peli.Peli;
 import Yksikot.Yksikko;
 import Yksikot.Ryhma;
 import Viholliset.HirvioRyhma;
@@ -19,13 +20,15 @@ public class Vuoro {
     private Yksikko nykyinen;
     private AI ai;
     private HirvioRyhma mash;
+    Peli peli;
 
-    public Vuoro(Ryhma party, HirvioRyhma mash) {
+    public Vuoro(Ryhma party, HirvioRyhma mash, Peli peli) {
         this.party = party;
         this.indeksi = 0;
         this.nykyinen = party.palautaHahmot().get(this.indeksi);
         this.mash = mash;
         this.ai = new AI(party, mash);
+        this.peli = peli;
     }
 
     public Yksikko getVuoro() {
@@ -47,13 +50,11 @@ public class Vuoro {
             return;
         }
 
-//        if (this.indeksi > getKoko() - 1) {
-//            //implementoi vuoron vaihto monstereille tähän, nyt testimielessä nollaa laskurin
-//            System.out.println("vaihto");
-//            ai.liikuKohtiLahinta();
-//            this.indeksi = 0;
-//        }
-
+        if(mash.palautaMosat().isEmpty()){
+            peli.seuraavaTaso();
+            return;
+        }
+        
         this.indeksi++;
 
         if (this.indeksi > getKoko() - 1) {
@@ -67,8 +68,7 @@ public class Vuoro {
             System.exit(0);
             return;
         }
-
+        
         nykyinen = this.party.palautaHahmot().get(this.indeksi);
-
     }
 }

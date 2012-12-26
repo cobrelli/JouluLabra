@@ -16,16 +16,21 @@ import Viholliset.HirvioRyhma;
 public class AI {
 
     Ryhma party;
-    HirvioRyhma mash;
+    HirvioRyhma hirviot;
 
     public AI(Ryhma party, HirvioRyhma mash) {
         this.party = party;
-        this.mash = mash;
+        this.hirviot = mash;
     }
 
     //lasketaan jokaiselle monsterille lähin hahmo ja liikutaan sitä kohti
     public void liikuKohtiLahinta() {
-        for (Hirvio m : mash.palautaMosat()) {
+        
+//        if(hirviot.palautaMosat().isEmpty()){
+//            
+//        }
+        
+        for (Hirvio m : hirviot.palautaMosat()) {
             Yksikko lahin = null;
             int lahinP = Integer.MAX_VALUE;
             int lahinX = Integer.MAX_VALUE;
@@ -122,7 +127,7 @@ public class AI {
                 return true;
             }
         }
-        for (Hirvio mon : mash.palautaMosat()) {
+        for (Hirvio mon : hirviot.palautaMosat()) {
             if (x == mon.getX() && y == mon.getY()) {
                 return true;
             }

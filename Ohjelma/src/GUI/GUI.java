@@ -4,6 +4,7 @@ import GUI.Nappaimistonkuuntelija.Nappaimistonkuuntelija;
 import GUI.ToiminnanKuuntelijat.Exit;
 import GUI.ToiminnanKuuntelijat.luoKauppa;
 import GUI.ToiminnanKuuntelijat.luoTaisteluruutu;
+import Peli.Peli;
 import Sovelluslogiikka.JarjestaOliot;
 import Sovelluslogiikka.TarkistaTormays;
 import Sovelluslogiikka.Vuoro;
@@ -34,10 +35,12 @@ public class GUI implements Runnable {
     private JPanel alusta;
     private HirvioRyhma mash;
     private Ryhma party;
+    private Peli peli;
 
-    public GUI(HirvioRyhma m, Ryhma p) {
+    public GUI(HirvioRyhma m, Ryhma p, Peli peli) {
         this.mash = m;
         this.party = p;
+        this.peli = peli;
     }
 
     @Override
@@ -106,7 +109,9 @@ public class GUI implements Runnable {
 
         container.setLayout(new BorderLayout());
 
-        Vuoro vuoro = new Vuoro(party, mash);
+        this.mash = peli.palautaUudetViholliset();
+        
+        Vuoro vuoro = new Vuoro(party, mash, peli);
 
         JarjestaOliot j = new JarjestaOliot(mash, party);
         j.jarjesta();
