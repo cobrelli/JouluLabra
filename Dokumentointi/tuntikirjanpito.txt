@@ -44,4 +44,4 @@ ja toteutus.
 
 27.12
 
-1h Refaktorointia, ostosysteemin suunnittelua.
+2h Refaktorointia, ostosysteemin suunnittelua.
