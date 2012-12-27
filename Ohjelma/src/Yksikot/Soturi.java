@@ -16,7 +16,7 @@ public class Soturi extends Yksikko{
     public Soturi(String nimi){
         super(nimi);
         setHpMax(100);
-        setCharClassID("Fighter");
+        setCharClassID("Soturi");
         alustaStatsit();
     }
     

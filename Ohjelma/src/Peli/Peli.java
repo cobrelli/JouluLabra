@@ -8,6 +8,7 @@ import GUI.GUI;
 import Viholliset.Hirvio;
 import Viholliset.HirvioRyhma;
 import Viholliset.Rotta;
+import Yksikot.Nostovaki;
 import Yksikot.Ryhma;
 import Yksikot.Soturi;
 
@@ -61,7 +62,7 @@ public class Peli {
 
         this.hirviot = new HirvioRyhma();
         ryhma = new Ryhma();
-        ryhma.lisaaHahmo(new Soturi(""));
+        ryhma.lisaaHahmo(new Nostovaki(""));
 //        palautaUudetViholliset();
         gui = new GUI(hirviot, ryhma, this);
         gui.run();
