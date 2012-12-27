@@ -16,5 +16,6 @@ public class Rotta extends Hirvio{
         setHpMax(5);
         setMonsterClassID("Rat");
         alustaStatsit();
+        setPalkkio(1);
     }
 }

@@ -13,7 +13,8 @@ public abstract class Hirvio {
     private String monsterClassID;
     private int x;
     private int y;
-
+    private int palkkio;
+    
     /**
      * Luokan konstruktori, joka luo uuden olion halutulla nimellä ja alustaa
      * sen attribuutit.
@@ -163,6 +164,14 @@ public abstract class Hirvio {
         return "R.I.P";
     }
 
+    public void setPalkkio(int palkkio){
+        this.palkkio = palkkio;
+    }
+    
+    public int getPalkkio(){
+        return this.palkkio;
+    }
+    
     @Override
     public String toString() {
         return this.nimi + " " + this.monsterClassID + " HP: (" + getHp() 

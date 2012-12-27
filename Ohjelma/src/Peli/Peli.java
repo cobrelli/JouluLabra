@@ -10,7 +10,6 @@ import Viholliset.HirvioRyhma;
 import Viholliset.Rotta;
 import Yksikot.Nostovaki;
 import Yksikot.Ryhma;
-import Yksikot.Soturi;
 
 /**
  *
@@ -18,31 +17,13 @@ import Yksikot.Soturi;
  */
 public class Peli {
 
-    private int pisteet;
     private int taso;
     private HirvioRyhma hirviot;
     private Ryhma ryhma;
     GUI gui;
     
     public Peli() {
-        this.pisteet = 0;
         this.taso = 1;
-    }
-
-    public int getPisteet() {
-        return this.pisteet;
-    }
-
-    public void lisaaPisteita(int maara) {
-        this.pisteet += maara;
-    }
-
-    public void vahennaPisteita(int maara) {
-        this.pisteet -= maara;
-    }
-
-    public boolean riittaako(int maara) {
-        return this.pisteet - maara >= 0;
     }
 
     public int getTaso() {

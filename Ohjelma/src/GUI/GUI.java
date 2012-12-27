@@ -24,7 +24,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
-
 /**
  *
  * @author Cobrelli
@@ -33,13 +32,13 @@ public class GUI implements Runnable {
 
     JFrame frame;
     private JPanel alusta;
-    private HirvioRyhma mash;
-    private Ryhma party;
+    private HirvioRyhma hirvioRyhma;
+    private Ryhma ryhma;
     private Peli peli;
 
     public GUI(HirvioRyhma m, Ryhma p, Peli peli) {
-        this.mash = m;
-        this.party = p;
+        this.hirvioRyhma = m;
+        this.ryhma = p;
         this.peli = peli;
     }
 
@@ -109,18 +108,18 @@ public class GUI implements Runnable {
 
         container.setLayout(new BorderLayout());
 
-        this.mash = peli.palautaUudetViholliset();
+        this.hirvioRyhma = peli.palautaUudetViholliset();
         
-        Vuoro vuoro = new Vuoro(party, mash, peli);
+        Vuoro vuoro = new Vuoro(ryhma, hirvioRyhma, peli);
 
-        JarjestaOliot j = new JarjestaOliot(mash, party);
+        JarjestaOliot j = new JarjestaOliot(hirvioRyhma, ryhma);
         j.jarjesta();
 
-        this.alusta = new PiirtoalustaTaistelu(mash, party, vuoro);
+        this.alusta = new PiirtoalustaTaistelu(hirvioRyhma, ryhma, vuoro);
 
         container.add(this.alusta, BorderLayout.CENTER);
 
-        TarkistaTormays tormays = new TarkistaTormays(party, mash, vuoro);
+        TarkistaTormays tormays = new TarkistaTormays(ryhma, hirvioRyhma, vuoro);
 
         container.addKeyListener(new Nappaimistonkuuntelija(this.alusta,
                 tormays, vuoro));

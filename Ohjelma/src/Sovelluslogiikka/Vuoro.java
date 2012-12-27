@@ -50,15 +50,14 @@ public class Vuoro {
             return;
         }
 
-        if(mash.palautaMosat().isEmpty()){
+        if (mash.palautaMosat().isEmpty()) {
             peli.seuraavaTaso();
             return;
         }
-        
+
         this.indeksi++;
 
         if (this.indeksi > getKoko() - 1) {
-            //implementoi vuoron vaihto monstereille tähän, nyt testimielessä nollaa laskurin
             System.out.println("vaihto");
             ai.liikuKohtiLahinta();
             this.indeksi = 0;
@@ -68,7 +67,7 @@ public class Vuoro {
             System.exit(0);
             return;
         }
-        
+
         nykyinen = this.party.palautaHahmot().get(this.indeksi);
     }
 }

@@ -12,6 +12,8 @@ public class Ryhma {
 
     private String partyNimi;
     private ArrayList<Yksikko> party;
+    private int pisteet;
+    private int kokonaisPisteet;
 
     /**
      * Luokan konstruktori alustaa ArrayListin ja yksikön nimen.
@@ -19,6 +21,8 @@ public class Ryhma {
     public Ryhma() {
         this.party = new ArrayList<>();
         this.partyNimi = "";
+        this.pisteet = 0;
+        this.kokonaisPisteet = 0;
     }
 
     /**
@@ -92,5 +96,26 @@ public class Ryhma {
         for (Yksikko y : party) {
             y.alustaStatsit();
         }
+    }
+
+    public int getKokonaisPisteet() {
+        return this.kokonaisPisteet;
+    }
+
+    public int getPisteet() {
+        return this.pisteet;
+    }
+
+    public void lisaaPisteita(int maara) {
+        this.pisteet += maara;
+        this.kokonaisPisteet += maara;
+    }
+
+    public void vahennaPisteita(int maara) {
+        this.pisteet -= maara;
+    }
+
+    public boolean riittaako(int maara) {
+        return this.pisteet - maara >= 0;
     }
 }

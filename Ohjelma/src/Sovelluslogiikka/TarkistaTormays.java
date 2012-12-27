@@ -1,13 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Sovelluslogiikka;
 
-import Yksikot.Yksikko;
-import Yksikot.Ryhma;
 import Viholliset.Hirvio;
 import Viholliset.HirvioRyhma;
+import Yksikot.Ryhma;
+import Yksikot.Yksikko;
 
 /**
  *
@@ -15,18 +11,18 @@ import Viholliset.HirvioRyhma;
  */
 public class TarkistaTormays {
 
-    Ryhma party;
-    HirvioRyhma mash;
+    Ryhma ryhma;
+    HirvioRyhma vihollisRyhma;
     Vuoro vuoro;
 
-    public TarkistaTormays(Ryhma party, HirvioRyhma mash, Vuoro vuoro) {
-        this.party = party;
-        this.mash = mash;
+    public TarkistaTormays(Ryhma Ryhma, HirvioRyhma vihollisRyhma, Vuoro vuoro) {
+        this.ryhma = Ryhma;
+        this.vihollisRyhma = vihollisRyhma;
         this.vuoro = vuoro;
     }
 
     public boolean tarkistaTormaako(int x, int y) {
-        for (Yksikko cha : party.palautaHahmot()) {
+        for (Yksikko cha : ryhma.palautaHahmot()) {
             if (cha.getX() == x && cha.getY() == y) {
                 return true;
             }
@@ -34,17 +30,18 @@ public class TarkistaTormays {
 
         Hirvio kuoleva;
 
-        for (Hirvio m : mash.palautaMosat()) {
+        for (Hirvio m : vihollisRyhma.palautaMosat()) {
             if (m.getX() == x && m.getY() == y) {
                 m.vahennaHp(10);
 
                 if (!m.isAlive()) {
                     kuoleva = m;
-                    mash.poistaMosa(kuoleva);
+                    ryhma.lisaaPisteita(m.getPalkkio());
+                    vihollisRyhma.poistaMosa(kuoleva);
 //                    vuoro.seuraavaVuoro();
                     return true;
                 }
-                System.out.println("sattuuuuuuu!");
+//                System.out.println("sattuuuuuuu!");
 //                vuoro.seuraavaVuoro();
                 return true;
             }
