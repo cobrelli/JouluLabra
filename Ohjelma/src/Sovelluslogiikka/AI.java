@@ -25,11 +25,11 @@ public class AI {
 
     //lasketaan jokaiselle monsterille lähin hahmo ja liikutaan sitä kohti
     public void liikuKohtiLahinta() {
-        
+
 //        if(hirviot.palautaMosat().isEmpty()){
 //            
 //        }
-        
+
         for (Hirvio m : hirviot.palautaMosat()) {
             Yksikko lahin = null;
             int lahinP = Integer.MAX_VALUE;
@@ -56,56 +56,21 @@ public class AI {
 //            System.out.println(lahin);
             //kulkee koordinaattien mukaisesti kohti lähintä
             if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() > m.getY()) {
-                if (tormaako(m, m.getX() + 25, m.getY() + 25)) {
-                } else {
-                    m.setX(m.getX() + 25);
-                    m.setY(m.getY() + 25);
-                }
-
+                liikuJosValidi(m, m.getY() + 25, m.getX() + 25);
             } else if (lahinX == lahinY && lahin.getX() < m.getX() && lahin.getY() < m.getY()) {
-                if (tormaako(m, m.getX() - 25, m.getY() - 25)) {
-                } else {
-                    m.setX(m.getX() - 25);
-                    m.setY(m.getY() - 25);
-                }
-
+                liikuJosValidi(m, m.getY() - 25, m.getX() - 25);
             } else if (lahinX == lahinY && lahin.getY() > m.getY() && lahin.getX() < m.getX()) {
-                if (tormaako(m, m.getX() - 25, m.getY() + 25)) {
-                } else {
-                    m.setX(m.getX() - 25);
-                    m.setY(m.getY() + 25);
-                }
-
+                liikuJosValidi(m, m.getY() + 25, m.getX() - 25);
             } else if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() < m.getY()) {
-                if (tormaako(m, m.getX() + 25, m.getY() - 25)) {
-                } else {
-                    m.setX(m.getX() + 25);
-                    m.setY(m.getY() - 25);
-                }
-
+                liikuJosValidi(m, m.getY() - 25, m.getX() + 25);
             } else if (lahinX < lahinY && lahin.getY() > m.getY()) {
-                if (tormaako(m, m.getX(), m.getY() + 25)) {
-                } else {
-                    m.setY(m.getY() + 25);
-                }
-
+                liikuJosValidi(m, m.getY() + 25, m.getX());
             } else if (lahinX < lahinY && lahin.getY() < m.getY()) {
-                if (tormaako(m, m.getX(), m.getY() - 25)) {
-                } else {
-                    m.setY(m.getY() - 25);
-                }
-
+                liikuJosValidi(m, m.getY()-25, m.getX());
             } else if (lahinX > lahinY && lahin.getX() > m.getX()) {
-                if (tormaako(m, m.getX() + 25, m.getY())) {
-                } else {
-                    m.setX(m.getX() + 25);
-                }
-
+                liikuJosValidi(m, m.getY(), m.getX()+25);
             } else if (lahinX > lahinY && lahin.getX() < m.getX()) {
-                if (tormaako(m, m.getX() - 25, m.getY())) {
-                } else {
-                    m.setX(m.getX() - 25);
-                }
+                liikuJosValidi(m, m.getY(), m.getX()-25);
             }
         }
     }
@@ -133,5 +98,13 @@ public class AI {
             }
         }
         return false;
+    }
+
+    public void liikuJosValidi(Hirvio m, int y, int x) {
+        if (tormaako(m, x, y)) {
+        } else {
+            m.setX(x);
+            m.setY(y);
+        }
     }
 }
