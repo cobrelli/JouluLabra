@@ -4,6 +4,7 @@ import GUI.Nappaimistonkuuntelija.Nappaimistonkuuntelija;
 import GUI.ToiminnanKuuntelijat.Exit;
 import GUI.ToiminnanKuuntelijat.luoKauppa;
 import GUI.ToiminnanKuuntelijat.luoTaisteluruutu;
+import GUI.ToiminnanKuuntelijat.ostaNostovaki;
 import Peli.Peli;
 import Sovelluslogiikka.JarjestaOliot;
 import Sovelluslogiikka.TarkistaTormays;
@@ -172,7 +173,8 @@ public class GUI implements Runnable {
 
         JPanel pisteet = new JPanel(new GridLayout(1, 3));
         pisteet.setBackground(Color.white);
-        JTextArea pisteLaskuri = new JTextArea("Pisteitä jäljellä: ");
+        JTextArea pisteLaskuri = new JTextArea("Pisteitä jäljellä: " + 
+                ryhma.getPisteet());
         pisteLaskuri.setForeground(Color.black);
         pisteLaskuri.setEditable(false);
         pisteLaskuri.setFont(font);
@@ -182,6 +184,8 @@ public class GUI implements Runnable {
         pisteet.add(new JLabel());
         pisteet.add(pisteLaskuri, BorderLayout.SOUTH);
         pisteet.add(new JLabel());
+        
+        ostaNostovaki.addActionListener(new ostaNostovaki(ryhma, pisteLaskuri));
     }
 
     public JFrame getFrame() {

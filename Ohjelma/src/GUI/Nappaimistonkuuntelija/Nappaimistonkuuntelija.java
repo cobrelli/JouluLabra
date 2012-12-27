@@ -85,7 +85,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
     public void liikuJosValidi(int y, int x) {
 
         if (y > 475 || y < 100 || x < 100 || x > 475
-                || tormays.tarkistaTormaako(x, y)) {
+                || tormays.tarkistaTormaako(x, y, c.getVahinko())) {
             paivitettava.repaint();
             return;
         }

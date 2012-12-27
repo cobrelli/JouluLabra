@@ -21,7 +21,7 @@ public class TarkistaTormays {
         this.vuoro = vuoro;
     }
 
-    public boolean tarkistaTormaako(int x, int y) {
+    public boolean tarkistaTormaako(int x, int y, int vahinko) {
         for (Yksikko cha : ryhma.palautaHahmot()) {
             if (cha.getX() == x && cha.getY() == y) {
                 return true;
@@ -32,7 +32,7 @@ public class TarkistaTormays {
 
         for (Hirvio m : vihollisRyhma.palautaMosat()) {
             if (m.getX() == x && m.getY() == y) {
-                m.vahennaHp(10);
+                m.vahennaHp(vahinko);
 
                 if (!m.isAlive()) {
                     kuoleva = m;

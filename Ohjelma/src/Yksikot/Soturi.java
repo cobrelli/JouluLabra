@@ -18,6 +18,7 @@ public class Soturi extends Yksikko{
         setHpMax(100);
         setCharClassID("Soturi");
         alustaStatsit();
+        setVahinko(10);
     }
     
 }

@@ -15,6 +15,7 @@ public abstract class Yksikko {
     private String charClassID;
     private int x;
     private int y;
+    private int vahinko;
 
     /**
      * Luokan konstruktori, jolla luodaan uusi hahmo halutulla nimellä
@@ -27,7 +28,7 @@ public abstract class Yksikko {
         this.nimi = nimi;
         this.elossa = true;
         this.charClassID = "";
-
+        
     }
 
     /**
@@ -174,6 +175,14 @@ public abstract class Yksikko {
         return "R.I.P";
     }
 
+    public int getVahinko(){
+        return this.vahinko;
+    }
+    
+    public void setVahinko(int uusi){
+        this.vahinko = uusi;
+    }
+    
     @Override
     public String toString() {
         return this.nimi + " " + this.charClassID + " HP: (" + getHp() + "/" +

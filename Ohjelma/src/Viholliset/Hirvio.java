@@ -112,7 +112,7 @@ public abstract class Hirvio {
         if (!elossa) {
             return;
         }
-        if (this.Hp - maara < 0) {
+        if (this.Hp - maara <= 0) {
             this.elossa = false;
             this.Hp = -1;
         } else {
