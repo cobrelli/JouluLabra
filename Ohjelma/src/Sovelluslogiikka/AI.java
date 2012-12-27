@@ -51,6 +51,10 @@ public class AI {
             }
 //            System.out.println(lahin);
             //kulkee koordinaattien mukaisesti kohti lähintä
+            if(party.palautaHahmot().isEmpty()){
+                return;
+            }
+            
             if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() > m.getY()) {
                 liikuJosValidi(m, m.getY() + 25, m.getX() + 25);
             } else if (lahinX == lahinY && lahin.getX() < m.getX() && lahin.getY() < m.getY()) {

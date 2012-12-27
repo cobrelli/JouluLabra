@@ -2,6 +2,7 @@ package GUI;
 
 import GUI.Nappaimistonkuuntelija.Nappaimistonkuuntelija;
 import GUI.ToiminnanKuuntelijat.Exit;
+import GUI.ToiminnanKuuntelijat.TalletaTulos;
 import GUI.ToiminnanKuuntelijat.luoKauppa;
 import GUI.ToiminnanKuuntelijat.luoTaisteluruutu;
 import GUI.ToiminnanKuuntelijat.ostaNostovaki;
@@ -28,6 +29,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -219,16 +221,28 @@ public class GUI implements Runnable {
         JPanel tulostenNaytto = new JPanel(new GridBagLayout());
         alusta.add(tulostenNaytto, BorderLayout.WEST);
         
-        JLabel tulostenLabel = new JLabel();
+        JTextPane tuloksetTekstina = new JTextPane();
         
         Tulokset tulokset = new Tulokset();
         ArrayList<Piste> pisteet = tulokset.getPisteet();
-        int indeksi = 9;
+        int indeksi = 10;
 
-        tulokset.lisaaPiste("testi", 0);
+//        tulokset.lisaaPiste("testi", 0);
         
-        tulostenLabel.setText(tulokset.getPisteetStringina());
-        tulostenNaytto.add(tulostenLabel);
+//        tuloksetTekstina.setText(tulokset.getPisteetStringina());
+//        tulostenNaytto.add(tuloksetTekstina);
+        JTextArea nimi = new JTextArea("Anna nimesi");
+        nimi.setPreferredSize(new Dimension(100, 50));
+        tulostenNaytto.add(nimi);
+        JButton talleta = new JButton("Talleta");
+        talleta.addActionListener(new TalletaTulos(nimi, tulokset, tulostenNaytto, 
+                ryhma.getKokonaisPisteet()));
+        talleta.setPreferredSize(new Dimension(100, 50));
+        tulostenNaytto.add(talleta);
+        
+        if(pisteet.size()<11){
+            
+        }
 //        if (!pisteet.isEmpty()) {
 //            if (pisteet.size() < 11) {
 ////                tulokset.lisaaPiste(null, indeksi);
