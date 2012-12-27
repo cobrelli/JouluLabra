@@ -9,16 +9,14 @@ package Yksikot;
 public class Soturi extends Yksikko{
     
     /**
-     * Konstruktori luo uuden Fighterin. Luokka tulee sisältämään enemmän tälle
-     * hahmotyypille tyypillisiä eroja suhteessa toisiin hahmoluokkiin.
+     * Konstruktori luo uuden Soturin. 
      * @param nimi      Luo uuden fighterin halutulla nimellä.
      */
     public Soturi(String nimi){
         super(nimi);
-        setHpMax(100);
+        setHpMax(85);
         setCharClassID("Soturi");
         alustaStatsit();
         setVahinko(10);
     }
-    
 }

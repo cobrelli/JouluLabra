@@ -45,8 +45,7 @@ public class Vuoro {
 
     public void seuraavaVuoro() {
         if (party.isEmpty()) {
-            System.out.println("GAME OVER");
-            System.exit(0);
+            peli.tulosRuutu();
             return;
         }
 
@@ -63,8 +62,7 @@ public class Vuoro {
             this.indeksi = 0;
         }
         if (party.isEmpty()) {
-            System.out.println("GAME OVER");
-            System.exit(0);
+            peli.tulosRuutu();
             return;
         }
 

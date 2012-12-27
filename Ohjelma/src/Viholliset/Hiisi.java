@@ -11,10 +11,10 @@ package Viholliset;
 public class Hiisi extends Hirvio{
     public Hiisi(String nimi){
         super(nimi);
-        setHpMax(20);
+        setHpMax(25);
         setMonsterClassID("Hiisi");
         alustaStatsit();
-        setPalkkio(5);
+        setPalkkio(3);
         setVahinko(10);
     }
 }

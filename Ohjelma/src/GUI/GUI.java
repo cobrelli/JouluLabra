@@ -6,6 +6,8 @@ import GUI.ToiminnanKuuntelijat.luoKauppa;
 import GUI.ToiminnanKuuntelijat.luoTaisteluruutu;
 import GUI.ToiminnanKuuntelijat.ostaNostovaki;
 import GUI.ToiminnanKuuntelijat.ostaSoturi;
+import HuippuTulokset.Piste;
+import HuippuTulokset.Tulokset;
 import Peli.Peli;
 import Sovelluslogiikka.JarjestaOliot;
 import Sovelluslogiikka.TarkistaTormays;
@@ -20,12 +22,14 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
+
 /**
  *
  * @author Cobrelli
@@ -58,11 +62,11 @@ public class GUI implements Runnable {
     }
 
     private void luoAloitusruutu(Container container) {
-        this.alusta = new PiirtoalustaAloitus();
+        this.alusta = new Piirtoalusta();
         container.add(alusta);
 
         alusta.setLayout(new GridBagLayout());
-//        alusta.setBackground(Color.darkGray);
+        alusta.setBackground(Color.darkGray);
 //        container.setBackground(Color.darkGray);
         GridBagConstraints c = new GridBagConstraints();
 
@@ -111,7 +115,7 @@ public class GUI implements Runnable {
         container.setLayout(new BorderLayout());
 
         this.hirvioRyhma = peli.palautaUudetViholliset();
-        
+
         Vuoro vuoro = new Vuoro(ryhma, hirvioRyhma, peli);
 
         JarjestaOliot j = new JarjestaOliot(hirvioRyhma, ryhma);
@@ -132,7 +136,7 @@ public class GUI implements Runnable {
 
     public void luoKauppa(Container container) {
 
-        this.alusta = new PiirtoalustaKauppa();
+        this.alusta = new Piirtoalusta();
         container.add(alusta);
 
         alusta.setLayout(new BorderLayout(10, 10));
@@ -174,8 +178,8 @@ public class GUI implements Runnable {
 
         JPanel pisteet = new JPanel(new GridLayout(1, 3));
         pisteet.setBackground(Color.white);
-        JTextArea pisteLaskuri = new JTextArea("Pisteitä jäljellä: " + 
-                ryhma.getPisteet());
+        JTextArea pisteLaskuri = new JTextArea("Pisteitä jäljellä: "
+                + ryhma.getPisteet());
         pisteLaskuri.setForeground(Color.black);
         pisteLaskuri.setEditable(false);
         pisteLaskuri.setFont(font);
@@ -185,9 +189,56 @@ public class GUI implements Runnable {
         pisteet.add(new JLabel());
         pisteet.add(pisteLaskuri, BorderLayout.SOUTH);
         pisteet.add(new JLabel());
-        
+
         ostaNostovaki.addActionListener(new ostaNostovaki(ryhma, pisteLaskuri));
         ostaSoturi.addActionListener(new ostaSoturi(ryhma, pisteLaskuri));
+    }
+
+    public void luoHuippuTulokset(Container container) {
+        this.alusta = new Piirtoalusta();
+        container.add(alusta);
+
+        alusta.setLayout(new BorderLayout(10, 10));
+
+        Font font = new Font("Verdana", Font.BOLD, 30);
+
+        JPanel otsikko = new JPanel(new GridLayout(1, 3));
+        otsikko.setBackground(Color.white);
+//        otsikko.setPreferredSize(new Dimension(900, 150));
+        alusta.add(otsikko, BorderLayout.NORTH);
+
+        JTextArea huippuTulostenOtsikko = new JTextArea("  Peli loppui - Huipputulokset");
+        huippuTulostenOtsikko.setForeground(Color.black);
+        huippuTulostenOtsikko.setEditable(false);
+        huippuTulostenOtsikko.setFont(font);
+
+//        otsikko.add(new JLabel());
+        otsikko.add(huippuTulostenOtsikko);
+//        otsikko.add(new JLabel());
+
+        JPanel tulostenNaytto = new JPanel(new GridBagLayout());
+        alusta.add(tulostenNaytto, BorderLayout.WEST);
+        
+        JLabel tulostenLabel = new JLabel();
+        
+        Tulokset tulokset = new Tulokset();
+        ArrayList<Piste> pisteet = tulokset.getPisteet();
+        int indeksi = 9;
+
+        tulokset.lisaaPiste("testi", 0);
+        
+        tulostenLabel.setText(tulokset.getPisteetStringina());
+        tulostenNaytto.add(tulostenLabel);
+//        if (!pisteet.isEmpty()) {
+//            if (pisteet.size() < 11) {
+////                tulokset.lisaaPiste(null, indeksi);
+//                
+//            }else if (pisteet.get(indeksi).getPisteet() < ryhma.getKokonaisPisteet()) {
+//                
+//            }
+//            
+//        }
+
     }
 
     public JFrame getFrame() {

@@ -77,4 +77,11 @@ public class Peli {
 
         return null;
     }
+
+    public void tulosRuutu() {
+        gui.getFrame().getContentPane().removeAll();
+        gui.getFrame().invalidate();
+        gui.luoHuippuTulokset(gui.getFrame().getContentPane());
+        gui.getFrame().validate();
+    }
 }

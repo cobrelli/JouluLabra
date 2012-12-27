@@ -82,8 +82,7 @@ public class AI {
                     party.poistaHahmo(ch);
                 }
                 if (party.isEmpty()) {
-                    System.out.println("GAME OVER");
-                    System.exit(0);
+                    break;
                 }
                 return true;
             }

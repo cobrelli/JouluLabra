@@ -44,4 +44,4 @@ ja toteutus.
 
 27.12
 
-2h Refaktorointia, ostosysteemin suunnittelua.
+6h Refaktorointia, ostosysteemin suunnittelua ja toteutus. Highscores systeemiä.
