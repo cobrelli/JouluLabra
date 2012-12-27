@@ -26,10 +26,6 @@ public class AI {
     //lasketaan jokaiselle monsterille lähin hahmo ja liikutaan sitä kohti
     public void liikuKohtiLahinta() {
 
-//        if(hirviot.palautaMosat().isEmpty()){
-//            
-//        }
-
         for (Hirvio m : hirviot.palautaMosat()) {
             Yksikko lahin = null;
             int lahinP = Integer.MAX_VALUE;
@@ -80,7 +76,7 @@ public class AI {
         for (Yksikko ch : party.palautaHahmot()) {
             if (x == ch.getX() && y == ch.getY()) {
                 System.out.println("Die infidel!");
-                ch.vahennaHp(5);
+                ch.vahennaHp(mo.getVahinko());
                 System.out.println(ch);
                 if (!ch.getIsAlive()) {
                     party.poistaHahmo(ch);

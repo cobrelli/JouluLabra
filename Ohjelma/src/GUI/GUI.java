@@ -5,6 +5,7 @@ import GUI.ToiminnanKuuntelijat.Exit;
 import GUI.ToiminnanKuuntelijat.luoKauppa;
 import GUI.ToiminnanKuuntelijat.luoTaisteluruutu;
 import GUI.ToiminnanKuuntelijat.ostaNostovaki;
+import GUI.ToiminnanKuuntelijat.ostaSoturi;
 import Peli.Peli;
 import Sovelluslogiikka.JarjestaOliot;
 import Sovelluslogiikka.TarkistaTormays;
@@ -186,6 +187,7 @@ public class GUI implements Runnable {
         pisteet.add(new JLabel());
         
         ostaNostovaki.addActionListener(new ostaNostovaki(ryhma, pisteLaskuri));
+        ostaSoturi.addActionListener(new ostaSoturi(ryhma, pisteLaskuri));
     }
 
     public JFrame getFrame() {

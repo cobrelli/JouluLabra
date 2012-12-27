@@ -5,6 +5,7 @@
 package Peli;
 
 import GUI.GUI;
+import Viholliset.Hiisi;
 import Viholliset.Hirvio;
 import Viholliset.HirvioRyhma;
 import Viholliset.Rotta;
@@ -21,7 +22,7 @@ public class Peli {
     private HirvioRyhma hirviot;
     private Ryhma ryhma;
     GUI gui;
-    
+
     public Peli() {
         this.taso = 1;
     }
@@ -60,15 +61,20 @@ public class Peli {
         int hirviotaso = taso / 10;
 
         for (int i = 0; i < (maara + luku); i++) {
-            hirviot.lisaaMosa(new Rotta("Rotta"));
+            if(taso>10){
+                hirviot.lisaaMosa(new Hiisi("Hiisi"));
+            }else{
+                hirviot.lisaaMosa(new Rotta("Rotta"));
+            }
+            
         }
 
         return hirviot;
     }
-    
-    public Hirvio annaHirvioTasonMukaan(){
-        
-        
+
+    public Hirvio annaHirvioTasonMukaan() {
+
+
         return null;
     }
 }

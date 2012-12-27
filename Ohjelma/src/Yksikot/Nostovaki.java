@@ -11,7 +11,7 @@ package Yksikot;
 public class Nostovaki extends Yksikko{
     public Nostovaki(String nimi){
         super(nimi);
-        setHpMax(50);
+        setHpMax(30);
         setVahinko(5);
         setCharClassID("Nostoväki");
         alustaStatsit();
