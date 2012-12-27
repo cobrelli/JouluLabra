@@ -41,3 +41,7 @@ Sovelluslogiikan rakentelua.
 
 3h Pelin rakenteen suunnittelua, ruudunvaihtojen toteutuksen suunnittelua 
 ja toteutus.
+
+27.12
+
+1h Refaktorointia, ostosysteemin suunnittelua.
