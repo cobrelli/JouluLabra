@@ -1,27 +1,36 @@
 package GUI.Nappaimistonkuuntelija;
 
-import Yksikot.Yksikko;
 import Sovelluslogiikka.TarkistaTormays;
 import Sovelluslogiikka.Vuoro;
+import Yksikot.Yksikko;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 
 /**
+ * Luokka jonka tehtävänä on kuunnella näppäimistöä ja pelaajan yksiköille
+ * antamia käskyjä. Ja toteuttaa liikkeet sallittujen määräysten mukaisesti.
  *
  * @author Cobrelli
  */
 public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
-    JPanel paivitettava;
+    JPanel paneeli;
     Yksikko c;
     TarkistaTormays tormays;
     Vuoro vuoro;
-    
-    public Nappaimistonkuuntelija(JPanel paivitettava, TarkistaTormays tormays, 
+
+    /**
+     * Konstruktori. Luo uuden näppäimistönkuuntelija olion ja alustaa
+     * tarvittavat oliot.
+     *
+     * @param paneeli
+     * @param tormays
+     * @param vuoro
+     */
+    public Nappaimistonkuuntelija(JPanel paneeli, TarkistaTormays tormays,
             Vuoro vuoro) {
-        this.paivitettava = paivitettava;
-//        this.c = c;
+        this.paneeli = paneeli;
         this.tormays = tormays;
         this.vuoro = vuoro;
     }
@@ -30,7 +39,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
     public void keyPressed(KeyEvent e) {
 
         c = vuoro.getVuoro();
-        
+
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             liikuJosValidi(c.getY() - 25, c.getX());
 
@@ -56,7 +65,7 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
             liikuJosValidi(c.getY(), c.getX() - 25);
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
-            paivitettava.repaint();
+            paneeli.repaint();
 
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
             liikuJosValidi(c.getY(), c.getX() + 25);
@@ -82,18 +91,21 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
     public void keyReleased(KeyEvent e) {
     }
 
+    /**
+     *
+     * @param y
+     * @param x
+     */
     public void liikuJosValidi(int y, int x) {
 
         if (y > 475 || y < 100 || x < 100 || x > 475
                 || tormays.tarkistaTormaako(x, y, c.getVahinko())) {
-            paivitettava.repaint();
+            paneeli.repaint();
             return;
         }
 
         c.setY(y);
         c.setX(x);
-//        vuoro.seuraavaVuoro();
-        paivitettava.repaint();
-//        vuoro.seuraavaVuoro();
+        paneeli.repaint();
     }
 }

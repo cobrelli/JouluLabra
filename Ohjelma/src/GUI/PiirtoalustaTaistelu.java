@@ -10,15 +10,25 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
+ * Piirtoalusta, joka hoitaa kaikkien tärkeimpien asioiden piirtämisen.
  *
  * @author Cobrelli
  */
-public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
+public class PiirtoalustaTaistelu extends JPanel {
 
     private HirvioRyhma mash;
     private Ryhma party;
     Vuoro vuoro;
 
+    /**
+     * Konstruktori. Luo uuden piirtoalustan ja kutsuu piirtotoiminnallisuudet
+     * sille annettujen parametrien mukaisesti.
+     *
+     * @param m Antaa viitteen hirviot sisältävään oliosäiliöön.
+     * @param p Antaa viitteen pelaajan yksiköt sisältävään oliosäiliöön.
+     * @param vuoro Antaa viitteen vuoro-olioon joka määrää kunkin hetken
+     * vuoron.
+     */
     public PiirtoalustaTaistelu(HirvioRyhma m, Ryhma p, Vuoro vuoro) {
         super.setBackground(Color.white);
         this.mash = m;
@@ -36,6 +46,11 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
         piirraMosat(g);
     }
 
+    /**
+     * Piirtää pelissä näkyvän ruudukon.
+     *
+     * @param g Antaa viitteen grafiikkaolioon.
+     */
     private void piirraRuudukko(Graphics g) {
         g.setColor(Color.black);
 
@@ -46,6 +61,11 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
 
     }
 
+    /**
+     * Piirtaa kaikki pelaajan yksiköiden oliosäiliössä olevat hahmot.
+     *
+     * @param g Antaa viitteen grafiikkaolioon.
+     */
     private void piirraHahmot(Graphics g) {
 
         for (Yksikko c : this.party.palautaHahmot()) {
@@ -56,6 +76,12 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
         }
     }
 
+    /**
+     * Piirtää kaikki vihollisyksiköiden oliosäiliön sisältämät viholliset
+     * ruudulle.
+     *
+     * @param g Antaa viitteen grafiikkaolioon.
+     */
     private void piirraMosat(Graphics g) {
 
         for (Hirvio m : this.mash.palautaMosat()) {
@@ -67,13 +93,16 @@ public class PiirtoalustaTaistelu extends JPanel implements Paivitettava {
 
     }
 
-    public void piirraVuoro(Graphics g, int x, int y) {
+    /**
+     * Piirtää sen hetkisen vuoron omaavan pelaajan taakse harmaan alueen
+     * indikoimaan vuoroa.
+     *
+     * @param g Antaa viitteen grafiikkaolioon.
+     * @param x Kertoo piirrettävän paikan kohdan x -akselilla.
+     * @param y Kertoo piirrettävän paikan kohdan y -akselilla.
+     */
+    private void piirraVuoro(Graphics g, int x, int y) {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(x, y, 23, 23);
-    }
-
-    @Override
-    public void paivita() {
-        repaint();
     }
 }

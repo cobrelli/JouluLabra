@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package GUI;
 
 import java.awt.Color;
@@ -9,11 +5,15 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
- *
+ * Piirtoalusta, joka hoitaa uuden alustan piirtämisen ja johon lisätään kaikki
+ * käyttöliittymäkomponentit.
  * @author vito
  */
-public class Piirtoalusta extends JPanel implements Paivitettava {
+public class Piirtoalusta extends JPanel {
 
+    /**
+     * Konstruktori. Asettaa taustaväriksi valkoisen.
+     */
     public Piirtoalusta(){
         super.setBackground(Color.white);
     }
@@ -22,10 +22,4 @@ public class Piirtoalusta extends JPanel implements Paivitettava {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
     }
-    
-    @Override
-    public void paivita() {
-        repaint();
-    }
-    
 }

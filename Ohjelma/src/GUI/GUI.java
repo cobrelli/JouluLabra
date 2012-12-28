@@ -33,6 +33,8 @@ import javax.swing.JTextPane;
 import javax.swing.WindowConstants;
 
 /**
+ * Graafinen käyttöliittymä. Vastuussa eri graafisten piirtotoiminnallisuuksien
+ * kutsumisesta ja tarvittavien olioiden luonnista.
  *
  * @author Cobrelli
  */
@@ -44,6 +46,15 @@ public class GUI implements Runnable {
     private Ryhma ryhma;
     private Peli peli;
 
+    /**
+     * Konstruktori. Luo uuden GUI olion, jolle annetaan parametrinä tieto
+     * tarvittavista olioista ja pelistä.
+     *
+     * @param m Antaa viitteen vastustajat sisältävään oliosäiliöön.
+     * @param p Antaa viitteen pelaajan yksiköt sisältävään oliosäiliöön.
+     * @param peli Antaa viitteen peli luokkaan, joka hallinnoi pelin
+     * toiminnallisuutta.
+     */
     public GUI(HirvioRyhma m, Ryhma p, Peli peli) {
         this.hirvioRyhma = m;
         this.ryhma = p;
@@ -112,6 +123,13 @@ public class GUI implements Runnable {
         button2.addActionListener(new Exit());
     }
 
+    /**
+     * Luo uuden taisteluruudun, kutsuu uuden piirtoalustan ja piirtämiset ja
+     * alustaa tarpeelliset oliot ja luokat piirtämistä varten.
+     *
+     * @param container Antaa viitteen container olioon johon lisätään kaikki
+     * tarpeelliset käyttöliittymäkomponentit.
+     */
     public void luoTaisteluruutu(Container container) {
 
         container.setLayout(new BorderLayout());
@@ -136,6 +154,12 @@ public class GUI implements Runnable {
         container.requestFocusInWindow();
     }
 
+    /**
+     * Luo uuden alustan kaupparuudulle ja lisää alustaan kaikki tarvittavat
+     * käyttöliittymäkomponentit.
+     * @param container         Sisältää viitteen container olioon, johon kaikki
+     *                          tarvittavat komponentit lisätään.
+     */
     public void luoKauppa(Container container) {
 
         this.alusta = new Piirtoalusta();
@@ -196,6 +220,12 @@ public class GUI implements Runnable {
         ostaSoturi.addActionListener(new ostaSoturi(ryhma, pisteLaskuri));
     }
 
+    /**
+     * Luo uuden alustan huipputulosten näyttämistä varten ja lisää tarvittavat
+     * käyttöliittymäkomponentit alustaan.
+     * @param container         Sisältää viitteen container olioon johon kaikki
+     *                          tarvittavat käyttöliittymäkomponentit lisätään.
+     */
     public void luoHuippuTulokset(Container container) {
         this.alusta = new Piirtoalusta();
         container.add(alusta);
@@ -220,28 +250,27 @@ public class GUI implements Runnable {
 
         JPanel tulostenNaytto = new JPanel(new GridBagLayout());
         alusta.add(tulostenNaytto, BorderLayout.WEST);
-        
+
         JTextPane tuloksetTekstina = new JTextPane();
-        
+
         Tulokset tulokset = new Tulokset();
         ArrayList<Piste> pisteet = tulokset.getPisteet();
         int indeksi = 10;
 
 //        tulokset.lisaaPiste("testi", 0);
-        
+
 //        tuloksetTekstina.setText(tulokset.getPisteetStringina());
 //        tulostenNaytto.add(tuloksetTekstina);
         JTextArea nimi = new JTextArea("Anna nimesi");
         nimi.setPreferredSize(new Dimension(100, 50));
         tulostenNaytto.add(nimi);
         JButton talleta = new JButton("Talleta");
-        talleta.addActionListener(new TalletaTulos(nimi, tulokset, tulostenNaytto, 
+        talleta.addActionListener(new TalletaTulos(nimi, tulokset, tulostenNaytto,
                 ryhma.getKokonaisPisteet()));
         talleta.setPreferredSize(new Dimension(100, 50));
         tulostenNaytto.add(talleta);
-        
-        if(pisteet.size()<11){
-            
+
+        if (pisteet.size() < 11) {
         }
 //        if (!pisteet.isEmpty()) {
 //            if (pisteet.size() < 11) {
@@ -255,6 +284,10 @@ public class GUI implements Runnable {
 
     }
 
+    /**
+     * Getteri
+     * @return          Palauttaa viitteen JFrame olioon.
+     */
     public JFrame getFrame() {
         return frame;
     }
