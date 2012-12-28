@@ -1,11 +1,10 @@
 package HuippuTuloksetTestit;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import HuippuTulokset.Piste;
+import HuippuTulokset.Tulokset;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  *
@@ -13,27 +12,30 @@ import static org.junit.Assert.*;
  */
 public class TuloksetTest {
     
+    Tulokset tulokset;
+    
     public TuloksetTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
     }
     
     @Before
     public void setUp() {
+        tulokset = new Tulokset();
     }
     
-    @After
-    public void tearDown() {
+    @Test
+    public void testaaEttaTuloksetPalautuvat() {
+        assertFalse(tulokset.palautaPisteet().isEmpty());
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-     @Test
-     public void hello() {}
+    
+    @Test
+    public void testaaEttaTulostenTallettaminenOnnistuu(){
+        boolean loytyy = false;
+        tulokset.lisaaPiste("testi-esa", 0);
+        for (Piste p : tulokset.palautaPisteet()) {
+            if(p.getNimi().equals("testi-esa")){
+                loytyy = true;
+            }
+        }
+        assertTrue(loytyy);
+    }
 }

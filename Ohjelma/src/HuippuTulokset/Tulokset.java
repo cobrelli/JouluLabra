@@ -63,7 +63,7 @@ public class Tulokset {
      * ArrayListille. Ottaa huomioon tyypillisimpiä ongelmia latausmetodin
      * käsittelyn suhteen.
      */
-    public void lataaPisteet() {
+    private void lataaPisteet() {
         try {
             inputStream = new ObjectInputStream(new FileInputStream(pisteTiedosto));
             pisteet = (ArrayList<Piste>) inputStream.readObject();
@@ -89,7 +89,7 @@ public class Tulokset {
      * Yrittää ladata tiedostoon ArrayListiltä tiedot talteen ja ottaa huomioon
      * muutamia tyypillisimpiä virhetilanteita.
      */
-    public void paivitaPisteet() {
+    private void paivitaPisteet() {
         try {
             outputStream = new ObjectOutputStream(new FileOutputStream(pisteTiedosto));
             outputStream.writeObject(pisteet);
@@ -119,7 +119,6 @@ public class Tulokset {
         String pisteetStringina = "";
         int maara = 10;
 
-        ArrayList<Piste> scores;
         pisteet = palautaPisteet();
 
         int i = 0;
