@@ -1,15 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Sovelluslogiikka;
 
-import Yksikot.Yksikko;
-import Yksikot.Ryhma;
 import Viholliset.Hirvio;
 import Viholliset.HirvioRyhma;
+import Yksikot.Ryhma;
+import Yksikot.Yksikko;
 
 /**
+ * Luokka sisältää hirviöiden toiminnan logiikkaa.
  *
  * @author vito
  */
@@ -18,12 +15,22 @@ public class AI {
     Ryhma party;
     HirvioRyhma hirviot;
 
-    public AI(Ryhma party, HirvioRyhma mash) {
-        this.party = party;
-        this.hirviot = mash;
+    /**
+     * Konstruktori, luo uuden tekoäly olion, jolle annetaan tieto pelaajan
+     * yksiköistä ja hirviöyksiköistä.
+     *
+     * @param ryhma Sisältää viitteen pelaajan yksiköt sisältävään oliosäiliöön.
+     * @param hirvioRyhma Sisältää viitteet hirviöt sisältävään oliosäiliöön.
+     */
+    public AI(Ryhma ryhma, HirvioRyhma hirvioRyhma) {
+        this.party = ryhma;
+        this.hirviot = hirvioRyhma;
     }
 
-    //lasketaan jokaiselle monsterille lähin hahmo ja liikutaan sitä kohti
+    /**
+     * Metodin avulla lasketaan jokaiselle monsterille lähin hahmo ja liikutaan
+     * sitä kohti.
+     */
     public void liikuKohtiLahinta() {
 
         for (Hirvio m : hirviot.palautaMosat()) {
@@ -32,7 +39,6 @@ public class AI {
             int lahinX = Integer.MAX_VALUE;
             int lahinY = Integer.MAX_VALUE;
 
-            //lasketaan lähin y ja x koordinaattien perusteella
             for (Yksikko c : party.palautaHahmot()) {
                 int x = c.getX() - m.getX();
                 if (x < 0) {
@@ -49,12 +55,10 @@ public class AI {
                     lahinY = y;
                 }
             }
-//            System.out.println(lahin);
-            //kulkee koordinaattien mukaisesti kohti lähintä
-            if(party.palautaHahmot().isEmpty()){
+            if (party.palautaHahmot().isEmpty()) {
                 return;
             }
-            
+
             if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() > m.getY()) {
                 liikuJosValidi(m, m.getY() + 25, m.getX() + 25);
             } else if (lahinX == lahinY && lahin.getX() < m.getX() && lahin.getY() < m.getY()) {
@@ -66,21 +70,32 @@ public class AI {
             } else if (lahinX < lahinY && lahin.getY() > m.getY()) {
                 liikuJosValidi(m, m.getY() + 25, m.getX());
             } else if (lahinX < lahinY && lahin.getY() < m.getY()) {
-                liikuJosValidi(m, m.getY()-25, m.getX());
+                liikuJosValidi(m, m.getY() - 25, m.getX());
             } else if (lahinX > lahinY && lahin.getX() > m.getX()) {
-                liikuJosValidi(m, m.getY(), m.getX()+25);
+                liikuJosValidi(m, m.getY(), m.getX() + 25);
             } else if (lahinX > lahinY && lahin.getX() < m.getX()) {
-                liikuJosValidi(m, m.getY(), m.getX()-25);
+                liikuJosValidi(m, m.getY(), m.getX() - 25);
             }
         }
     }
 
-    public boolean tormaako(Hirvio mo, int x, int y) {
+    /**
+     * Tarkistaa törmääkö vihollinen pelaajan johonkin yksikköön, jos törmää
+     * niin vähentää hahmon kestoja, jos kestot laskevat nollaan tai alle niin
+     * hahmo merkitään kuolleeksi ja poistetaan. Jos törmää johonkin toiseen
+     * vihollisyksikköön palautetaan true.
+     *
+     * @param hirvio Antaa viitteen käsiteltävään hirviöön.
+     * @param x Kertoo tarkasteltavan paikan sijainnin x -akselilla.
+     * @param y Kertoo tarkasteltavan paikan sijainnin y -akselilla.
+     * @return Palauttaa true jos törmää johonkin ja palauttaa false jos ei.
+     */
+    public boolean tormaako(Hirvio hirvio, int x, int y) {
 
         for (Yksikko ch : party.palautaHahmot()) {
             if (x == ch.getX() && y == ch.getY()) {
                 System.out.println("Die infidel!");
-                ch.vahennaHp(mo.getVahinko());
+                ch.vahennaHp(hirvio.getVahinko());
                 System.out.println(ch);
                 if (!ch.getIsAlive()) {
                     party.poistaHahmo(ch);
@@ -99,6 +114,14 @@ public class AI {
         return false;
     }
 
+    /**
+     * Tarkistaa annetun paikan tormaako metodilta ja liikkuu jossei mihinkään
+     * törmätä.
+     *
+     * @param m Antaa viitteen käsiteltävään hirviö olioon.
+     * @param y Kertoo tarkasteltavan paikan sijainnin y -akselilla.
+     * @param x Kertoo tarkasteltavan paikan sijainnin x -akselilla.
+     */
     public void liikuJosValidi(Hirvio m, int y, int x) {
         if (tormaako(m, x, y)) {
         } else {

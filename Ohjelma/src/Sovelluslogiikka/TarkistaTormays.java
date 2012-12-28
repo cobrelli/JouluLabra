@@ -6,6 +6,7 @@ import Yksikot.Ryhma;
 import Yksikot.Yksikko;
 
 /**
+ * Luokka tarkistaa törmääkö kysytyllä siirrolla pelaajan yksikkö mihinkään.
  *
  * @author vito
  */
@@ -13,14 +14,27 @@ public class TarkistaTormays {
 
     Ryhma ryhma;
     HirvioRyhma vihollisRyhma;
-    Vuoro vuoro;
+//    Vuoro vuoro;
 
-    public TarkistaTormays(Ryhma Ryhma, HirvioRyhma vihollisRyhma, Vuoro vuoro) {
+    /**
+     * Konstruktori.
+     * @param Ryhma Antaa viitteen pelaajan oliot sisältävään oliosäiliöön.
+     * @param vihollisRyhma Antaa viitteen hirviöt sisältävään oliosäiliöön.
+     * @param vuoro Antaa viitteen 
+     */
+    public TarkistaTormays(Ryhma Ryhma, HirvioRyhma vihollisRyhma) {
         this.ryhma = Ryhma;
         this.vihollisRyhma = vihollisRyhma;
-        this.vuoro = vuoro;
+//        this.vuoro = vuoro;
     }
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param vahinko
+     * @return
+     */
     public boolean tarkistaTormaako(int x, int y, int vahinko) {
         for (Yksikko cha : ryhma.palautaHahmot()) {
             if (cha.getX() == x && cha.getY() == y) {
@@ -38,14 +52,11 @@ public class TarkistaTormays {
                     kuoleva = m;
                     ryhma.lisaaPisteita(m.getPalkkio());
                     vihollisRyhma.poistaMosa(kuoleva);
-//                    vuoro.seuraavaVuoro();
                     return true;
                 }
-//                System.out.println("sattuuuuuuu!");
-//                vuoro.seuraavaVuoro();
                 return true;
             }
         }
-       return false;
+        return false;
     }
 }

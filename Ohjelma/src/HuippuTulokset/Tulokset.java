@@ -86,7 +86,8 @@ public class Tulokset {
     }
 
     /**
-     *
+     * Yrittää ladata tiedostoon ArrayListiltä tiedot talteen ja ottaa huomioon
+     * muutamia tyypillisimpiä virhetilanteita.
      */
     public void paivitaPisteet() {
         try {
@@ -109,6 +110,8 @@ public class Tulokset {
     }
 
     /**
+     * Rakentaa 10 korkeimman pistetuloksen tilanteesta String -olion
+     * annettavaksi tulostusta varten.
      *
      * @return
      */

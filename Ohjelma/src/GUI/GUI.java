@@ -145,7 +145,7 @@ public class GUI implements Runnable {
 
         container.add(this.alusta, BorderLayout.CENTER);
 
-        TarkistaTormays tormays = new TarkistaTormays(ryhma, hirvioRyhma, vuoro);
+        TarkistaTormays tormays = new TarkistaTormays(ryhma, hirvioRyhma);
 
         container.addKeyListener(new Nappaimistonkuuntelija(this.alusta,
                 tormays, vuoro));
