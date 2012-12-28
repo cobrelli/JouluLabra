@@ -21,6 +21,7 @@ public class TalletaTulos implements ActionListener {
     private Tulokset tulokset;
     private JPanel paneeli;
     private int tulos;
+    private JTextArea luettava;
 
     /**
      * Konstruktori, alustaa uuden toiminnankuuntelijan ja sen tarvitsemat oliot
@@ -33,7 +34,7 @@ public class TalletaTulos implements ActionListener {
      */
     public TalletaTulos(JTextArea luettava, Tulokset tulokset, JPanel paneeli,
             int tulos) {
-        this.nimi = luettava.getText();
+        this.luettava = luettava;
         this.tulokset = tulokset;
         this.paneeli = paneeli;
         this.tulos = tulos;
@@ -41,6 +42,7 @@ public class TalletaTulos implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        this.nimi = luettava.getText();
         paneeli.removeAll();
 
         tulokset.lisaaPiste(nimi, tulos);

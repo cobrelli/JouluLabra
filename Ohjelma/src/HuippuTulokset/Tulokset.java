@@ -113,7 +113,7 @@ public class Tulokset {
      * Rakentaa 10 korkeimman pistetuloksen tilanteesta String -olion
      * annettavaksi tulostusta varten.
      *
-     * @return
+     * @return Palauttaa pistetilanteen Stringinä.
      */
     public String palautaPisteetStringina() {
         String pisteetStringina = "";
