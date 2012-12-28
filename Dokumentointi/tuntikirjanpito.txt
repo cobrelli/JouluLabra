@@ -48,4 +48,4 @@ ja toteutus.
 
 28.12
 
-2h Refaktorointia, javadocseja
+3h Refaktorointia, javadocseja

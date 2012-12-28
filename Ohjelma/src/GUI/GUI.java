@@ -254,7 +254,7 @@ public class GUI implements Runnable {
         JTextPane tuloksetTekstina = new JTextPane();
 
         Tulokset tulokset = new Tulokset();
-        ArrayList<Piste> pisteet = tulokset.getPisteet();
+        ArrayList<Piste> pisteet = tulokset.palautaPisteet();
         int indeksi = 10;
 
 //        tulokset.lisaaPiste("testi", 0);

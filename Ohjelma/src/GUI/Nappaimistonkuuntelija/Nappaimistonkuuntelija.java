@@ -24,9 +24,9 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
      * Konstruktori. Luo uuden näppäimistönkuuntelija olion ja alustaa
      * tarvittavat oliot.
      *
-     * @param paneeli
-     * @param tormays
-     * @param vuoro
+     * @param paneeli Antaa viitteen JPanel olioon.
+     * @param tormays Antaa viitteen törmäysten tarkistusta hoitavaan olioon.
+     * @param vuoro Antaa viitteen vuorojen jakamista hoitavaan olioon.
      */
     public Nappaimistonkuuntelija(JPanel paneeli, TarkistaTormays tormays,
             Vuoro vuoro) {
@@ -92,9 +92,13 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
     }
 
     /**
+     * Tarkistaa onko liike sallituissa rajoissa ja jos on kysyy törmäysten
+     * tarkistajalta törmääkö yksikkö mihinkään. Jos ei törmää ja liike on
+     * sallittu niin päivitetään olion sijainti ja kutsutaan paneelin repaint
+     * metodia.
      *
-     * @param y
-     * @param x
+     * @param y Antaa viitteen tutkittavan paikan y -koordinaattiin.
+     * @param x Antaa viitteen tutkittavan paikan x -koordinaattiin.
      */
     public void liikuJosValidi(int y, int x) {
 

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package GUI.ToiminnanKuuntelijat;
 
 import GUI.GUI;
@@ -10,19 +6,27 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 /**
+ * Toiminnankuuntelija, jonka tarkoitus on luoda uusi kaupparuutu kun
+ * aloitusruudussa painetaan nappulaa.
  *
  * @author vito
  */
-public class luoKauppa  implements ActionListener {
+public class luoKauppa implements ActionListener {
 
     JFrame frame;
     GUI gui;
-    
-    public luoKauppa(JFrame frame, GUI gui){
+
+    /**
+     * Konstruktori, alustaa kaikki tarvittavat oliot kaupan luomista varten.
+     *
+     * @param frame Antaa viitteen muokattavaan JFrame olioon.
+     * @param gui Antaa viitteen GUI olioon, josta luoKauppa metodia kutsutaan.
+     */
+    public luoKauppa(JFrame frame, GUI gui) {
         this.frame = frame;
         this.gui = gui;
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         frame.getContentPane().removeAll();
