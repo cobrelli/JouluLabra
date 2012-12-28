@@ -34,7 +34,7 @@ aloitukseen ja taisteluun.
 
 25.12
 
-3h Swingin kanssa säätämistä. Kaupparuutu alkaa pikkuhiljaa hahmottumaan.
+4h Swingin kanssa säätämistä. Kaupparuutu alkaa pikkuhiljaa hahmottumaan.
 Sovelluslogiikan rakentelua.
 
 26.12

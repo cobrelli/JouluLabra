@@ -1,15 +1,18 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Viholliset;
 
 /**
+ * Hirviöiden aliluokka hiisi.
  *
  * @author vito
  */
-public class Hiisi extends Hirvio{
-    public Hiisi(String nimi){
+public class Hiisi extends Hirvio {
+
+    /**
+     * Konstruktori, joka alustaa uuden Hiisi olion.
+     *
+     * @param nimi Kertoo hirviön nimen.
+     */
+    public Hiisi(String nimi) {
         super(nimi);
         setHpMax(25);
         setMonsterClassID("Hiisi");

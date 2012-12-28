@@ -14,26 +14,28 @@ public class TarkistaTormays {
 
     Ryhma ryhma;
     HirvioRyhma vihollisRyhma;
-//    Vuoro vuoro;
 
     /**
      * Konstruktori.
+     *
      * @param Ryhma Antaa viitteen pelaajan oliot sisältävään oliosäiliöön.
      * @param vihollisRyhma Antaa viitteen hirviöt sisältävään oliosäiliöön.
-     * @param vuoro Antaa viitteen 
      */
     public TarkistaTormays(Ryhma Ryhma, HirvioRyhma vihollisRyhma) {
         this.ryhma = Ryhma;
         this.vihollisRyhma = vihollisRyhma;
-//        this.vuoro = vuoro;
     }
 
     /**
+     * Metodi jolla tarkistetaan törmääkö annetussa sijainnissa mihinkään. Jos
+     * törmää hirviöön, vähennetään hirviön kestoja. Jos kestot laskevat nollaan
+     * tai alle merkitään hirviö kuolleeksi ja poistetaan.
      *
-     * @param x
-     * @param y
-     * @param vahinko
-     * @return
+     * @param x Kertoo tarkasteltavan paikan sijainnin x -akselilla.
+     * @param y Kertoo tarkasteltavan paikan sijainnin y -akselilla.
+     * @param vahinko Kertoo vahingon jota pelaajan yksikkö aiheuttaa jos törmää
+     * viholliseen.
+     * @return Palauttaa true jos törmää johonkin, false jos ei törmää.
      */
     public boolean tarkistaTormaako(int x, int y, int vahinko) {
         for (Yksikko cha : ryhma.palautaHahmot()) {

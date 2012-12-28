@@ -28,7 +28,7 @@ public abstract class Yksikko {
         this.nimi = nimi;
         this.elossa = true;
         this.charClassID = "";
-        
+
     }
 
     /**
@@ -175,17 +175,27 @@ public abstract class Yksikko {
         return "R.I.P";
     }
 
-    public int getVahinko(){
+    /**
+     * Getteri
+     *
+     * @return Palauttaa yksikön vahinkoarvon.
+     */
+    public int getVahinko() {
         return this.vahinko;
     }
-    
-    public void setVahinko(int uusi){
+
+    /**
+     * Setteri
+     *
+     * @param uusi Kertoo uuden asetettavan vahingon arvon.
+     */
+    public void setVahinko(int uusi) {
         this.vahinko = uusi;
     }
-    
+
     @Override
     public String toString() {
-        return this.nimi + " " + this.charClassID + " HP: (" + getHp() + "/" +
-                getHpMax() + ") " + onkoElossa();
+        return this.nimi + " " + this.charClassID + " HP: (" + getHp() + "/"
+                + getHpMax() + ") " + onkoElossa();
     }
 }
