@@ -1,9 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package HuippuTuloksetTestit;
 
+import HuippuTulokset.Piste;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,27 +14,23 @@ import static org.junit.Assert.*;
  */
 public class PisteTest {
     
+    Piste piste;
+    
     public PisteTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
     }
     
     @Before
     public void setUp() {
+        piste = new Piste("esa", 3);
     }
     
-    @After
-    public void tearDown() {
-    }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
      @Test
-     public void hello() {}
+     public void testaaEttaAsetettuPistePalauttaaOikeanNimen() {
+         assertEquals("esa", piste.getNimi());
+     }
+     
+     @Test
+     public void testaaEttaAsetettuPistePalauttaaPisteetOikein(){
+         assertEquals(3, piste.getPisteet());
+     }
 }
