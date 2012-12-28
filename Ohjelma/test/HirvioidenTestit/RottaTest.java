@@ -1,4 +1,4 @@
-package MonsterTests;
+package HirvioidenTestit;
 
 import Viholliset.Rotta;
 import static org.junit.Assert.*;
@@ -6,25 +6,25 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Rat aliluokan testi luokka
+ * Rotta aliluokan testit
  * @author Cobrelli
  */
-public class RatTest {
+public class RottaTest {
     
-    Rotta rat;
+    Rotta rotta;
     
     /**
      * Konstruktori
      */
-    public RatTest() {
+    public RottaTest() {
     }
         
     /**
-     * Asettaa globaalin Rat olion testaamista varten.
+     * Asettaa globaalin Rotta olion testaamista varten.
      */
     @Before
     public void setUp() {
-        rat = new Rotta("rat-dummy");
+        rotta = new Rotta("rat-dummy");
     }
     
     /**
@@ -32,6 +32,6 @@ public class RatTest {
      */
     @Test
     public void testaaEttaMonsterClassIDAnnetaanOikein(){
-        assertEquals("Rat", rat.getMonsterClassID());
+        assertEquals("Rotta", rotta.getMonsterClassID());
     }
 }

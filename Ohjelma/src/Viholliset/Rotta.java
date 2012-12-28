@@ -14,7 +14,7 @@ public class Rotta extends Hirvio{
     public Rotta(String nimi) {
         super(nimi);
         setHpMax(5);
-        setMonsterClassID("Rat");
+        setMonsterClassID("Rotta");
         alustaStatsit();
         setPalkkio(1);
         setVahinko(3);

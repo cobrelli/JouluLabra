@@ -2,6 +2,7 @@ package Viholliset;
 
 /**
  * Yliluokka Monster, jonka aliluokkia ovat erilaiset vihollisyksiköt.
+ *
  * @author Cobrelli
  */
 public abstract class Hirvio {
@@ -15,11 +16,12 @@ public abstract class Hirvio {
     private int y;
     private int palkkio;
     private int vahinko;
-    
+
     /**
      * Luokan konstruktori, joka luo uuden olion halutulla nimellä ja alustaa
      * sen attribuutit.
-     * @param nimi      Olion nimi. 
+     *
+     * @param nimi Olion nimi.
      */
     public Hirvio(String nimi) {
 
@@ -31,7 +33,8 @@ public abstract class Hirvio {
 
     /**
      * Asettaa olion paikan x akselilla.
-     * @param x     Määrää mihin paikkaan x akselia olio sijoittuu matriisissa.
+     *
+     * @param x Määrää mihin paikkaan x akselia olio sijoittuu matriisissa.
      */
     public void setX(int x) {
         this.x = x;
@@ -39,7 +42,8 @@ public abstract class Hirvio {
 
     /**
      * Asettaa olion paikan y akselilla.
-     * @param y     Määrää mihin paikkaan y akselia olio sijoittuu matriisissa.
+     *
+     * @param y Määrää mihin paikkaan y akselia olio sijoittuu matriisissa.
      */
     public void setY(int y) {
         this.y = y;
@@ -47,7 +51,8 @@ public abstract class Hirvio {
 
     /**
      * Olion paikan x akselin getteri.
-     * @return      Palauttaa olion paikan x akselilla.
+     *
+     * @return Palauttaa olion paikan x akselilla.
      */
     public int getX() {
         return this.x;
@@ -55,14 +60,16 @@ public abstract class Hirvio {
 
     /**
      * Olion paikan y akselin getteri.
-     * @return      Palauttaa olion paikan y akselilla.
+     *
+     * @return Palauttaa olion paikan y akselilla.
      */
     public int getY() {
         return this.y;
     }
 
     /**
-     * Alustaa vihollisyksikön nykyisen hp arvon olemaan sama kuin sen HpMax arvo.
+     * Alustaa vihollisyksikön nykyisen hp arvon olemaan sama kuin sen HpMax
+     * arvo.
      */
     public void alustaStatsit() {
         this.Hp = HpMax;
@@ -70,7 +77,8 @@ public abstract class Hirvio {
 
     /**
      * Asettaa vihollisyksikön ID:n halutuksia.
-     * @param ID        Asettaa parametrina annetun Stringin olion ID:ksi.
+     *
+     * @param ID Asettaa parametrina annetun Stringin olion ID:ksi.
      */
     public void setMonsterClassID(String ID) {
         this.monsterClassID = ID;
@@ -78,17 +86,18 @@ public abstract class Hirvio {
 
     /**
      * Monsterin ID:n getteri.
-     * @return      Palauttaa ID:n Stringinä.
+     *
+     * @return Palauttaa ID:n Stringinä.
      */
-    public String getMonsterClassID(){
+    public String getMonsterClassID() {
         return this.monsterClassID;
     }
-    
+
     /**
      * Lisää hp:ta halutulla määrällä. Tarkistaa onko hirviö elossa, jos on niin
      * hp:ta ei kasvateta. Hp kasvaa maksimissaan HpMax arvoon asti.
-     * 
-     * @param maara         kertoo arvon jolla Hp:ta kasvatetaan.
+     *
+     * @param maara kertoo arvon jolla Hp:ta kasvatetaan.
      */
     public void lisaaHp(int maara) {
 
@@ -107,7 +116,8 @@ public abstract class Hirvio {
      * Vähentää monsterin hp:ta halutulla määrällä. Jos yksikkö ei elossa, ei
      * tehdä mitään. Jos laskee alle nollan asetetaan olio kuolleeksi ja hp
      * -1:ksi.
-     * @param maara         Kertoo määrän jolla Hp:ta vähennetään.
+     *
+     * @param maara Kertoo määrän jolla Hp:ta vähennetään.
      */
     public void vahennaHp(int maara) {
         if (!elossa) {
@@ -123,23 +133,26 @@ public abstract class Hirvio {
 
     /**
      * Hp attribuutin getteri.
-     * @return      Palauttaa nykyisen hp:n.
+     *
+     * @return Palauttaa nykyisen hp:n.
      */
     public int getHp() {
         return this.Hp;
     }
-    
+
     /**
      * HpMax attribuutin getteri.
-     * @return      Palauttaa maksimi hp:n.
+     *
+     * @return Palauttaa maksimi hp:n.
      */
-    public int getHpMax(){
+    public int getHpMax() {
         return this.HpMax;
     }
 
     /**
      * HpMax attribuutin setteri.
-     * @param uusi      Asettaa HpMax arvoksi arvon uusi.
+     *
+     * @param uusi Asettaa HpMax arvoksi arvon uusi.
      */
     public void setHpMax(int uusi) {
         this.HpMax = uusi;
@@ -148,15 +161,18 @@ public abstract class Hirvio {
 
     /**
      * Kertoo onko yksikkö elossa.
-     * @return      Palauttaa elossa attribuutin arvon.
+     *
+     * @return Palauttaa elossa attribuutin arvon.
      */
     public boolean isAlive() {
         return elossa;
     }
 
     /**
-     * Palauttaa esimerkiksi toStringiä varten hengissäolotilanteen mukaisesti tekstin
-     * @return      Jos elossa palattaa tyhjän, jos ei ole elossa palauttaa R.I.P.
+     * Palauttaa esimerkiksi toStringiä varten hengissäolotilanteen mukaisesti
+     * tekstin
+     *
+     * @return Jos elossa palattaa tyhjän, jos ei ole elossa palauttaa R.I.P.
      */
     public String onkoElossa() {
         if (elossa) {
@@ -165,25 +181,45 @@ public abstract class Hirvio {
         return "R.I.P";
     }
 
-    public void setPalkkio(int palkkio){
+    /**
+     * Setteri
+     *
+     * @param palkkio Arvo joka asetetaan hirviön palkkioattribuutiksi.
+     */
+    public void setPalkkio(int palkkio) {
         this.palkkio = palkkio;
     }
-    
-    public int getPalkkio(){
+
+    /**
+     * Getteri
+     *
+     * @return Palauttaa hirviön palkkio attribuutin.
+     */
+    public int getPalkkio() {
         return this.palkkio;
     }
-    
+
     @Override
     public String toString() {
-        return this.nimi + " " + this.monsterClassID + " HP: (" + getHp() 
-                + "/" + getHpMax() + ") " +onkoElossa();
+        return this.nimi + " " + this.monsterClassID + " HP: (" + getHp()
+                + "/" + getHpMax() + ") " + onkoElossa();
     }
 
+    /**
+     * Getteri
+     *
+     * @return Palauttaa hirviön vahinkoattribuutin.
+     */
     public int getVahinko() {
         return this.vahinko;
     }
-    
-    public void setVahinko(int vahinko){
+
+    /**
+     * Setteri
+     *
+     * @param vahinko Kertoo uuden asetettavan hirviön vahinkoattribuutin arvon.
+     */
+    public void setVahinko(int vahinko) {
         this.vahinko = vahinko;
     }
 }

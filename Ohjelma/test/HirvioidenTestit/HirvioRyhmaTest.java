@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package MonsterTests;
+package HirvioidenTestit;
 
 import Viholliset.HirvioRyhma;
 import Viholliset.Rotta;
@@ -14,7 +14,7 @@ import org.junit.Test;
  *
  * @author Cobrelli
  */
-public class MonsterMashTest {
+public class HirvioRyhmaTest {
 
     HirvioRyhma m;
     Rotta r;
@@ -22,7 +22,7 @@ public class MonsterMashTest {
     /**
      *
      */
-    public MonsterMashTest() {
+    public HirvioRyhmaTest() {
     }
 
     /**
