@@ -40,12 +40,19 @@ public class PiirtoalustaTaistelu extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        piirraTausta(g);
         piirraVuoro(g, vuoro.getVuoro().getX(), vuoro.getVuoro().getY());
         piirraRuudukko(g);
         piirraHahmot(g);
         piirraMosat(g);
     }
 
+    private void piirraTausta(Graphics g){
+        g.setColor(Color.green);
+        
+        g.fillRect(100, 100, 375, 375);
+    }
+    
     /**
      * Piirtää pelissä näkyvän ruudukon.
      *
@@ -102,7 +109,8 @@ public class PiirtoalustaTaistelu extends JPanel {
      * @param y Kertoo piirrettävän paikan kohdan y -akselilla.
      */
     private void piirraVuoro(Graphics g, int x, int y) {
-        g.setColor(Color.LIGHT_GRAY);
-        g.fillRect(x, y, 23, 23);
+//        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(Color.darkGray);
+        g.fillRect(x, y, 24, 24);
     }
 }

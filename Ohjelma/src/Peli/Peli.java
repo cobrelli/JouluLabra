@@ -80,6 +80,10 @@ public class Peli {
         //ei implementoitu vielä
         int hirviotaso = taso / 10;
 
+        if(luku == 0){
+            return luoBoss();
+        }
+        
         for (int i = 0; i < (maara + luku); i++) {
             if (taso > 9) {
                 hirviot.lisaaMosa(new Hiisi("Hiisi"));
@@ -112,5 +116,14 @@ public class Peli {
         gui.getFrame().invalidate();
         gui.luoHuippuTulokset(gui.getFrame().getContentPane());
         gui.getFrame().validate();
+    }
+
+    private HirvioRyhma luoBoss() {
+        Hiisi hiisiboss = new Hiisi("Boss");
+        hiisiboss.setPalkkio(30);
+        hiisiboss.setHpMax(taso*15);
+        hiisiboss.setVahinko(hiisiboss.getVahinko()+(taso/10));
+        hirviot.lisaaMosa(hiisiboss);
+        return hirviot;
     }
 }
