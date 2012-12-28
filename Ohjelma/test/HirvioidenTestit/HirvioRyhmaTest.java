@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package HirvioidenTestit;
 
 import Viholliset.HirvioRyhma;
@@ -35,10 +31,10 @@ public class HirvioRyhmaTest {
     }
 
     /**
-     * Testaa että annettu Monster lisätään oikeasti
+     * Testaa että annettu Hirvio lisätään oikeasti
      */
     @Test
-    public void testaaEttaLisattyMonsterLoytyy() {
+    public void testaaEttaLisattyHirvioLoytyy() {
         m.lisaaMosa(r);
         assertTrue(m.palautaMosat().contains(r));
     }

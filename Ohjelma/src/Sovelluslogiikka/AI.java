@@ -90,7 +90,7 @@ public class AI {
      * @param y Kertoo tarkasteltavan paikan sijainnin y -akselilla.
      * @return Palauttaa true jos törmää johonkin ja palauttaa false jos ei.
      */
-    public boolean tormaako(Hirvio hirvio, int x, int y) {
+    private boolean tormaako(Hirvio hirvio, int x, int y) {
 
         for (Yksikko ch : party.palautaHahmot()) {
             if (x == ch.getX() && y == ch.getY()) {
@@ -122,7 +122,7 @@ public class AI {
      * @param y Kertoo tarkasteltavan paikan sijainnin y -akselilla.
      * @param x Kertoo tarkasteltavan paikan sijainnin x -akselilla.
      */
-    public void liikuJosValidi(Hirvio m, int y, int x) {
+    private void liikuJosValidi(Hirvio m, int y, int x) {
         if (tormaako(m, x, y)) {
         } else {
             m.setX(x);
