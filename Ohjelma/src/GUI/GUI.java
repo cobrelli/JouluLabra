@@ -7,7 +7,6 @@ import GUI.ToiminnanKuuntelijat.luoKauppa;
 import GUI.ToiminnanKuuntelijat.luoTaisteluruutu;
 import GUI.ToiminnanKuuntelijat.ostaNostovaki;
 import GUI.ToiminnanKuuntelijat.ostaSoturi;
-import HuippuTulokset.Piste;
 import HuippuTulokset.Tulokset;
 import Peli.Peli;
 import Sovelluslogiikka.JarjestaOliot;
@@ -23,13 +22,11 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -236,7 +233,6 @@ public class GUI implements Runnable {
 
         JPanel otsikko = new JPanel(new GridLayout(1, 3));
         otsikko.setBackground(Color.white);
-//        otsikko.setPreferredSize(new Dimension(900, 150));
         alusta.add(otsikko, BorderLayout.NORTH);
 
         JTextArea huippuTulostenOtsikko = new JTextArea("  Peli loppui - Huipputulokset");
@@ -244,24 +240,16 @@ public class GUI implements Runnable {
         huippuTulostenOtsikko.setEditable(false);
         huippuTulostenOtsikko.setFont(font);
 
-//        otsikko.add(new JLabel());
         otsikko.add(huippuTulostenOtsikko);
-//        otsikko.add(new JLabel());
 
         JPanel tulostenNaytto = new JPanel(new GridBagLayout());
+        tulostenNaytto.setBackground(Color.white);
         alusta.add(tulostenNaytto, BorderLayout.WEST);
 
-        JTextPane tuloksetTekstina = new JTextPane();
-
         Tulokset tulokset = new Tulokset();
-        ArrayList<Piste> pisteet = tulokset.palautaPisteet();
-        int indeksi = 10;
 
-//        tulokset.lisaaPiste("testi", 0);
-
-//        tuloksetTekstina.setText(tulokset.getPisteetStringina());
-//        tulostenNaytto.add(tuloksetTekstina);
         JTextArea nimi = new JTextArea("Anna nimesi");
+        nimi.setBackground(Color.lightGray);
         nimi.setPreferredSize(new Dimension(100, 50));
         tulostenNaytto.add(nimi);
         JButton talleta = new JButton("Talleta");
@@ -269,19 +257,6 @@ public class GUI implements Runnable {
                 ryhma.getKokonaisPisteet()));
         talleta.setPreferredSize(new Dimension(100, 50));
         tulostenNaytto.add(talleta);
-
-        if (pisteet.size() < 11) {
-        }
-//        if (!pisteet.isEmpty()) {
-//            if (pisteet.size() < 11) {
-////                tulokset.lisaaPiste(null, indeksi);
-//                
-//            }else if (pisteet.get(indeksi).getPisteet() < ryhma.getKokonaisPisteet()) {
-//                
-//            }
-//            
-//        }
-
     }
 
     /**
