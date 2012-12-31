@@ -49,3 +49,7 @@ ja toteutus.
 28.12
 
 9h Refaktorointia, javadocseja, testejä
+
+31.12
+
+3h Grafiikan piirtelyä ja luokkakaavioita.
