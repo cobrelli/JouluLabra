@@ -68,7 +68,7 @@ public class Tulokset {
             inputStream = new ObjectInputStream(new FileInputStream(pisteTiedosto));
             pisteet = (ArrayList<Piste>) inputStream.readObject();
         } catch (FileNotFoundException e) {
-            System.out.println("[Lataus] FileNotFound Error: " + e.getMessage());
+            System.out.println("[Lataus] FileNotFound Warning: " + e.getMessage());
         } catch (IOException e) {
             System.out.println("[Lataus] IO Error: " + e.getMessage());
         } catch (ClassNotFoundException e) {
@@ -94,7 +94,7 @@ public class Tulokset {
             outputStream = new ObjectOutputStream(new FileOutputStream(pisteTiedosto));
             outputStream.writeObject(pisteet);
         } catch (FileNotFoundException e) {
-            System.out.println("[Päivitys] FileNotFound Error: " + e.getMessage() + ", ohjelma yrittää luoda uuden tiedoston.");
+            System.out.println("[Päivitys] FileNotFound Warning: " + e.getMessage() + ", ohjelma yrittää luoda uuden tiedoston.");
         } catch (IOException e) {
             System.out.println("[Päivitys] IO Error: " + e.getMessage());
         } finally {
