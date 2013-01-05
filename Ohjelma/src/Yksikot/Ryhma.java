@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public class Ryhma {
 
-    private String partyNimi;
-    private ArrayList<Yksikko> party;
+    private String ryhmanNimi;
+    private ArrayList<Yksikko> ryhma;
     private int pisteet;
     private int kokonaisPisteet;
 
@@ -19,8 +19,8 @@ public class Ryhma {
      * Luokan konstruktori alustaa ArrayListin ja yksikön nimen.
      */
     public Ryhma() {
-        this.party = new ArrayList<>();
-        this.partyNimi = "";
+        this.ryhma = new ArrayList<>();
+        this.ryhmanNimi = "";
         this.pisteet = 0;
         this.kokonaisPisteet = 0;
     }
@@ -31,7 +31,7 @@ public class Ryhma {
      * @return Palauttaa ryhmän nimen.
      */
     public String getNimi() {
-        return this.partyNimi;
+        return this.ryhmanNimi;
     }
 
     /**
@@ -40,7 +40,7 @@ public class Ryhma {
      * @param nimi Asettaa ryhmän nimen.
      */
     public void setNimi(String nimi) {
-        this.partyNimi = nimi;
+        this.ryhmanNimi = nimi;
     }
 
     /**
@@ -49,7 +49,7 @@ public class Ryhma {
      * @param hahmo Liittaa lisattavan CharClass olion arraylistiin.
      */
     public void lisaaHahmo(Yksikko hahmo) {
-        this.party.add(hahmo);
+        this.ryhma.add(hahmo);
     }
 
     /**
@@ -58,7 +58,7 @@ public class Ryhma {
      * @param hahmo Poistaa parametrinä annetun CharClass olion arraylististä
      */
     public void poistaHahmo(Yksikko hahmo) {
-        this.party.remove(hahmo);
+        this.ryhma.remove(hahmo);
     }
 
     /**
@@ -67,14 +67,14 @@ public class Ryhma {
      * @return Palauttaa viitteen arraylistiin.
      */
     public ArrayList<Yksikko> palautaHahmot() {
-        return this.party;
+        return this.ryhma;
     }
 
     /**
      * Tulostaa kaikki arraylistin sisältämät CharClass oliot.
      */
     public void tulostaHahmot() {
-        for (Yksikko c : party) {
+        for (Yksikko c : ryhma) {
             System.out.println(c);
         }
     }
@@ -86,7 +86,7 @@ public class Ryhma {
      * @return Palauttaa true jos tyhjä, false jos ei.
      */
     public boolean isEmpty() {
-        if (party.isEmpty()) {
+        if (ryhma.isEmpty()) {
             return true;
         }
         return false;
@@ -97,7 +97,7 @@ public class Ryhma {
      * arvoon.
      */
     public void alustaKaikkienHP() {
-        for (Yksikko y : party) {
+        for (Yksikko y : ryhma) {
             y.alustaStatsit();
         }
     }
