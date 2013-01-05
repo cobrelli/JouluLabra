@@ -58,24 +58,7 @@ public class AI {
             if (party.palautaHahmot().isEmpty()) {
                 return;
             }
-
-            if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() > m.getY()) {
-                liikuJosValidi(m, m.getY() + 25, m.getX() + 25);
-            } else if (lahinX == lahinY && lahin.getX() < m.getX() && lahin.getY() < m.getY()) {
-                liikuJosValidi(m, m.getY() - 25, m.getX() - 25);
-            } else if (lahinX == lahinY && lahin.getY() > m.getY() && lahin.getX() < m.getX()) {
-                liikuJosValidi(m, m.getY() + 25, m.getX() - 25);
-            } else if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() < m.getY()) {
-                liikuJosValidi(m, m.getY() - 25, m.getX() + 25);
-            } else if (lahinX < lahinY && lahin.getY() > m.getY()) {
-                liikuJosValidi(m, m.getY() + 25, m.getX());
-            } else if (lahinX < lahinY && lahin.getY() < m.getY()) {
-                liikuJosValidi(m, m.getY() - 25, m.getX());
-            } else if (lahinX > lahinY && lahin.getX() > m.getX()) {
-                liikuJosValidi(m, m.getY(), m.getX() + 25);
-            } else if (lahinX > lahinY && lahin.getX() < m.getX()) {
-                liikuJosValidi(m, m.getY(), m.getX() - 25);
-            }
+            tarkistaLiikkuminen(lahinX, lahinY, lahin, m);
         }
     }
 
@@ -127,6 +110,34 @@ public class AI {
         } else {
             m.setX(x);
             m.setY(y);
+        }
+    }
+
+    /**
+     * Apumetodi jonka tehtävänä on kutsua kaikki mahdolliset tavat liikkua.
+     *
+     * @param lahinX Kertoo lähimmän yksikön x akselilla.
+     * @param lahinY Kertoo lähimmän yksikön y akselilla.
+     * @param lahin Kertoo lähimmän Yksikko olion.
+     * @param m kertoo käsiteltävän Hirvio olion.
+     */
+    private void tarkistaLiikkuminen(int lahinX, int lahinY, Yksikko lahin, Hirvio m) {
+        if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() > m.getY()) {
+            liikuJosValidi(m, m.getY() + 25, m.getX() + 25);
+        } else if (lahinX == lahinY && lahin.getX() < m.getX() && lahin.getY() < m.getY()) {
+            liikuJosValidi(m, m.getY() - 25, m.getX() - 25);
+        } else if (lahinX == lahinY && lahin.getY() > m.getY() && lahin.getX() < m.getX()) {
+            liikuJosValidi(m, m.getY() + 25, m.getX() - 25);
+        } else if (lahinX == lahinY && lahin.getX() > m.getX() && lahin.getY() < m.getY()) {
+            liikuJosValidi(m, m.getY() - 25, m.getX() + 25);
+        } else if (lahinX < lahinY && lahin.getY() > m.getY()) {
+            liikuJosValidi(m, m.getY() + 25, m.getX());
+        } else if (lahinX < lahinY && lahin.getY() < m.getY()) {
+            liikuJosValidi(m, m.getY() - 25, m.getX());
+        } else if (lahinX > lahinY && lahin.getX() > m.getX()) {
+            liikuJosValidi(m, m.getY(), m.getX() + 25);
+        } else if (lahinX > lahinY && lahin.getX() < m.getX()) {
+            liikuJosValidi(m, m.getY(), m.getX() - 25);
         }
     }
 }
