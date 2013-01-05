@@ -53,3 +53,19 @@ ja toteutus.
 31.12
 
 3h Grafiikan piirtelyä ja luokkakaavioita.
+
+2.1
+
+5h Ohjauksessa käynti, aihemäärittelyn tarkennusta, hienosäätöä, luokkakaavion rakentelua sekä tulosten käsittelyn virhetilanteiden tekstien muokkausta.
+
+3.1
+
+½ h Luokkakaavion päivittelyä
+
+4.1
+
+½ h Luokkakaavion päivittelyä
+
+5.1
+
+1½ h sekvenssikaavion suunnittelua ja piirtoa
