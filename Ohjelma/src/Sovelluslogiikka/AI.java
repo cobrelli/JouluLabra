@@ -64,9 +64,9 @@ public class AI {
 
     /**
      * Tarkistaa törmääkö vihollinen pelaajan johonkin yksikköön, jos törmää
-     * niin vähentää hahmon kestoja, jos kestot laskevat nollaan tai alle niin
-     * hahmo merkitään kuolleeksi ja poistetaan. Jos törmää johonkin toiseen
-     * vihollisyksikköön palautetaan true.
+     * niin vähentää hahmon osumapisteitä, jos osumapisteet laskevat nollaan tai
+     * alle niin hahmo merkitään kuolleeksi ja poistetaan. Jos törmää johonkin
+     * toiseen vihollisyksikköön palautetaan true.
      *
      * @param hirvio Antaa viitteen käsiteltävään hirviöön.
      * @param x Kertoo tarkasteltavan paikan sijainnin x -akselilla.
@@ -77,9 +77,9 @@ public class AI {
 
         for (Yksikko ch : party.palautaHahmot()) {
             if (x == ch.getX() && y == ch.getY()) {
-                System.out.println("Die infidel!");
+//                System.out.println("Die infidel!");
                 ch.vahennaHp(hirvio.getVahinko());
-                System.out.println(ch);
+//                System.out.println(ch);
                 if (!ch.getIsAlive()) {
                     party.poistaHahmo(ch);
                 }
@@ -114,7 +114,9 @@ public class AI {
     }
 
     /**
-     * Apumetodi jonka tehtävänä on kutsua kaikki mahdolliset tavat liikkua.
+     * Apumetodi jonka tehtävänä on kutsua kaikki mahdolliset tavat liikkua. AI
+     * siirtää hirviötä siihen suuntaan missä sijaitsee lähin pelaajan yksikkö.
+     * Kun se on löydetty kutsutaan liiku jos validi metodia.
      *
      * @param lahinX Kertoo lähimmän yksikön x akselilla.
      * @param lahinY Kertoo lähimmän yksikön y akselilla.

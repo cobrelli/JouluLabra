@@ -28,8 +28,8 @@ public class TarkistaTormays {
 
     /**
      * Metodi jolla tarkistetaan törmääkö annetussa sijainnissa mihinkään. Jos
-     * törmää hirviöön, vähennetään hirviön kestoja. Jos kestot laskevat nollaan
-     * tai alle merkitään hirviö kuolleeksi ja poistetaan.
+     * törmää hirviöön, vähennetään hirviön osumapisteitä. Jos osumapisteet
+     * laskevat nollaan tai alle merkitään hirviö kuolleeksi ja poistetaan.
      *
      * @param x Kertoo tarkasteltavan paikan sijainnin x -akselilla.
      * @param y Kertoo tarkasteltavan paikan sijainnin y -akselilla.
