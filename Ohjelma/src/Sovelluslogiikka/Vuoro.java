@@ -84,7 +84,7 @@ public class Vuoro {
         this.indeksi++;
 
         if (this.indeksi > getKoko() - 1) {
-            System.out.println("vaihto");
+//            System.out.println("vaihto");
             ai.liikuKohtiLahinta();
             this.indeksi = 0;
         }
