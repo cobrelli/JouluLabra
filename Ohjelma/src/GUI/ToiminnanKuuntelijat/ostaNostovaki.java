@@ -34,7 +34,7 @@ public class ostaNostovaki implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         int hinta = 10;
 
-        if (ryhma.riittaako(hinta)) {
+        if (ryhma.riittaako(hinta) && ryhma.palautaHahmot().size()<105) {
             ryhma.vahennaPisteita(hinta);
             ryhma.lisaaHahmo(new Nostovaki(""));
             teksti.setText("Pisteitä jäljellä: " + ryhma.getPisteet());

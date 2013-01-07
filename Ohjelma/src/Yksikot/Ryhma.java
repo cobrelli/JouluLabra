@@ -49,6 +49,9 @@ public class Ryhma {
      * @param hahmo Liittaa lisattavan CharClass olion arraylistiin.
      */
     public void lisaaHahmo(Yksikko hahmo) {
+        if (ryhma.size() > 105) {
+            return;
+        }
         this.ryhma.add(hahmo);
     }
 

@@ -69,3 +69,9 @@ ja toteutus.
 5.1
 
 1½ h sekvenssikaavion suunnittelua ja piirtoa
+
+6.1
+2 h sekvenssikaavioita sekä dokumentaatiota.
+
+7.1
+1h dokumentointia.

@@ -26,6 +26,9 @@ public class HirvioRyhma {
      * @param mosa Parametrinä annettu monster olio lisätään arraylistiin.
      */
     public void lisaaMosa(Hirvio mosa) {
+        if (hirvioRyhma.size() > 105) {
+            return;
+        }
         this.hirvioRyhma.add(mosa);
     }
 
