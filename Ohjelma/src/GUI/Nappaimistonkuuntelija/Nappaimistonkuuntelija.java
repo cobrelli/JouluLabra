@@ -40,45 +40,48 @@ public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
         c = vuoro.getVuoro();
 
-        if (e.getKeyCode() == KeyEvent.VK_UP) {
-            liikuJosValidi(c.getY() - 25, c.getX());
-
-        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            liikuJosValidi(c.getY() + 25, c.getX());
-
-        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            liikuJosValidi(c.getY(), c.getX() - 25);
-
-        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            liikuJosValidi(c.getY(), c.getX() + 25);
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
-            liikuJosValidi(c.getY() - 25, c.getX() - 25);
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
-            liikuJosValidi(c.getY() - 25, c.getX());
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
-            liikuJosValidi(c.getY() - 25, c.getX() + 25);
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
-            liikuJosValidi(c.getY(), c.getX() - 25);
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
-            paneeli.repaint();
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
-            liikuJosValidi(c.getY(), c.getX() + 25);
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
-            liikuJosValidi(c.getY() + 25, c.getX() - 25);
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
-            liikuJosValidi(c.getY() + 25, c.getX());
-
-        } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
-            liikuJosValidi(c.getY() + 25, c.getX() + 25);
-
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_UP:
+                liikuJosValidi(c.getY() - 25, c.getX());
+                break;
+            case KeyEvent.VK_DOWN:
+                liikuJosValidi(c.getY() + 25, c.getX());
+                break;
+            case KeyEvent.VK_LEFT:
+                liikuJosValidi(c.getY(), c.getX() - 25);
+                break;
+            case KeyEvent.VK_RIGHT:
+                liikuJosValidi(c.getY(), c.getX() + 25);
+                break;
+            case KeyEvent.VK_NUMPAD7:
+                liikuJosValidi(c.getY() - 25, c.getX() - 25);
+                break;
+            case KeyEvent.VK_NUMPAD8:
+                liikuJosValidi(c.getY() - 25, c.getX());
+                break;
+            case KeyEvent.VK_NUMPAD9:
+                liikuJosValidi(c.getY() - 25, c.getX() + 25);
+                break;
+            case KeyEvent.VK_NUMPAD4:
+                liikuJosValidi(c.getY(), c.getX() - 25);
+                break;
+            case KeyEvent.VK_NUMPAD5:
+                paneeli.repaint();
+                break;
+            case KeyEvent.VK_NUMPAD6:
+                liikuJosValidi(c.getY(), c.getX() + 25);
+                break;
+            case KeyEvent.VK_NUMPAD1:
+                liikuJosValidi(c.getY() + 25, c.getX() - 25);
+                break;
+            case KeyEvent.VK_NUMPAD2:
+                liikuJosValidi(c.getY() + 25, c.getX());
+                break;
+            case KeyEvent.VK_NUMPAD3:
+                liikuJosValidi(c.getY() + 25, c.getX() + 25);
+                break;
+            default:
+                return;
         }
         vuoro.seuraavaVuoro();
     }
