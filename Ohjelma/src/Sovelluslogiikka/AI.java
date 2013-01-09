@@ -49,7 +49,7 @@ public class AI {
      * liikkumaan tähän suuntaan vai törmääkö se johonkin.
      *
      * @param m Antaa viitteen käsiteltävään hirviöön.
-     * @return
+     * @return palauttaa true jos pelaajaryhmä onkin tyhjä, false jos jos ei.
      */
     private boolean etsiLahin(Hirvio m) {
 
