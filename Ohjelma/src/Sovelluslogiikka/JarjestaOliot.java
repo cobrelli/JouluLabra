@@ -32,7 +32,14 @@ public class JarjestaOliot {
      * oikeaan laitaan.
      */
     public void jarjesta() {
+        jarjestaPelaajanRyhma();
+        jarjestaHirviot();
+    }
 
+    /**
+     * Jarjestaa pelaajan yksiköt vasempaan laitaan alkaen kohdasta (101),(101).
+     */
+    private void jarjestaPelaajanRyhma() {
         int x = 101;
         int y = 101;
 
@@ -45,9 +52,14 @@ public class JarjestaOliot {
             yks.setY(y);
             y += 25;
         }
+    }
 
-        x = 451;
-        y = 101;
+    /**
+     * Jarjestaa hirviöt oikeaan laitaan alkaen kohdasta (451),(101).
+     */
+    private void jarjestaHirviot() {
+        int x = 451;
+        int y = 101;
 
         for (Hirvio h : hirviot.palautaMosat()) {
             if (y > 475) {
