@@ -38,7 +38,7 @@ import javax.swing.WindowConstants;
  * @author Cobrelli
  */
 public class GUI implements Runnable {
-    
+
     JFrame frame;
     private JPanel alusta;
     private HirvioRyhma hirvioRyhma;
@@ -59,64 +59,64 @@ public class GUI implements Runnable {
         this.ryhma = p;
         this.peli = peli;
     }
-    
+
     @Override
     public void run() {
         frame = new JFrame("");
         frame.setPreferredSize(new Dimension(600, 600));
-        
+
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
+
         luoAloitusruutu(frame.getContentPane());
-        
+
         frame.pack();
         frame.setVisible(true);
     }
-    
+
     private void luoAloitusruutu(Container container) {
         this.alusta = new Piirtoalusta();
         container.add(alusta);
-        
+
         alusta.setLayout(new GridBagLayout());
         alusta.setBackground(Color.darkGray);
 //        container.setBackground(Color.darkGray);
         GridBagConstraints c = new GridBagConstraints();
-        
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 60;
         c.ipadx = 0;
         c.gridx = 1;
         c.gridy = 0;
-        
+
         Font font = new Font("Verdana", Font.BOLD, 30);
-        
+
         JTextArea Teksti1 = new JTextArea("The Battle");
         Teksti1.setForeground(Color.red);
         Teksti1.setBackground(Color.darkGray);
         Teksti1.setEditable(false);
         Teksti1.setFont(font);
-        
+
         alusta.add(Teksti1, c);
-        
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipadx = 0;
         c.ipady = 20;
         c.gridwidth = 1;
         c.gridx = 1;
         c.gridy = 1;
-        
+
         JButton button1 = new JButton("Aloita");
         alusta.add(button1, c);
-        
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipadx = 0;
         c.ipady = 20;
         c.gridwidth = 1;
         c.gridx = 1;
         c.gridy = 2;
-        
+
         button1.addActionListener(new luoKauppa(frame, this));
-        
+
         JButton button2 = new JButton("Lopeta");
         alusta.add(button2, c);
         button2.addActionListener(new Exit());
@@ -130,25 +130,25 @@ public class GUI implements Runnable {
      * tarpeelliset käyttöliittymäkomponentit.
      */
     public void luoTaisteluruutu(Container container) {
-        
+
         container.setLayout(new BorderLayout());
-        
+
         this.hirvioRyhma = peli.palautaUudetViholliset();
-        
+
         Vuoro vuoro = new Vuoro(ryhma, hirvioRyhma, peli);
-        
+
         JarjestaOliot j = new JarjestaOliot(hirvioRyhma, ryhma);
         j.jarjesta();
-        
+
         this.alusta = new PiirtoalustaTaistelu(hirvioRyhma, ryhma, vuoro);
-        
+
         container.add(this.alusta, BorderLayout.CENTER);
-        
+
         TarkistaTormays tormays = new TarkistaTormays(ryhma, hirvioRyhma);
-        
+
         container.addKeyListener(new Nappaimistonkuuntelija(this.alusta,
                 tormays, vuoro));
-        
+
         container.setFocusable(true);
         container.requestFocusInWindow();
     }
@@ -161,45 +161,45 @@ public class GUI implements Runnable {
      * tarvittavat komponentit lisätään.
      */
     public void luoKauppa(Container container) {
-        
+
         this.alusta = new Piirtoalusta();
         container.add(alusta);
-        
+
         alusta.setLayout(new BorderLayout(10, 10));
 //        alusta.setBackground(Color.lightGray);
         Font font = new Font("Verdana", Font.BOLD, 30);
-        
+
         JPanel otsikko = new JPanel(new GridLayout(1, 3));
         otsikko.setBackground(Color.white);
         alusta.add(otsikko, BorderLayout.NORTH);
-        
+
         JTextArea Teksti1 = new JTextArea("Kauppa");
         Teksti1.setForeground(Color.black);
         Teksti1.setEditable(false);
         Teksti1.setFont(font);
-        
+
         otsikko.add(new JLabel());
         otsikko.add(Teksti1);
         otsikko.add(new JLabel());
-        
+
         JPanel kaupanPainikkeet = new JPanel(new GridBagLayout());
         kaupanPainikkeet.setBackground(Color.white);
         alusta.add(kaupanPainikkeet, BorderLayout.CENTER);
-        
+
         JButton ostaNostovaki = new JButton("");
 //        ostaNostovaki.setBackground(Color.red);
         Icon ostaNostoVakiTaustakuva = new ImageIcon("Kuvat/nappula1.png");
         ostaNostovaki.setIcon(ostaNostoVakiTaustakuva);
         ostaNostovaki.setPreferredSize(new Dimension(90, 100));
-        
+
         JButton ostaSoturi = new JButton("");
         Icon ostaSoturiTaustakuva = new ImageIcon("Kuvat/nappula2.png");
         ostaSoturi.setIcon(ostaSoturiTaustakuva);
         ostaSoturi.setPreferredSize(new Dimension(90, 100));
-        
+
         kaupanPainikkeet.add(ostaNostovaki);
         kaupanPainikkeet.add(ostaSoturi);
-        
+
         JPanel hallintaNappulat = new JPanel(new GridBagLayout());
         hallintaNappulat.setBackground(Color.white);
         JButton aloita = new JButton("Taisteluun");
@@ -207,7 +207,7 @@ public class GUI implements Runnable {
         alusta.add(hallintaNappulat, BorderLayout.WEST);
         hallintaNappulat.setPreferredSize(new Dimension(130, 80));
         hallintaNappulat.add(aloita);
-        
+
         JPanel pisteet = new JPanel(new GridLayout(1, 3));
         pisteet.setBackground(Color.white);
         JTextArea pisteLaskuri = new JTextArea("Pisteitä jäljellä: "
@@ -216,12 +216,12 @@ public class GUI implements Runnable {
         pisteLaskuri.setEditable(false);
         pisteLaskuri.setFont(font);
         pisteLaskuri.setFont(new Font("Verdana", Font.BOLD, 12));
-        
+
         alusta.add(pisteet, BorderLayout.SOUTH);
         pisteet.add(new JLabel());
         pisteet.add(pisteLaskuri, BorderLayout.SOUTH);
         pisteet.add(new JLabel());
-        
+
         ostaNostovaki.addActionListener(new ostaNostovaki(ryhma, pisteLaskuri));
         ostaSoturi.addActionListener(new ostaSoturi(ryhma, pisteLaskuri));
     }
@@ -236,28 +236,28 @@ public class GUI implements Runnable {
     public void luoHuippuTulokset(Container container) {
         this.alusta = new Piirtoalusta();
         container.add(alusta);
-        
+
         alusta.setLayout(new BorderLayout(10, 10));
-        
+
         Font font = new Font("Verdana", Font.BOLD, 30);
-        
+
         JPanel otsikko = new JPanel(new GridLayout(1, 3));
         otsikko.setBackground(Color.white);
         alusta.add(otsikko, BorderLayout.NORTH);
-        
+
         JTextArea huippuTulostenOtsikko = new JTextArea("  Peli loppui - Huipputulokset");
         huippuTulostenOtsikko.setForeground(Color.black);
         huippuTulostenOtsikko.setEditable(false);
         huippuTulostenOtsikko.setFont(font);
-        
+
         otsikko.add(huippuTulostenOtsikko);
-        
+
         JPanel tulostenNaytto = new JPanel(new GridBagLayout());
         tulostenNaytto.setBackground(Color.white);
         alusta.add(tulostenNaytto, BorderLayout.WEST);
-        
+
         Tulokset tulokset = new Tulokset();
-        
+
         JTextArea nimi = new JTextArea("Anna nimesi");
         nimi.setBackground(Color.lightGray);
         nimi.setPreferredSize(new Dimension(100, 50));
