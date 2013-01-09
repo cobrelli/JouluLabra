@@ -18,5 +18,6 @@ public class Soturi extends Yksikko{
         setCharClassID("Soturi");
         alustaStatsit();
         setVahinko(10);
+        setKuvanSijainti("Kuvat/soturi.png");
     }
 }

@@ -7,6 +7,10 @@ import Yksikot.Ryhma;
 import Yksikot.Yksikko;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -47,12 +51,12 @@ public class PiirtoalustaTaistelu extends JPanel {
         piirraMosat(g);
     }
 
-    private void piirraTausta(Graphics g){
+    private void piirraTausta(Graphics g) {
         g.setColor(Color.green);
-        
+
         g.fillRect(100, 100, 375, 375);
     }
-    
+
     /**
      * Piirtää pelissä näkyvän ruudukon.
      *
@@ -77,8 +81,16 @@ public class PiirtoalustaTaistelu extends JPanel {
 
         for (Yksikko c : this.party.palautaHahmot()) {
             if (c.getIsAlive()) {
-                g.setColor(Color.red);
-                g.fillOval(c.getX(), c.getY(), 23, 23);
+//                g.setColor(Color.red);
+//                g.fillOval(c.getX(), c.getY(), 23, 23);
+
+                BufferedImage img = null;
+                try {
+                    img = ImageIO.read(new File(c.getKuvanSijainti()));
+                } catch (IOException e) {
+                }
+
+                g.drawImage(img, c.getX(), c.getY(), null);
             }
         }
     }
@@ -93,8 +105,16 @@ public class PiirtoalustaTaistelu extends JPanel {
 
         for (Hirvio m : this.mash.palautaMosat()) {
             if (m.isAlive()) {
-                g.setColor(Color.black);
-                g.fillOval(m.getX(), m.getY(), 23, 23);
+//                g.setColor(Color.black);
+//                g.fillOval(m.getX(), m.getY(), 23, 23);
+                
+                BufferedImage img = null;
+                try {
+                    img = ImageIO.read(new File(m.getKuvanSijainti()));
+                } catch (IOException e) {
+                }
+
+                g.drawImage(img, m.getX(), m.getY(), null);
             }
         }
 

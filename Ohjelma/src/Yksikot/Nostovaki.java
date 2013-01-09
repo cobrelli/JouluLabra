@@ -18,5 +18,6 @@ public class Nostovaki extends Yksikko {
         setVahinko(5);
         setCharClassID("Nostovaki");
         alustaStatsit();
+        setKuvanSijainti("Kuvat/nostovaki.png");
     }
 }

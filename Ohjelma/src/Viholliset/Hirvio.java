@@ -16,6 +16,7 @@ public abstract class Hirvio {
     private int y;
     private int palkkio;
     private int vahinko;
+    private String kuvanSijainti;
 
     /**
      * Luokan konstruktori, joka luo uuden olion halutulla nimellä ja alustaa
@@ -221,5 +222,23 @@ public abstract class Hirvio {
      */
     public void setVahinko(int vahinko) {
         this.vahinko = vahinko;
+    }
+    
+    /**
+     * Getteri
+     *
+     * @return Palauttaa stringinä polun kuvaan.
+     */
+    public String getKuvanSijainti() {
+        return this.kuvanSijainti;
+    }
+
+    /**
+     * Setteri
+     *
+     * @param sijainti Hirvion kuvan uusi sijainti.
+     */
+    public void setKuvanSijainti(String sijainti) {
+        this.kuvanSijainti = sijainti;
     }
 }

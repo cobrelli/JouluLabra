@@ -19,5 +19,6 @@ public class Hiisi extends Hirvio {
         alustaStatsit();
         setPalkkio(3);
         setVahinko(10);
+        setKuvanSijainti("Kuvat/hiisi.png");
     }
 }

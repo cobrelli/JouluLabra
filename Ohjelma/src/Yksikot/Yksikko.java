@@ -16,6 +16,7 @@ public abstract class Yksikko {
     private int x;
     private int y;
     private int vahinko;
+    String kuvanSijainti;
 
     /**
      * Luokan konstruktori, jolla luodaan uusi hahmo halutulla nimellä
@@ -191,6 +192,24 @@ public abstract class Yksikko {
      */
     public void setVahinko(int uusi) {
         this.vahinko = uusi;
+    }
+
+    /**
+     * Getteri
+     *
+     * @return Palauttaa stringinä polun kuvaan.
+     */
+    public String getKuvanSijainti() {
+        return this.kuvanSijainti;
+    }
+
+    /**
+     * Setteri
+     *
+     * @param sijainti Yksikön kuvan uusi sijainti.
+     */
+    public void setKuvanSijainti(String sijainti) {
+        this.kuvanSijainti = sijainti;
     }
 
     @Override

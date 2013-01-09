@@ -86,8 +86,7 @@ public class Peli {
         for (int i = 0; i < (maara + luku); i++) {
             if (taso < 10) {
                 hirviot.lisaaMosa(new Rotta("Rotta"));
-            }
-            else if (taso > 10 && taso < 20) {
+            } else if (taso > 10 && taso < 20) {
                 hirviot.lisaaMosa(new Hiisi("Hiisi"));
             } else if (taso > 20) {
                 Hiisi hiisi = new Hiisi("Hiisi");

@@ -18,5 +18,6 @@ public class Rotta extends Hirvio{
         alustaStatsit();
         setPalkkio(1);
         setVahinko(3);
+        setKuvanSijainti("Kuvat/rotta.png");
     }
 }
