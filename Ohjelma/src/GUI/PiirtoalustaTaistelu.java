@@ -86,8 +86,10 @@ public class PiirtoalustaTaistelu extends JPanel {
 
                 BufferedImage img = null;
                 try {
-                    img = ImageIO.read(new File(c.getKuvanSijainti()));
+                    img = ImageIO.read(getClass().getResource(c.getKuvanSijainti()));
                 } catch (IOException e) {
+                } catch (IllegalArgumentException e){
+                    System.out.println("[Kuvan Lataus] Varoitus - Kuvaa ei löytynyt");
                 }
 
                 g.drawImage(img, c.getX(), c.getY(), null);
@@ -105,13 +107,13 @@ public class PiirtoalustaTaistelu extends JPanel {
 
         for (Hirvio m : this.mash.palautaMosat()) {
             if (m.isAlive()) {
-//                g.setColor(Color.black);
-//                g.fillOval(m.getX(), m.getY(), 23, 23);
-                
                 BufferedImage img = null;
+                
                 try {
-                    img = ImageIO.read(new File(m.getKuvanSijainti()));
+                    img = ImageIO.read(getClass().getResource(m.getKuvanSijainti()));
                 } catch (IOException e) {
+                } catch (IllegalArgumentException e){
+                    System.out.println("[Kuvan Lataus] Varoitus - Kuvaa ei löytynyt");
                 }
 
                 g.drawImage(img, m.getX(), m.getY(), null);

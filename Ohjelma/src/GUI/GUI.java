@@ -22,6 +22,8 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.io.InputStream;
+import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -187,13 +189,14 @@ public class GUI implements Runnable {
         alusta.add(kaupanPainikkeet, BorderLayout.CENTER);
 
         JButton ostaNostovaki = new JButton("");
-//        ostaNostovaki.setBackground(Color.red);
-        Icon ostaNostoVakiTaustakuva = new ImageIcon("Kuvat/nappula1.png");
+        ImageIcon ostaNostovakiPNG = new javax.swing.ImageIcon(getClass().getResource("Kuvat/nappula1.png"));
+        Icon ostaNostoVakiTaustakuva = ostaNostovakiPNG;
         ostaNostovaki.setIcon(ostaNostoVakiTaustakuva);
         ostaNostovaki.setPreferredSize(new Dimension(90, 100));
 
         JButton ostaSoturi = new JButton("");
-        Icon ostaSoturiTaustakuva = new ImageIcon("Kuvat/nappula2.png");
+        ImageIcon ostaSoturiPNG = new javax.swing.ImageIcon(getClass().getResource("Kuvat/nappula2.png"));
+        Icon ostaSoturiTaustakuva = ostaSoturiPNG;
         ostaSoturi.setIcon(ostaSoturiTaustakuva);
         ostaSoturi.setPreferredSize(new Dimension(90, 100));
 
