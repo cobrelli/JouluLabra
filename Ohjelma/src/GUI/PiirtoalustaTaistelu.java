@@ -8,7 +8,6 @@ import Yksikot.Yksikko;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -81,17 +80,13 @@ public class PiirtoalustaTaistelu extends JPanel {
 
         for (Yksikko c : this.party.palautaHahmot()) {
             if (c.getIsAlive()) {
-//                g.setColor(Color.red);
-//                g.fillOval(c.getX(), c.getY(), 23, 23);
-
                 BufferedImage img = null;
                 try {
                     img = ImageIO.read(getClass().getResource(c.getKuvanSijainti()));
                 } catch (IOException e) {
-                } catch (IllegalArgumentException e){
+                } catch (IllegalArgumentException e) {
                     System.out.println("[Kuvan Lataus] Varoitus - Kuvaa ei löytynyt");
                 }
-
                 g.drawImage(img, c.getX(), c.getY(), null);
             }
         }
@@ -108,18 +103,15 @@ public class PiirtoalustaTaistelu extends JPanel {
         for (Hirvio m : this.mash.palautaMosat()) {
             if (m.isAlive()) {
                 BufferedImage img = null;
-                
                 try {
                     img = ImageIO.read(getClass().getResource(m.getKuvanSijainti()));
                 } catch (IOException e) {
-                } catch (IllegalArgumentException e){
+                } catch (IllegalArgumentException e) {
                     System.out.println("[Kuvan Lataus] Varoitus - Kuvaa ei löytynyt");
                 }
-
                 g.drawImage(img, m.getX(), m.getY(), null);
             }
         }
-
     }
 
     /**
