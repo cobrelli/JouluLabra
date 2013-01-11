@@ -75,3 +75,6 @@ ja toteutus.
 
 7.1
 1h dokumentointia.
+
+9.1
+3h refaktorointia, grafiikkaa
