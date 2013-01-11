@@ -12,6 +12,11 @@ import Yksikot.Yksikko;
  */
 public class JarjestaOliot {
 
+    /**
+     * hirviot sisältää viitteen Hirvioita sisältävään olio sailioon.
+     *
+     * ryhma sisältää viitteen pelaajan yksiköitä sisältävään olio sailioon.
+     */
     HirvioRyhma hirviot;
     Ryhma ryhma;
 

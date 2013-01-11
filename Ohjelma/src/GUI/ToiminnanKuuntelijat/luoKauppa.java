@@ -13,6 +13,11 @@ import javax.swing.JFrame;
  */
 public class luoKauppa implements ActionListener {
 
+    /**
+     * frame kertoo käytettävän JFramen, johon talletetaan eri alustoja.
+     *
+     * gui antaa viitteen GUI olioon, jolla hoidetaan GUI:n hallinta.
+     */
     JFrame frame;
     GUI gui;
 

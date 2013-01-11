@@ -19,8 +19,16 @@ import javax.swing.JPanel;
  */
 public class PiirtoalustaTaistelu extends JPanel {
 
-    private HirvioRyhma mash;
-    private Ryhma party;
+    /**
+     * hirvioRyhma kertoo HirvioRyhma olion.
+     *
+     * ryhma kertoo Ryhma olion.
+     *
+     * vuoro sisältää tiedon käytössä olevasta Vuoro oliosta vuoron käyttöä
+     * varten.
+     */
+    private HirvioRyhma hirvioRyhma;
+    private Ryhma ryhma;
     Vuoro vuoro;
 
     /**
@@ -34,8 +42,8 @@ public class PiirtoalustaTaistelu extends JPanel {
      */
     public PiirtoalustaTaistelu(HirvioRyhma m, Ryhma p, Vuoro vuoro) {
         super.setBackground(Color.white);
-        this.mash = m;
-        this.party = p;
+        this.hirvioRyhma = m;
+        this.ryhma = p;
         this.vuoro = vuoro;
     }
 
@@ -78,7 +86,7 @@ public class PiirtoalustaTaistelu extends JPanel {
      */
     private void piirraHahmot(Graphics g) {
 
-        for (Yksikko c : this.party.palautaHahmot()) {
+        for (Yksikko c : this.ryhma.palautaHahmot()) {
             if (c.getIsAlive()) {
                 BufferedImage img = null;
                 try {
@@ -100,7 +108,7 @@ public class PiirtoalustaTaistelu extends JPanel {
      */
     private void piirraMosat(Graphics g) {
 
-        for (Hirvio m : this.mash.palautaMosat()) {
+        for (Hirvio m : this.hirvioRyhma.palautaMosat()) {
             if (m.isAlive()) {
                 BufferedImage img = null;
                 try {

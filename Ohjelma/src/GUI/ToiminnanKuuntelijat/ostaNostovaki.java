@@ -15,6 +15,14 @@ import javax.swing.JTextArea;
  */
 public class ostaNostovaki implements ActionListener {
 
+    /**
+     * ryhma sisältää viitteen Ryhma olioon, johon talletetaan uusi ostettava
+     * Nostovaki olio.
+     *
+     * teksti sisältää viitteen JTextAreaan, jossa näytetään sen hetkiset
+     * pisteet, joita ostettavissa on. Tähä määrää muutetaan, kun Nostovaki
+     * ostetaan.
+     */
     Ryhma ryhma;
     JTextArea teksti;
 
@@ -34,7 +42,7 @@ public class ostaNostovaki implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         int hinta = 10;
 
-        if (ryhma.riittaako(hinta) && ryhma.palautaHahmot().size()<105) {
+        if (ryhma.riittaako(hinta) && ryhma.palautaHahmot().size() < 105) {
             ryhma.vahennaPisteita(hinta);
             ryhma.lisaaHahmo(new Nostovaki(""));
             teksti.setText("Pisteitä jäljellä: " + ryhma.getPisteet());

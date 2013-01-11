@@ -16,6 +16,16 @@ import Yksikot.Ryhma;
  */
 public class Peli {
 
+    /**
+     * taso sisältää tiedon sen nykyisestä peli tasosta.
+     *
+     * hirviot sisältää viitteen Hirvioita sisältävään olio sailioon.
+     *
+     * ryhma sisältää viitteen pelaajan yksiköitä sisältävään olioi sailioon.
+     *
+     * gui sisältää viitteen käytössä olevaan GUI:hin, josta kutsutaan
+     * esimerkiksi kaupparuutuun siirtymistä silloin kun taso vaihtuu.
+     */
     private int taso;
     private HirvioRyhma hirviot;
     private Ryhma ryhma;

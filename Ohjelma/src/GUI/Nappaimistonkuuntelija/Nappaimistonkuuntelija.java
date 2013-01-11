@@ -15,6 +15,17 @@ import javax.swing.JPanel;
  */
 public class Nappaimistonkuuntelija extends JPanel implements KeyListener {
 
+    /**
+     * paneeli sisaltaa viitteen käytössä olevaan JPaneliin, mihin hirviöiden
+     * sijainnit ym. on piirretty.
+     *
+     * tormays sisaltaa TarkistaTormays olion, jonka tehtävä on hallita
+     * yksiköiden törmäyksiä.
+     *
+     * c sisaltaa sen hetkisen käytössä olevan Yksikko olion, jota siirretään.
+     *
+     * vuoro kertoo käytössä olevan Vuoro olion.
+     */
     JPanel paneeli;
     Yksikko c;
     TarkistaTormays tormays;

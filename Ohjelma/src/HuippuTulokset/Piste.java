@@ -10,6 +10,12 @@ import java.io.Serializable;
  */
 public class Piste implements Serializable, Comparable<Piste> {
 
+    /**
+     * nimi sisältää tiedon pelaajan nimestä joka talletetaan tuloksiin.
+     *
+     * pisteet sisältää tiedon pelaajan pistemäärästä, joka talletetaan
+     * tuloksiin.
+     */
     private String nimi;
     private int pisteet;
 

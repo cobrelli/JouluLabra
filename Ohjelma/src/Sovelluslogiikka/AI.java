@@ -12,7 +12,12 @@ import Yksikot.Yksikko;
  */
 public class AI {
 
-    Ryhma party;
+    /**
+     * hirviot sisältää viitteen Hirvioita sisältävään olio sailioon.
+     *
+     * ryhma sisältää viitteen pelaajan yksiköitä sisältävään olio sailioon.
+     */
+    Ryhma ryhma;
     HirvioRyhma hirviot;
 
     /**
@@ -23,7 +28,7 @@ public class AI {
      * @param hirvioRyhma Sisältää viitteet hirviöt sisältävään oliosäiliöön.
      */
     public AI(Ryhma ryhma, HirvioRyhma hirvioRyhma) {
-        this.party = ryhma;
+        this.ryhma = ryhma;
         this.hirviot = hirvioRyhma;
     }
 
@@ -58,7 +63,7 @@ public class AI {
         int lahinX = Integer.MAX_VALUE;
         int lahinY = Integer.MAX_VALUE;
 
-        for (Yksikko c : party.palautaHahmot()) {
+        for (Yksikko c : ryhma.palautaHahmot()) {
             int x = c.getX() - m.getX();
             if (x < 0) {
                 x *= -1;
@@ -74,7 +79,7 @@ public class AI {
                 lahinY = y;
             }
         }
-        if (party.palautaHahmot().isEmpty()) {
+        if (ryhma.palautaHahmot().isEmpty()) {
             return true;
         }
         tarkistaLiikkuminen(lahinX, lahinY, lahin, m);
@@ -140,15 +145,15 @@ public class AI {
      */
     private boolean tormaako(Hirvio hirvio, int x, int y) {
 
-        for (Yksikko ch : party.palautaHahmot()) {
+        for (Yksikko ch : ryhma.palautaHahmot()) {
             if (x == ch.getX() && y == ch.getY()) {
 //                System.out.println("Die infidel!");
                 ch.vahennaHp(hirvio.getVahinko());
 //                System.out.println(ch);
                 if (!ch.getIsAlive()) {
-                    party.poistaHahmo(ch);
+                    ryhma.poistaHahmo(ch);
                 }
-                if (party.isEmpty()) {
+                if (ryhma.isEmpty()) {
                     break;
                 }
                 return true;

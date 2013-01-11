@@ -41,6 +41,18 @@ import javax.swing.WindowConstants;
  */
 public class GUI implements Runnable {
 
+    /**
+     * frame on käytettävä JFrame olio.
+     *
+     * Alusta on JPanel johon sillä hetkellä on lisättynä joko piirtoalusta tai
+     * piirtoalustataistelu.
+     *
+     * hirvioRyhma sisaltaa käytettävän HirvioRyhma olion.
+     * 
+     * ryhma sisältää käytettävän Ryhma olion.
+     * 
+     * peli kertoo käytettävän Peli olion.
+     */
     JFrame frame;
     private JPanel alusta;
     private HirvioRyhma hirvioRyhma;

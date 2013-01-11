@@ -12,11 +12,26 @@ import Yksikot.Yksikko;
  */
 public class Vuoro {
 
+    /**
+     * hirviot sisältää viitteen Hirvioita sisältävään olio sailioon.
+     *
+     * ryhma sisältää viitteen pelaajan yksiköitä sisältävään olioi sailioon.
+     *
+     * indeksi kertoo sen hetkisen vuorossa olevan pelaajan yksikön indeksin
+     * Ryhma oliosailion ArrayListillä.
+     *
+     * nykyinen kertoo sen hetkellä vuorossa olevan pelaajan yksikön.
+     *
+     * ai sisältää viitteen käytössä olevaan AI:hin.
+     *
+     * peli sisältää viitteen käytössä olevaan Peliolioon, pelin loppumista ja
+     * tason vaihtumista varten.
+     */
     private Ryhma ryhma;
     private int indeksi;
     private Yksikko nykyinen;
     private AI ai;
-    private HirvioRyhma hirvioRyhma;
+    private HirvioRyhma hirviot;
     Peli peli;
 
     /**
@@ -30,7 +45,7 @@ public class Vuoro {
         this.ryhma = ryhma;
         this.indeksi = 0;
         this.nykyinen = ryhma.palautaHahmot().get(this.indeksi);
-        this.hirvioRyhma = hirvioRyhma;
+        this.hirviot = hirvioRyhma;
         this.ai = new AI(ryhma, hirvioRyhma);
         this.peli = peli;
     }
@@ -76,7 +91,7 @@ public class Vuoro {
             return;
         }
 
-        if (hirvioRyhma.palautaMosat().isEmpty()) {
+        if (hirviot.palautaMosat().isEmpty()) {
             peli.seuraavaTaso();
             return;
         }

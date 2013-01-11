@@ -10,6 +10,10 @@ import java.util.ArrayList;
  */
 public class HirvioRyhma {
 
+    /**
+     * hirviöRyhma sisältää viitteen käytössä olevaan ArrayListiin, johon Hirvio
+     * oliot talletetaan.
+     */
     private ArrayList<Hirvio> hirvioRyhma;
 
     /**

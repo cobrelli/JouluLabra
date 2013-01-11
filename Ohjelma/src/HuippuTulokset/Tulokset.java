@@ -17,6 +17,10 @@ import java.util.Collections;
  */
 public class Tulokset {
 
+    /**
+     * pisteet on ArrayList olio, joka sisältää useita pisteitä täten sisältäen
+     * pelaajien pisteet listattuna järjestykseen.
+     */
     private ArrayList<Piste> pisteet;
     /**
      * Tiedosto, johon tulokset talletetaan ja josta ne ladataan.

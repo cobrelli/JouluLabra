@@ -17,6 +17,17 @@ import javax.swing.JTextPane;
  */
 public class TalletaTulos implements ActionListener {
 
+    /**
+     * nimi sisältää tiedon pelaajan nimestä.
+     *
+     * tulokset kertoo viitteen tulokset olioon, jonka avulla talletetaan tulos.
+     *
+     * paneeli sisältää viitteen käytössä olevaan JPaneliin, johon piirretään
+     * näytettävät tulokset tallentamisen jälkeen.
+     *
+     * luettava sisältää viitteen JTextAreaan, johon on kirjoitettu pelaajan
+     * nimi, joka luetaan ja talletetaan.
+     */
     private String nimi;
     private Tulokset tulokset;
     private JPanel paneeli;
