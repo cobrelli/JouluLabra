@@ -13,12 +13,12 @@ import static org.junit.Assert.*;
  * @author vito
  */
 public class NostovakiTest {
-    
+
     Nostovaki nostovaki;
-    
+
     public NostovakiTest() {
     }
-    
+
     @Before
     public void setUp() {
         nostovaki = new Nostovaki("");
@@ -28,5 +28,4 @@ public class NostovakiTest {
     public void testPalauttaaOikeanCharClassID() {
         assertEquals("Nostovaki", nostovaki.getCharClassID());
     }
-
 }
