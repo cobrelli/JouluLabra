@@ -10,6 +10,16 @@ import java.util.ArrayList;
  */
 public class Ryhma {
 
+    /**
+     * ryhmanNimi kertoo pelaajan ryhmän nimen, ei käytössä tällä hetkellä.
+     *
+     * ryhma sisältää viitteen ArrayListiin, johon pelaajan yksiköt talletetaan.
+     *
+     * pisteet kertoo pelaajan käytössä olevat ostoa varten tarkoitetut pisteet.
+     *
+     * kokonaisPisteet kertoo paljon pelaaja on koko pelin aikana ansainnut
+     * pisteitä yhteensä.
+     */
     private String ryhmanNimi;
     private ArrayList<Yksikko> ryhma;
     private int pisteet;

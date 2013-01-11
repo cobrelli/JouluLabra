@@ -7,6 +7,27 @@ package Viholliset;
  */
 public abstract class Hirvio {
 
+    /**
+     * hp kertoo olion nykyiset osumispisteet.
+     *
+     * hpMax kertoo olion suurimmat mahdolliset osumapisteet.
+     *
+     * elossa kertoo onko olio hengissä vai kuollut.
+     *
+     * nimi kertoo hirviön nimen.
+     *
+     * monsterClassID kertoo hirviölle talletetun tunniste tunnuksen.
+     *
+     * x kertoo hirviön sijainnin ruudulla x -akselin mukaisesti.
+     *
+     * y kertoo hirviön sijainnin ruudulla y -akselin mukaisesti.
+     *
+     * palkkio kertoo paljon hirviöstä saa pisteitä kun se kuolee.
+     *
+     * vahinko kertoo paljon hirviö aiheuttaa vahinkoa kun se osuu pelaajaan.
+     *
+     * kuvanSijainti kertoo missä hirviöin kuva sijaitsee piirtämistä varten.
+     */
     private int Hp;
     private int HpMax;
     private boolean elossa;
@@ -223,7 +244,7 @@ public abstract class Hirvio {
     public void setVahinko(int vahinko) {
         this.vahinko = vahinko;
     }
-    
+
     /**
      * Getteri
      *

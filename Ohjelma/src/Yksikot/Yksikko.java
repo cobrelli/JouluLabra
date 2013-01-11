@@ -8,6 +8,27 @@ package Yksikot;
  */
 public abstract class Yksikko {
 
+    /**
+     * Hp kertoo yksikön nykyiset osumapisteet. Kun ne vähenevät nollaan pelaaja
+     * merkitään kuolleeksi.
+     *
+     * HpMax kertoo yksikön suurimmat mahdolliset osumapisteet.
+     *
+     * elossa kertoo yksikön sen hetkisen tilan. Jos yksikkö on elossa arvo on
+     * True, jos kuollut False.
+     *
+     * nimi kertoo yksikön nimen.
+     *
+     * charClassID kertoo yksikön tunnisteen.
+     *
+     * x kertoo yksikön sijainnin ruudulla x -akselin mukaisesti.
+     *
+     * y kertoo yksikön sijainnin ruudulla y -akselin mukaisesti.
+     *
+     * vahinko kertoo paljon yksikkö aiheuttaa vahinkoa törmätessään hirviöön.
+     *
+     * kuvanSijainti kertoo missä yksikköä kuvaava kuva sijaitsee.
+     */
     private int Hp;
     private int HpMax;
     private boolean elossa;
