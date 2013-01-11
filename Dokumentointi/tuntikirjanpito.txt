@@ -75,3 +75,9 @@ ja toteutus.
 
 7.1
 1h dokumentointia.
+
+9.1
+3h refaktorointia, grafiikkaa
+
+11.1
+4h refaktorointia, javadocseja attribuuteille, demo
